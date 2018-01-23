@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-package com.complexible.stardog.examples.api;
-
 import com.complexible.common.openrdf.model.Models2;
 import com.complexible.common.rdf.model.Values;
 import com.complexible.stardog.ContextSets;

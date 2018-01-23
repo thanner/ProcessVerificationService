@@ -1,5 +1,3 @@
-
-
 /*
  * Copyright (c) 2010-2015 Clark & Parsia, LLC. <http://www.clarkparsia.com>
  *
