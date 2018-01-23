@@ -29,19 +29,38 @@
         </repository>
     </repositories>
 
-    <!-- Stardog -->
     <dependencies>
+
+        <!-- Stardog -->
+        <dependency>
+            <groupId>com.complexible.stardog</groupId>
+            <artifactId>client-http</artifactId>
+            <version>5.0.4</version>
+            <type>pom</type>
+        </dependency>
+        <!-- Erro ao usar esse daqui
         <dependency>
             <groupId>com.complexible.stardog</groupId>
             <artifactId>server</artifactId>
             <version>5.0.4</version>
             <type>pom</type>
         </dependency>
+        -->
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <!-- Caso necessário
         <dependency>
-            <groupId>com.complexible.stardog</groupId>
-            <artifactId>client-http</artifactId>
-            <version>5.0.4</version>
-            <type>pom</type>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.3.0.Beta1</version>
+        </dependency>
+        -->
+
+        <!-- Java REST https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0</version>
         </dependency>
     </dependencies>
 

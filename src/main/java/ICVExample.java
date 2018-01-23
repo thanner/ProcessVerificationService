@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+/*
 import com.complexible.common.openrdf.model.Models2;
 import com.complexible.common.rdf.model.Values;
 import com.complexible.stardog.ContextSets;
@@ -33,6 +34,7 @@ import org.openrdf.model.vocabulary.RDFS;
 
 import static com.complexible.common.openrdf.util.ExpressionFactory.some;
 import static com.complexible.common.openrdf.util.ExpressionFactory.subClassOf;
+*/
 
 /**
  * <p></p>
@@ -41,6 +43,7 @@ import static com.complexible.common.openrdf.util.ExpressionFactory.subClassOf;
  * @version 4.0
  * @since 0.7
  */
+/*
 public class ICVExample {
 
     // Using the Stardog ICV API
@@ -125,3 +128,4 @@ public class ICVExample {
         }
     }
 }
+*/
