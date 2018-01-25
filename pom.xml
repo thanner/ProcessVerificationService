@@ -18,6 +18,38 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.3.1</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Sources -->
+                    <sources>
+                        <source>${basedir}/src/main/resources/xsd</source>
+                    </sources>
+                    <!-- The package of your generated sources -->
+                    <packageName>br.edu.ufrgs.inf.bpm.bpmn</packageName>
+                    <!-- Binding -->
+                    <!--
+                    <xjbSources>
+                        <source>${basedir}/src/main/resources/xjb/Binding.xjb</source>
+                    </xjbSources>
+                    -->
+                    <extension>true</extension>
+                    <addGeneratedAnnotation>true</addGeneratedAnnotation>
+                    <clearOutputDir>true</clearOutputDir>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
