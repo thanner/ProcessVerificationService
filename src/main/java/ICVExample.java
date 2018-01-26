@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-/*
+import com.complexible.common.base.CloseableIterator;
 import com.complexible.common.openrdf.model.Models2;
 import com.complexible.common.rdf.model.Values;
 import com.complexible.stardog.ContextSets;
@@ -24,6 +24,7 @@ import com.complexible.stardog.api.admin.AdminConnection;
 import com.complexible.stardog.api.admin.AdminConnectionConfiguration;
 import com.complexible.stardog.icv.Constraint;
 import com.complexible.stardog.icv.ConstraintFactory;
+import com.complexible.stardog.icv.ConstraintViolation;
 import com.complexible.stardog.icv.api.ICVConnection;
 import com.complexible.stardog.reasoning.Proof;
 import com.complexible.stardog.reasoning.ProofWriter;
@@ -31,10 +32,10 @@ import org.openrdf.model.IRI;
 import org.openrdf.model.Model;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
+import org.openrdf.query.BindingSet;
 
 import static com.complexible.common.openrdf.util.ExpressionFactory.some;
 import static com.complexible.common.openrdf.util.ExpressionFactory.subClassOf;
-*/
 
 /**
  * <p></p>
@@ -43,7 +44,6 @@ import static com.complexible.common.openrdf.util.ExpressionFactory.subClassOf;
  * @version 4.0
  * @since 0.7
  */
-/*
 public class ICVExample {
 
     // Using the Stardog ICV API
@@ -92,15 +92,20 @@ public class ICVExample {
                     aConn.add().graph(aGraph);
                     aConn.commit();
 
-                    // Now let's define a constraint; we want to say that a product must be manufactured by a Manufacturer:
-                    Constraint aConstraint = ConstraintFactory.constraint(subClassOf(Product, some(manufacturedBy, Manufacturer)));
 
                     // Grab an [ICVConnection](http://docs.stardog.com/java/snarl/com/complexible/stardog/icv/api/ICVConnection.html)
                     // so we can add our constraint to the database and start using ICV.
                     ICVConnection aValidator = aConn.as(ICVConnection.class);
 
+
+                    // aValidator.begin();
+
+                    // Now let's define a constraint; we want to say that a product must be manufactured by a Manufacturer:
+                    Constraint aConstraint = ConstraintFactory.constraint(subClassOf(Product, some(manufacturedBy, Manufacturer)));
                     // Add the constraint we just created to our database
                     aValidator.addConstraint(aConstraint);
+
+                    // aValidator.commit();
 
                     // So we can check whether or not our data is valid,
                     // which it isn't; we're lacking the assertion that m1 is a Manufacturer.
@@ -108,12 +113,30 @@ public class ICVExample {
                             ? "is"
                             : "is NOT") + " valid!");
 
+                    /**
+                    System.out.println("Violations:");
+                    CloseableIterator<ConstraintViolation<BindingSet>> violationsMax = aValidator.getViolationBindings();
+                    while(violationsMax.hasNext()){
+                        System.out.println("Max");
+                        CloseableIterator<BindingSet> violations = violationsMax.next().getViolations();
+                        while(violations.hasNext()){
+                            System.out.println("Min");
+                            System.out.println(violations.next().toString());
+                            // Tem constraint no violations
+                        }
+                    }
+                    **/
+
                     // Ok, so our data is invalid.  But what's wrong with it?  It's easy to see in this case, but if we have
                     // a lot of data, it may not be so clear what we're missing.  So lets ask!  Like with reasoning, we
                     // can get a [Proof](http://docs.stardog.com/java/snarl/com/complexible/stardog/reasoning/Proof.html) for
                     // integrity constraint violations.
-                    Proof aProof = aValidator.explain(aConstraint).proof();
+                    // Proof aProof = aValidator.explain(aConstraint).proof();
+
+                    Constraint dbConstraint = aValidator.getConstraints().stream().findFirst().get();
+                    Proof aProof = aValidator.explain(dbConstraint).proof();
                     System.out.println(ProofWriter.toString(aProof));
+
                 }
                 finally {
                     // remove the disk database
@@ -128,4 +151,3 @@ public class ICVExample {
         }
     }
 }
-*/

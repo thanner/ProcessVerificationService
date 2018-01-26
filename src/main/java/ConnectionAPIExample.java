@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-/*
 import com.complexible.common.openrdf.model.ModelIO;
 import com.complexible.common.openrdf.model.Models2;
 import com.complexible.common.rdf.model.Values;
@@ -36,7 +35,6 @@ import org.openrdf.rio.RDFFormat;
 import java.io.FileInputStream;
 import java.io.OutputStreamWriter;
 import java.nio.file.Paths;
-*/
 
 /**
  * <p>Example code illustrating use of the Stardog Connection API</p>
@@ -46,7 +44,6 @@ import java.nio.file.Paths;
  * @since 0.4
  */
 
-/*
 public class ConnectionAPIExample {
 
     // Using the SNARL API
@@ -229,4 +226,3 @@ public class ConnectionAPIExample {
         }
     }
 }
-*/
