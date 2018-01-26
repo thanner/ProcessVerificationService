@@ -1,2 +1,0 @@
-data
-stardog-license-key

@@ -1,5 +1,7 @@
 package br.edu.ufrgs.inf.bpm.rest.bpmnValidation;
 
+import br.edu.ufrgs.inf.bpm.wrapper.StardogWrapper;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -21,8 +23,9 @@ public class ApplicationRest {
     @Path("/getValidation")
     @Consumes(MediaType.TEXT_PLAIN)
     public Response getBpmnXml(String bpmnString) throws IOException {
-        String process = "Response for " + bpmnString;
-        return Response.ok().entity(process).build();
+        StardogWrapper stardogWrapper = new StardogWrapper();
+        String validation = stardogWrapper.getValidation();
+        return Response.ok().entity(validation).build();
     }
 
 }
