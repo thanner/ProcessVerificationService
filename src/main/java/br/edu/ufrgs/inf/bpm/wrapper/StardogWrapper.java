@@ -20,23 +20,26 @@ import java.util.Properties;
 
 public class StardogWrapper {
 
-    private static Stardog aStardog;
     private Path dataFile;
     private Path constraintsFile;
     private String dbName;
     private String username;
     private String password;
-
-    public StardogWrapper() throws IOException {
-        createConnection();
-    }
+    private static Stardog aStardog;
 
     public static void StartStardog() {
-        aStardog = Stardog.builder().create();
+        if(aStardog == null) {
+            aStardog = Stardog.builder().create();
+        }
     }
 
     public static void FinishStardog() {
         aStardog.shutdown();
+    }
+
+    public StardogWrapper() throws IOException {
+        StartStardog();
+        createConnection();
     }
 
     private void createConnection() throws IOException {
