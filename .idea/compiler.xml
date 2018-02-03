@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bpmnvalidationrest" />
+        <module name="bpmnverificationrest" />
         <module name="BpmValidationRest" />
         <module name="TestDog" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bpmnvalidationrest" target="1.8" />
+      <module name="bpmnverificationrest" target="1.8" />
       <module name="BpmValidationRest" target="1.8" />
       <module name="TestDog" target="1.8" />
     </bytecodeTargetLevel>

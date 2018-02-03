@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm.rest.bpmnValidation;
+package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

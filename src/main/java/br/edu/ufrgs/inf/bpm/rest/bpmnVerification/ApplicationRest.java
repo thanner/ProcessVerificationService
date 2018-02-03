@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm.rest.bpmnValidation;
+package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 
 import br.edu.ufrgs.inf.bpm.wrapper.StardogWrapper;
 
