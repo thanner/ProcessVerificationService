@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 
-<!DOCTYPE OntologyOld [
+<!DOCTYPE ontologyOld [
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
@@ -9,7 +9,7 @@
 ]>
 
 
-<OntologyOld xmlns="http://www.w3.org/2002/07/owl#"
+<ontologyOld xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.scch.at/ontologies/bpmn20base.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -34,7 +34,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">OntologyOld describes the elements and syntax of BPMN 2.0</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ontologyOld describes the elements and syntax of BPMN 2.0</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
@@ -10593,7 +10593,7 @@ default technology for this task is unspecified.</Literal>
         <IRI>#UserTask</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">HumanInteraction</Literal>
     </AnnotationAssertion>
-</OntologyOld>
+</ontologyOld>
 
 
 

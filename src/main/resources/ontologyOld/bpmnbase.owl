@@ -13,12 +13,12 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:base="http://www.scch.at/ontologies/bpmn20base.owl#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:OntologyOld rdf:about="http://www.scch.at/ontologies/bpmn20base.owl">
-        <dc:description>OntologyOld describes the elements and syntax of BPMN 2.0</dc:description>
+    <owl:ontologyOld rdf:about="http://www.scch.at/ontologies/bpmn20base.owl">
+        <dc:description>ontologyOld describes the elements and syntax of BPMN 2.0</dc:description>
         <dc:date>18. August 2010</dc:date>
         <dc:creator>Christine Natschlaeger</dc:creator>
         <dc:title>BPMN 2.0</dc:title>
-    </owl:OntologyOld>
+    </owl:ontologyOld>
     
 
 

@@ -145,8 +145,7 @@ public class ConnectionAPIExample {
                         System.out.println("The first ten results...");
 
                         QueryResultIO.writeTuple(aResult, TextTableQueryResultWriter.FORMAT, System.out);
-                    }
-                    finally {
+                    } finally {
                         // *Always* close your result sets, they hold resources which need to be released.
                         aResult.close();
                     }
@@ -168,8 +167,7 @@ public class ConnectionAPIExample {
 
                     try {
                         QueryResultIO.writeTuple(aResult, TextTableQueryResultWriter.FORMAT, System.out);
-                    }
-                    finally {
+                    } finally {
                         // Again, *close* your result sets.
                         aResult.close();
                     }
@@ -212,16 +210,14 @@ public class ConnectionAPIExample {
                     System.out.println("\nFinally, the same results as earlier, but as a graph...");
 
                     ModelIO.write(aGraph, new OutputStreamWriter(System.out), RDFFormat.TURTLE);
-                }
-                finally {
+                } finally {
                     // remove the database
                     if (aAdminConnection.list().contains("testConnectionAPI")) {
                         aAdminConnection.drop("testConnectionAPI");
                     }
                 }
             }
-        }
-        finally {
+        } finally {
             aStardog.shutdown();
         }
     }
