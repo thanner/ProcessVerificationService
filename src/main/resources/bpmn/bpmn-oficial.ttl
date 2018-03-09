@@ -1,7 +1,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 []
-  a owl:ontologyOld ;
+  a owl:Ontology ;
   owl:Prefix "" ;
   owl:Import "http://www.scch.at/ontologies/bpmn20base.owl" ;
   owl:Annotation [ a owl:AnnotationProperty ], [ a owl:Literal ], [ a owl:AnnotationProperty ], [ a owl:Literal ], [ a owl:AnnotationProperty ], [ a owl:Literal ], [ a owl:AnnotationProperty ], [ a owl:Literal ] ;
