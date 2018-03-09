@@ -111,12 +111,12 @@ public class StardogWrapper {
         // check validity
         boolean isValid = aValidator.isValid();
         // print validation result
-        s.append(String.format("The Data is%s valid%n\n", isValid ? "" : " NOT"));
+        s.append(String.format("The Data is%s valid%n", isValid ? "" : " NOT"));
         // if not valid print explanations
         if (!isValid) {
             Iterable<Proof> aViolationProofs = aValidator.explain().countLimit(10).mergeExplanations().proofs();
             for (Proof aProof : aViolationProofs) {
-                s.append(ProofWriter.toString(aNamespaces, aProof));
+                s.append("\n").append(ProofWriter.toString(aNamespaces, aProof));
             }
         }
 

@@ -107,7 +107,7 @@ public class ConnectionAPIExample {
                             Values.iri("urn:pred"),
                             Values.iri("urn:obj")));
 
-                    Resource aContext = Values.iri("urn:test:context");
+                    Resource aContext = Values.iri("urn:bpmn:context");
 
                     // With our newly created `Graph`, we can easily add that to the database as well.  You can also
                     // easily specify the context the data should be added to.  This will insert all of the statements
