@@ -100,6 +100,7 @@ public class StardogWrapper {
     private void addConstraints(ICVConnection aValidator) {
         aValidator.begin();
         aValidator.addConstraints().format(RDFFormat.TURTLE).file(constraintsFile);
+        System.out.println("Constraints: " + aValidator.getConstraints().size());
         aValidator.commit();
     }
 

@@ -34,10 +34,10 @@ public class OntologyWrapper {
                 File file = new File(filePath);
                 ontologyOld = manager.loadOntologyFromOntologyDocument(file);
                 factory = manager.getOWLDataFactory();
-                prefixManager = new DefaultPrefixManager(null, null, filePath);
+                // prefixManager = new DefaultPrefixManager(null, null, filePath);
                 // ontologyIRI = IRI.create(file);
                 ontologyIRI = "http://www.scch.at/ontologies/bpmn20base.owl#";
-                prefixManager = new DefaultPrefixManager(null, null, ontologyIRI.toString());
+                prefixManager = new DefaultPrefixManager(ontologyIRI.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,11 +46,11 @@ public class OntologyWrapper {
     }
 
     public static List<OWLClass> getClass(Predicate<? super OWLClass> predicate) {
-        return ontologyOld.classesInSignature().filter(predicate).collect(Collectors.toList());
+        return ontologyOld.getClassesInSignature().stream().filter(predicate).collect(Collectors.toList());
     }
 
     public static List<OWLClass> getClasses() {
-        return ontologyOld.classesInSignature().collect(Collectors.toList());
+        return ontologyOld.getClassesInSignature().stream().collect(Collectors.toList());
     }
 
     public static void printClasses() {
@@ -59,22 +59,22 @@ public class OntologyWrapper {
     }
 
     public static List<OWLIndividual> getIndividuals() {
-        return ontologyOld.individualsInSignature().collect(Collectors.toList());
+        return new ArrayList<>(ontologyOld.getIndividualsInSignature());
     }
 
     // TODO: Arrumar
     public static List<OWLIndividual> getIndividualsClass(String className) {
         OWLReasonerFactory reasonerFactory = new StructuralReasonerFactory();
 
-        for (OWLClass owlClass : ontologyOld.classesInSignature().collect(Collectors.toList())) {
+        for (OWLClass owlClass : new ArrayList<>(ontologyOld.getClassesInSignature())) {
             if (owlClass.getIRI().getFragment().equals(className)) {
-                System.out.println("\nClass name: " + owlClass.getIRI().getShortForm());
+                System.out.println("\nClass name: " + owlClass.getIRI());
                 System.out.println("IRI Class: " + owlClass);
                 System.out.println("-----------------------");
                 OWLReasoner reasoner = reasonerFactory.createReasoner(ontologyOld);
                 NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(owlClass, true);
                 System.out.println("Individuals: ");
-                for (OWLNamedIndividual i : instances.entities().collect(Collectors.toList())) {
+                for (OWLNamedIndividual i : instances.getFlattened()) {
                     System.out.println(i.getIRI().getFragment());
                 }
             }
@@ -126,7 +126,7 @@ public class OntologyWrapper {
     }
 
     public static List<OWLDataProperty> getDataProperties() {
-        return ontologyOld.dataPropertiesInSignature().collect(Collectors.toList());
+        return new ArrayList<>(ontologyOld.getDataPropertiesInSignature());
     }
 
     public static void printDataProperties() {
@@ -134,9 +134,10 @@ public class OntologyWrapper {
         getDataProperties().forEach(System.out::println);
     }
 
+    /*
     public static void getDataPropertiesClass(OWLClass className) {
         System.out.println("\nData Property Domain:");
-        for (OWLDataPropertyDomainAxiom dp : ontologyOld.axioms(AxiomType.DATA_PROPERTY_DOMAIN).collect(Collectors.toList())) {
+        for (OWLDataPropertyDomainAxiom dp : ontologyOld.getDataPropertyDomainAxioms(AxiomType.DATA_PROPERTY_DOMAIN)) {
             if (dp.getDomain().equals(className)) {
                 for (OWLDataProperty odp : dp.dataPropertiesInSignature().collect(Collectors.toList())) {
                     System.out.println("\t\t +: " + odp.getIRI().getShortForm());
@@ -145,22 +146,23 @@ public class OntologyWrapper {
             }
         }
     }
+    */
 
     public static List<ProcessElement> getCompleteIndividuals() {
         List<ProcessElement> individuals = new ArrayList<>();
         ProcessElement individual;
-        for (OWLClass owlClass : ontologyOld.classesInSignature().collect(Collectors.toList())) {
+        for (OWLClass owlClass : ontologyOld.getClassesInSignature().stream().collect(Collectors.toList())) {
             for (OWLIndividual i : EntitySearcher.getIndividuals(owlClass, ontologyOld).collect(Collectors.toList())) {
                 individual = new ProcessElement(owlClass.toString(), i.toString());
 
-                List<OWLDataProperty> owlDataProperties = i.dataPropertiesInSignature().collect(Collectors.toList());
+                List<OWLDataProperty> owlDataProperties = new ArrayList<>(i.getDataPropertiesInSignature());
                 for (OWLDataProperty dataProperty : owlDataProperties) {
-                    individual.addDataProperty(dataProperty.getIRI().getShortForm(), dataProperty.toString());
+                    individual.addDataProperty(dataProperty.getIRI().toString(), dataProperty.toString());
                 }
 
-                List<OWLObjectProperty> owlObjectProperties = i.objectPropertiesInSignature().collect(Collectors.toList());
+                List<OWLObjectProperty> owlObjectProperties = new ArrayList<>(i.getObjectPropertiesInSignature());
                 for (OWLObjectProperty objectProperty : owlObjectProperties) {
-                    individual.addObjectProperty(objectProperty.getIRI().getShortForm(), objectProperty.toString());
+                    individual.addObjectProperty(objectProperty.getIRI().toString(), objectProperty.toString());
                 }
 
                 individuals.add(individual);

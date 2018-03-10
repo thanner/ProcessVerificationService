@@ -181,7 +181,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.janino:janino:2.7.6" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.janino:commons-compiler:2.7.6" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-queryalgebra-model:4.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-util:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-queryparser-sparql:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.complexible.stardog.core:stardog:5.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.8.1" level="project" />
@@ -209,13 +208,11 @@
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.complexible.stardog.utils:stardog-utils-openrdf:5.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-turtle:4.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-model:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-query:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-queryresultio-api:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-repository-api:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-sail-api:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.complexible.stardog.utils:stardog-utils-rdf:5.0.4" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-api:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-languages:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-datatypes:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-binary:4.0.0" level="project" />
@@ -237,6 +234,35 @@
     <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.4.01" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.6" level="project" />
     <orderEntry type="library" name="Maven: com.complexible.stardog.memory:stardog-memory:5.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.pellet:pellet-owlapiv3:2.3.6-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.owlapi:owlapi-api:3.4.9.2-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.abstract-service-loader:abstract-service-loader:0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-model:2.7.8" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-util:2.7.8" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-api:2.7.8" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.owlapi:owlapi-impl:3.4.9.2-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.owlapi:owlapi-parsers:3.4.9.2-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.owlapi:owlapi-tools:3.4.9.2-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.pellet:pellet-core:2.3.6-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.pellet:pellet-common:2.3.6-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.aterms:aterm-java:1.8.2-p1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.jjtraveler:jjtraveler:0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.aterms:shared-objects:1.4.9-p1" level="project" />
+    <orderEntry type="library" name="Maven: org.jgrapht:jgrapht-jdk1.5:0.7.3" level="project" />
+    <orderEntry type="library" name="Maven: msv:xsdlib:20030225" level="project" />
+    <orderEntry type="library" name="Maven: msv:relaxngDatatype:20030225" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.hpl.jena:jena:2.6.4" level="project" />
+    <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:3.4.4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.pellet:pellet-query:2.3.6-ansell" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.hpl.jena:arq:2.8.7" level="project" />
+    <orderEntry type="library" name="Maven: com.hp.hpl.jena:iri:0.8" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.woodstox:wstx-asl:3.2.9" level="project" />
+    <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ansell.pellet:pellet-jena:2.3.6-ansell" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr-runtime:3.4" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:stringtemplate:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
+    <orderEntry type="library" name="Maven: org.kohsuke.metainf-services:metainf-services:1.4" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.0" level="project" />
     <orderEntry type="module-library">

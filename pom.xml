@@ -85,6 +85,13 @@
         </dependency>
         -->
 
+        <!-- https://mvnrepository.com/artifact/com.github.ansell.pellet/pellet-owlapiv3 -->
+        <dependency>
+            <groupId>com.github.ansell.pellet</groupId>
+            <artifactId>pellet-owlapiv3</artifactId>
+            <version>2.3.6-ansell</version>
+        </dependency>
+
         <!-- Java REST https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
         <dependency>
             <groupId>javax.ws.rs</groupId>
@@ -130,7 +137,7 @@
             <version>1.7.5</version>
         </dependency>
 
-        <!-- OWLAPI https://mvnrepository.com/artifact/net.sourceforge.owlapi/owlapi-distribution -->
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.owlapi/owlapi-distribution -->
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlapi-distribution</artifactId>
