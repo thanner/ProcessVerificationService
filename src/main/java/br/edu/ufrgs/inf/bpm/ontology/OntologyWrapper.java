@@ -8,7 +8,6 @@ import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
-import org.semanticweb.owlapi.search.EntitySearcher;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 import java.io.File;
@@ -16,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+//import org.semanticweb.owlapi.search.EntitySearcher;
 
 public class OntologyWrapper {
 
@@ -148,8 +149,10 @@ public class OntologyWrapper {
     }
     */
 
+
     public static List<ProcessElement> getCompleteIndividuals() {
         List<ProcessElement> individuals = new ArrayList<>();
+        /*
         ProcessElement individual;
         for (OWLClass owlClass : ontologyOld.getClassesInSignature().stream().collect(Collectors.toList())) {
             for (OWLIndividual i : EntitySearcher.getIndividuals(owlClass, ontologyOld).collect(Collectors.toList())) {
@@ -168,6 +171,7 @@ public class OntologyWrapper {
                 individuals.add(individual);
             }
         }
+        */
         return individuals;
     }
 
