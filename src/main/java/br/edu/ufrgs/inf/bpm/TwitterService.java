@@ -1,4 +1,3 @@
-/*
 package br.edu.ufrgs.inf.bpm;
 
 import org.jdom2.Element;
@@ -15,19 +14,26 @@ public class TwitterService extends InterfaceBWebsideController {
     private final String engineUser = "twitterService";
     private final String enginePassword = "yTwitter";
 
-    public void handleEnabledWorkItemEvent(WorkItemRecord wir) {
+    public void handleEnabledWorkItemEvent(WorkItemRecord workItemRecord) {
         try {
-            // connect only i f not al ready connected
-            if (!connected()) handle = connect(engineUser,
-                    enginePassword);
-            // checkout . . . proces s . . . checkin
-            wir = checkOut(wir.getID(), handle);
-            String result = updateStatus(wir);
-            checkInWorkItem(wir.getID(), wir.getDataList(),
-                    getOutputData(wir.getTaskName(), result), null, handle);
+
+            // connect only if not already connected
+            if (!connected()) {
+                handle = connect(engineUser, enginePassword);
+            }
+
+            // checkout ... process ... checkin
+            workItemRecord = checkOut(workItemRecord.getID(), handle);
+            String result = updateStatus(workItemRecord);
+            checkInWorkItem(workItemRecord.getID(), workItemRecord.getDataList(),
+                    getOutputData(workItemRecord.getTaskName(), result), null, handle);
         } catch (Exception ioe) {
             ioe.printStackTrace();
         }
+    }
+
+    private String updateStatus(WorkItemRecord workItemRecord) {
+        return "Testado";
     }
 
     // have to implement abstract method , but have no need for this event
@@ -69,4 +75,3 @@ public class TwitterService extends InterfaceBWebsideController {
     }
 
 }
-*/
