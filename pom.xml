@@ -124,6 +124,13 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/YAWL_Standalone_4.2.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.yawlfoundation.yawl</groupId>
+            <artifactId>YAWLEditor</artifactId>
+            <version>4.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/YAWLEditor4.2.jar</systemPath>
+        </dependency>
 
         <!-- Prom -->
         <dependency>

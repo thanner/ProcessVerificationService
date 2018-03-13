@@ -291,6 +291,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="Maven: org.yawlfoundation.yawl:YAWLEditor:4.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/YAWLEditor4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="Maven: org.processmining.framework:prom:6.6">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/others/ProM-Framework.jar!/" />
