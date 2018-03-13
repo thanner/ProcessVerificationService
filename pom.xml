@@ -52,22 +52,27 @@
     </build>
 
     <!-- Stardog Repository -->
+    <!--
     <repositories>
         <repository>
             <id>stardog-public</id>
             <url>http://maven.stardog.com</url>
         </repository>
     </repositories>
+    -->
 
     <dependencies>
 
         <!-- Stardog -->
         <!-- Stardog (ICV) hibernate.validator.cdi.internal.ValidationExtension da erro -->
+        <!--
         <dependency>
             <groupId>com.complexible.stardog</groupId>
             <artifactId>client-embedded</artifactId>
             <version>5.0.4</version>
         </dependency>
+        -->
+
         <!--
         <dependency>
         <groupId>com.complexible.stardog</groupId>
@@ -116,7 +121,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- YAWL Local -->
+        <!-- YAWL Local - Standalone -->
         <dependency>
             <groupId>org.yawlfoundation.yawl</groupId>
             <artifactId>yawl-standalone</artifactId>
@@ -131,6 +136,61 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/YAWLEditor4.2.jar</systemPath>
         </dependency>
+        <!-- YAWL Outra versão -->
+        <!--
+        <dependency>
+            <groupId>org.jdom2</groupId>
+            <artifactId>jdom</artifactId>
+            <version>2.0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/jdom-2.0.5.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons.codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/commons-codec-1.9.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.yawlfoundation.yawl</groupId>
+            <artifactId>yawl-lib</artifactId>
+            <version>4.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/yawl-lib-4.2.jar</systemPath>
+        </dependency>
+        -->
+        <!-- YAWL - LOG4J -->
+        <!--
+        <dependency>
+            <groupId>org.apache.log4j</groupId>
+            <artifactId>log4j-1.2-api-2.3</artifactId>
+            <version>2.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-1.2-api-2.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.log4j</groupId>
+            <artifactId>log4j-api-2.3</artifactId>
+            <version>2.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-api-2.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.log4j</groupId>
+            <artifactId>log4j-core-2.3</artifactId>
+            <version>2.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-core-2.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.log4j</groupId>
+            <artifactId>log4j-slf4j-impl-2.33</artifactId>
+            <version>2.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-slf4j-impl-2.3.jar</systemPath>
+        </dependency>
+        -->
 
         <!-- Prom -->
         <dependency>

@@ -2,7 +2,7 @@
 
 <!DOCTYPE web-app
         PUBLIC "-//Sun Mycrosystems, Inc.//DTD Web Application 2.3//EN"
-        " http://java.sun.com/dtd/web-app_2_3.dtd">
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
     <display-name>TwitterService</display-name>
@@ -34,8 +34,7 @@
 
     <servlet>
         <servlet-name>twitterService</servlet-name>
-        <servlet-class>org.yawlfoundation.yawl.engine.interfce.interfaceB.InterfaceB_EnvironmentBasedServer
-        </servlet-class>
+        <servlet-class>org.yawlfoundation.yawl.engine.interfce.interfaceB.InterfaceB_EnvironmentBasedServer</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 

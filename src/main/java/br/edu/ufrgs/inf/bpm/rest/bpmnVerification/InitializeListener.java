@@ -1,6 +1,31 @@
 package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 
-import br.edu.ufrgs.inf.bpm.wrapper.StardogWrapper;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import br.edu.ufrgs.inf.bpm.wrapper.StardogWrapper;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -11,12 +36,12 @@ public class InitializeListener implements ServletContextListener {
 
     @Override
     public final void contextInitialized(final ServletContextEvent sce) {
-        StardogWrapper.StartStardog();
+        // StardogWrapper.StartStardog();
     }
 
     @Override
     public final void contextDestroyed(final ServletContextEvent sce) {
-        StardogWrapper.FinishStardog();
+        // StardogWrapper.FinishStardog();
     }
 
 }

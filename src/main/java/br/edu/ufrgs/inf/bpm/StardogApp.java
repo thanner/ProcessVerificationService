@@ -1,3 +1,4 @@
+/*
 package br.edu.ufrgs.inf.bpm;
 
 import br.edu.ufrgs.inf.bpm.wrapper.StardogWrapper;
@@ -11,3 +12,4 @@ public class StardogApp {
         System.out.println(validation);
     }
 }
+*/

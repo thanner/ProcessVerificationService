@@ -1,3 +1,4 @@
+/*
 package br.edu.ufrgs.inf.bpm.wrapper;
 
 import com.complexible.common.rdf.model.Namespaces;
@@ -125,3 +126,4 @@ public class StardogWrapper {
     }
 
 }
+*/
