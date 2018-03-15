@@ -5,6 +5,7 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
+    <!--
     <display-name>TwitterService</display-name>
     <description>A twitter service</description>
 
@@ -42,5 +43,5 @@
         <servlet-name>twitterService</servlet-name>
         <url-pattern>/ib</url-pattern>
     </servlet-mapping>
-
+    -->
 </web-app>
