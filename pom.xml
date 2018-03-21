@@ -196,10 +196,33 @@
         <dependency>
             <groupId>org.processmining.framework</groupId>
             <artifactId>prom</artifactId>
-            <version>6.6</version>
+            <version>5.2</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/ProM-Framework.jar</systemPath>
+            <systemPath>${basedir}/src/main/others/ProM.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.processmining.framework.models</groupId>
+            <artifactId>prom</artifactId>
+            <version>5.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/ProMmodels.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>att.grappa</groupId>
+            <artifactId>prom</artifactId>
+            <version>5.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/att.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.deckfour.slickerbox</groupId>
+            <artifactId>prom</artifactId>
+            <version>0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/slickerbox0.5.jar</systemPath>
+        </dependency>
+
+
 
         <!-- Log4J https://mvnrepository.com/artifact/log4j/log4j -->
         <dependency>

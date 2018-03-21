@@ -86,9 +86,36 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Maven: org.processmining.framework:prom:6.6">
+      <library name="Maven: org.processmining.framework:prom:5.2">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/others/ProM-Framework.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/main/others/ProM.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: org.processmining.framework.models:prom:5.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/ProMmodels.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: att.grappa:prom:5.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/att.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: org.deckfour.slickerbox:prom:0.5">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/slickerbox0.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
