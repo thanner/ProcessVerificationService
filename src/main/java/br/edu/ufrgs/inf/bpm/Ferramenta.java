@@ -28,7 +28,8 @@ public class Ferramenta {
         System.out.println(yawlXML);
 
         // Salva yawlXML em alguma espécie de buffer
-        // Gera uma estrutura yawlfoundation a partir do xml/buffer (YSpecification, YDecomposition)
+        // Gera uma estrutura yawlfoundation a partir do xml/buffer
+        // ver YAWLEditor pra achar algum reader file to YAlgumaCoisa (YSpecification, YDecomposition)
         // para estrutura/cada elemento, faz a verificação
     }
 }
