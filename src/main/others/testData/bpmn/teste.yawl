@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet
+	xmlns="http://www.citi.qut.edu.au/yawl"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="Beta 4"
+	xsi:schemaLocation="http://www.citi.qut.edu.au/yawl d:/yawl/schema/YAWL_SchemaBeta4.xsd"
+>
+	<specification uri="Bpmnnet">
+		<name>Bpmnnet</name>
+		<documentation>Bpmnnet</documentation>
+		<metaData/>
+		<decomposition
+			id="root"
+			isRootNet="true"
+			xsi:type="NetFactsType"
+		>
+			<processControlElements>
+				<inputCondition
+					id="Node0"
+				>
+					<flowsInto>
+						<nextElementRef id="Node1"/>
+					</flowsInto>
+				</inputCondition>
+				<task
+					id="Node1"
+				>
+					<name>inTask_root</name>
+					<documentation>inTask_root</documentation>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node3"
+				>
+					<name>outTask_root</name>
+					<documentation>outTask_root</documentation>
+					<flowsInto>
+						<nextElementRef id="Node2"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<outputCondition id="Node2"/>
+			</processControlElements>
+		</decomposition>
+	</specification>
+</specificationSet>
