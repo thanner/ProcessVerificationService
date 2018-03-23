@@ -2,11 +2,14 @@ package br.edu.ufrgs.inf.bpm.builder;
 
 import br.edu.ufrgs.inf.bpm.bpmn.TActivity;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
+import br.edu.ufrgs.inf.bpm.bpmn.TProcess;
+import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
 import org.processmining.framework.models.bpmn.*;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.bpmnmining.BpmnResult;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProcessModelBuilder {
@@ -15,7 +18,7 @@ public class ProcessModelBuilder {
     private Map<String, BpmnSwimLane> laneMap;
     private Map<String, BpmnProcessModel> poolMap;
     private Map<String, BpmnElement> elementMap;
-    // private BpmnWrapper processModelWrapper;
+    private BpmnWrapper processModelWrapper;
 
     public ProcessModelBuilder() {
         genericId = 0;
@@ -26,16 +29,16 @@ public class ProcessModelBuilder {
 
     public MiningResult buildProcess(TDefinitions definitions) {
 
-        // processModelWrapper = new BpmnWrapper(definitions);
+        processModelWrapper = new BpmnWrapper(definitions);
 
         int newId = generateModelId("ProcessModel1");
         BpmnProcessModel processModel = new BpmnProcessModel("Process Model");
 
-        //List<TProcess> processList = processModelWrapper.getProcessList();
+        List<TProcess> processList = processModelWrapper.getProcessList();
 
-        /*
         for (TProcess process : processList) {
 
+            /*
             processModel.addPool(createPool(process));
             for (TLaneSet laneSet : process.getLaneSet()) {
                 for (TLane lane : laneSet.getLane()) {
@@ -58,9 +61,9 @@ public class ProcessModelBuilder {
                     processModel.addArc(createArc((TSequenceFlow) flowElement.getValue()));
                 }
             }
+            */
 
         }
-        */
 
         BpmnGraph bpmnGraph = new BpmnGraph("Graph", processModel);
         MiningResult miningResult = new BpmnResult(null, bpmnGraph);
