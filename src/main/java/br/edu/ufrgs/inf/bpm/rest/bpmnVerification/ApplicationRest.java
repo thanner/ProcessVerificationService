@@ -1,5 +1,10 @@
 package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 
+import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
+import br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder;
+import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
+import org.processmining.mining.MiningResult;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -20,8 +25,12 @@ public class ApplicationRest {
     @Path("/getValidation")
     @Consumes(MediaType.TEXT_PLAIN)
     public Response getBpmnXml(String bpmnString) {
-        // StardogWrapper stardogWrapper = new StardogWrapper();
-        // String validation = stardogWrapper.getValidation();
+        String process = null;
+        TDefinitions definitions = JaxbWrapper.convertXMLToObject(bpmnString);
+
+        ProcessModelBuilder processModelBuilder = new ProcessModelBuilder();
+        MiningResult processModel = processModelBuilder.buildProcess(definitions);
+        //process = TextGenerator.generateText(processModel, 0);
         return Response.ok().build();
     }
 

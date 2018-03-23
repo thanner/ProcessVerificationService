@@ -19,7 +19,7 @@ public class Ferramenta {
 
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream("src/main/others/testData/bpmn/diagram2.bpmn");
+            inputStream = new FileInputStream("src/main/others/testData/bpmn/diagram.bpmn");
 
             // TÁ RETORNANDO ERRADO
             BpmnResult bpmnResult = (BpmnResult) bpmnImport.importFile(inputStream);
@@ -31,6 +31,7 @@ public class Ferramenta {
                 YAWLResult yawlResult = (YAWLResult) bpmnToYawl.convert(providedObjectBpmn);
                 for (ProvidedObject providedObjectYawl : yawlResult.getProvidedObjects()) {
                     yawlExport.export(providedObjectYawl, outputStream);
+                    System.out.println("a");
                 }
             }
 

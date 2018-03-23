@@ -9,4 +9,6 @@ public class Paths {
     public final static String ConstraintFile = "src/main/resources/stardog.turtle/bpmn20basic.owl";
 
     public final static String OntologyPath = "/ontology/bpmn20base.owl";
+
+    public final static String PackageBpmnPath = "br.edu.ufrgs.inf.bpm.bpmn";
 }
