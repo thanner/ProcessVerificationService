@@ -1,13 +1,14 @@
 /**
  *
  */
-package org.processmining.framework.models.bpmn;
+package br.edu.ufrgs.inf.bpm.changes;
 
 /**
  * @author JianHong.YE, collaborate with LiJie.WEN and Feng
  * XML tags used in BPMN files
  */
 public class BpmnXmlTags {
+    // TODO: MODIFIQUEI ALGUMAS DAS BPMNTAGS (Talvez nem seja necessárias)
 
     // diagram
     public static String BPMN_DIAGRAM = "diagram";
@@ -16,26 +17,26 @@ public class BpmnXmlTags {
      * Tags
      */
     // event
-    public static String BPMN_START = "Start";
-    public static String BPMN_INTERMEDIATE = "Intermediate";
-    public static String BPMN_END = "End";
+    public static String BPMN_START = "bpmn:startEvent"; //"Start";
+    public static String BPMN_INTERMEDIATE = "bpmn:Intermediate";
+    public static String BPMN_END = "bpmn:endEvent"; // "End";
 
     // Task
-    public static String BPMN_TASK = "Task";
+    public static String BPMN_TASK = "bpmn:task"; // "Task";
 
     // Sub process
     public static String BPMN_SUBPROCESS = "SubProcess";
 
     // lane and pool
-    public static String BPMN_LANE = "Lane";
-    public static String BPMN_POOL = "Pool";
+    public static String BPMN_LANE = "bpmn:lane"; // "Lane";
+    public static String BPMN_POOL = "bpmn:laneSet"; // "Pool";
 
     // flow and message
-    public static String BPMN_FLOW = "Flow";
+    public static String BPMN_FLOW = "bpmn:sequenceFlow"; // "Flow";
     public static String BPMN_MESSAGE = "Message";
 
     // gateway
-    public static String BPMN_GATEWAY = "Gateway";
+    public static String BPMN_GATEWAY = "bpmn:gateway"; // "Gateway";
 
     /**
      * Property
