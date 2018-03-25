@@ -19,7 +19,7 @@ public class Ferramenta {
 
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream("src/main/others/testData/bpmn/diagram.bpmn");
+            inputStream = new FileInputStream("src/main/others/testData/bpmn/diagram2.bpmn");
 
             // TÁ RETORNANDO ERRADO
             BpmnResult bpmnResult = (BpmnResult) bpmnImport.importFile(inputStream);

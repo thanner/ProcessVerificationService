@@ -264,6 +264,15 @@
           <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.4.01" />
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:2.3.1" />
           <element id="library" level="project" name="Maven: xerces:xercesImpl:2.10.0" />
+          <element id="library" level="module" name="Maven: att.grappa:prom:5.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: colt:prom:5.2" module-name="bpmnverificationrest" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
+          <element id="library" level="module" name="Maven: java_cup_grappa.runtime:prom:5.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.deckfour.gantzgraf:prom:0.9" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.deckfour.slickerbox:prom:0.5" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.processmining.framework.models:prom:5.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.processmining.framework:prom:5.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.processmining.lib:prom:5.2" module-name="bpmnverificationrest" />
         </element>
       </element>
     </root>

@@ -25,13 +25,13 @@ public class ApplicationRest {
     @Path("/getValidation")
     @Consumes(MediaType.TEXT_PLAIN)
     public Response getBpmnXml(String bpmnString) {
-        String process = null;
         TDefinitions definitions = JaxbWrapper.convertXMLToObject(bpmnString);
 
         ProcessModelBuilder processModelBuilder = new ProcessModelBuilder();
         MiningResult processModel = processModelBuilder.buildProcess(definitions);
-        //process = TextGenerator.generateText(processModel, 0);
-        return Response.ok().build();
+
+        //return Response.ok().build();
+        return null;
     }
 
 }

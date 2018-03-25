@@ -33,19 +33,26 @@ public class ProcessModelBuilder {
 
         int newId = generateModelId("ProcessModel1");
         BpmnProcessModel processModel = new BpmnProcessModel("Process Model");
+        BpmnGraph bpmnGraph = new BpmnGraph("Graph", processModel);
 
         List<TProcess> processList = processModelWrapper.getProcessList();
 
         for (TProcess process : processList) {
+            processModel = new BpmnProcessModel("Process Model");
+            bpmnGraph = new BpmnGraph("Graph", processModel);
 
+            processModel.addNode(new BpmnTask("1")); // Pegar do DOC?
+
+            //bpmnGraph.addPool(createPool(process));
             /*
-            processModel.addPool(createPool(process));
             for (TLaneSet laneSet : process.getLaneSet()) {
                 for (TLane lane : laneSet.getLane()) {
                     processModel.addLane(createLane(lane, process));
                 }
             }
+            */
 
+            /*
             for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
                 if (flowElement.getValue() instanceof TActivity) {
                     processModel.addActivity(createActivity((TActivity) flowElement.getValue()));
@@ -65,7 +72,6 @@ public class ProcessModelBuilder {
 
         }
 
-        BpmnGraph bpmnGraph = new BpmnGraph("Graph", processModel);
         MiningResult miningResult = new BpmnResult(null, bpmnGraph);
         return miningResult;
     }
@@ -86,16 +92,43 @@ public class ProcessModelBuilder {
     }
     */
 
-    private BpmnTask createActivity(TActivity activity) {
-        try {
-            //int newId = generateModelId(activity.getId());
-            //int activityType = getActivityType(activity);
-            BpmnTask modelActivity = new BpmnTask(""); //new BpmnTask(newId, getName(activity.getName()), getLaneByObject(activity), getPoolByObject(activity), activityType);
-            elementMap.put(activity.getId(), modelActivity);
-            return modelActivity;
-        } catch (IllegalArgumentException i) {
-            i.printStackTrace();
+    private BpmnTask createTask(TActivity activity) {
+        /*
+        // Task and activities starting with the tag "Task"
+        BpmnTask task = new BpmnTask(element);
+        String id = task.getId();
+        // set the type by the starting tag name
+        task.setTypeTag(BpmnTaskType.valueOf(tag));
+        // set the parent id
+        task.setpid(this.parentId);
+        // save the node
+        nodes.put(id, task);
+
+        //handle its child of intermediate event type
+        NodeList childNodes = element.getElementsByTagName(BpmnXmlTags.BPMN_INTERMEDIATE);
+        int childrenNum = childNodes.getLength();
+        for (int i = 0; i < childrenNum; i++)
+        {
+            Node nd = childNodes.item(i);
+            if (nd instanceof Element)
+            {
+                BpmnEvent event = (BpmnEvent)parseElement((Element) nd);
+                event.setLane(task.getLane());
+                if(event != null)
+                {
+                    String edgeId = event.getId() + "_" + id;
+                    BpmnEdge edge = new BpmnEdge(event.getId(), id);
+                    edge.setType(BpmnEdgeType.Flow);
+                    // set the parent id
+                    edge.setpid(this.parentId);
+                    edge.setId(edgeId);
+                    // save the node
+                    edges.put(edgeId, edge);
+                }
+            }
         }
+        return task;
+        */
         return null;
     }
 

@@ -202,6 +202,7 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/ProM.jar</systemPath>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.processmining.framework.models</groupId>
             <artifactId>prom</artifactId>
@@ -209,6 +210,7 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/ProMmodels.jar</systemPath>
         </dependency>
+        -->
         <dependency>
             <groupId>att.grappa</groupId>
             <artifactId>prom</artifactId>
@@ -253,6 +255,37 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/MXMLib.jar</systemPath>
         </dependency>
+
+        <!-- REMOVER QUANDO USAR ProMmodels -->
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>prom</artifactId>
+            <version>5.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/jdom.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>prom</artifactId>
+            <version>1.0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/jfreechart-1.0.5.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.semanticweb</groupId>
+            <artifactId>prom</artifactId>
+            <version>1.0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/kaon2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons.math</groupId>
+            <artifactId>prom</artifactId>
+            <version>1.0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/others/commons-math-1.1.jar</systemPath>
+        </dependency>
+
 
         <!-- Apache -->
         <!-- IO https://mvnrepository.com/artifact/commons-io/commons-io -->
