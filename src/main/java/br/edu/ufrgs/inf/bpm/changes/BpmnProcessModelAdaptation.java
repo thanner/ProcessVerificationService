@@ -5,6 +5,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+
+// Pode invalidar process model builder
 public class BpmnProcessModelAdaptation extends BpmnProcessModel {
 
     public BpmnProcessModelAdaptation(String parentId, Element element) {
