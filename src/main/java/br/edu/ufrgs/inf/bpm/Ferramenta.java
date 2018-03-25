@@ -1,11 +1,11 @@
 package br.edu.ufrgs.inf.bpm;
 
+import br.edu.ufrgs.inf.bpm.changes.BpmnImport;
 import org.processmining.converting.bpmn2yawl.BPMNToYAWL;
 import org.processmining.exporting.yawl.YAWLExport;
 import org.processmining.framework.models.bpmn.BpmnGraph;
 import org.processmining.framework.models.bpmn.BpmnUtils;
 import org.processmining.framework.plugin.ProvidedObject;
-import org.processmining.importing.bpmn.BpmnImport;
 import org.processmining.mining.bpmnmining.BpmnResult;
 import org.processmining.mining.yawlmining.YAWLResult;
 import org.w3c.dom.Document;

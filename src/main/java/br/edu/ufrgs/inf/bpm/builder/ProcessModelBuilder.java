@@ -3,8 +3,12 @@ package br.edu.ufrgs.inf.bpm.builder;
 import br.edu.ufrgs.inf.bpm.bpmn.TActivity;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
 import br.edu.ufrgs.inf.bpm.bpmn.TProcess;
+import br.edu.ufrgs.inf.bpm.changes.BpmnProcessModelAdaptation;
 import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
-import org.processmining.framework.models.bpmn.*;
+import org.processmining.framework.models.bpmn.BpmnElement;
+import org.processmining.framework.models.bpmn.BpmnGraph;
+import org.processmining.framework.models.bpmn.BpmnSwimLane;
+import org.processmining.framework.models.bpmn.BpmnTask;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.bpmnmining.BpmnResult;
 
@@ -16,7 +20,7 @@ public class ProcessModelBuilder {
 
     private int genericId;
     private Map<String, BpmnSwimLane> laneMap;
-    private Map<String, BpmnProcessModel> poolMap;
+    private Map<String, BpmnProcessModelAdaptation> poolMap;
     private Map<String, BpmnElement> elementMap;
     private BpmnWrapper processModelWrapper;
 
@@ -32,13 +36,13 @@ public class ProcessModelBuilder {
         processModelWrapper = new BpmnWrapper(definitions);
 
         int newId = generateModelId("ProcessModel1");
-        BpmnProcessModel processModel = new BpmnProcessModel("Process Model");
+        BpmnProcessModelAdaptation processModel = new BpmnProcessModelAdaptation("Process Model");
         BpmnGraph bpmnGraph = new BpmnGraph("Graph", processModel);
 
         List<TProcess> processList = processModelWrapper.getProcessList();
 
         for (TProcess process : processList) {
-            processModel = new BpmnProcessModel("Process Model");
+            processModel = new BpmnProcessModelAdaptation("Process Model");
             bpmnGraph = new BpmnGraph("Graph", processModel);
 
             processModel.addNode(new BpmnTask("1")); // Pegar do DOC?
