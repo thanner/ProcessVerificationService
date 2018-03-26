@@ -1,6 +1,6 @@
 package br.edu.ufrgs.inf.bpm;
 
-import br.edu.ufrgs.inf.bpm.changes.BpmnImport;
+import br.edu.ufrgs.inf.bpm.changes.BpmnImportAdapter;
 import org.processmining.converting.bpmn2yawl.BPMNToYAWL;
 import org.processmining.exporting.yawl.YAWLExport;
 import org.processmining.framework.models.bpmn.BpmnGraph;
@@ -15,14 +15,14 @@ import java.io.*;
 
 public class Ferramenta {
     public static void main(String[] args) {
-        BpmnImport bpmnImport = new BpmnImport();
+        BpmnImportAdapter bpmnImportAdapter = new BpmnImportAdapter();
 
         InputStream inputStream = null;
         try {
             inputStream = new FileInputStream("src/main/others/testData/bpmn/diagram2.bpmn");
 
             // TÁ RETORNANDO ERRADO
-            BpmnResult bpmnResult = (BpmnResult) bpmnImport.importFile(inputStream);
+            BpmnResult bpmnResult = (BpmnResult) bpmnImportAdapter.importFile(inputStream);
 
             BPMNToYAWL bpmnToYawl = new BPMNToYAWL();
             YAWLExport yawlExport = new YAWLExport();

@@ -28,6 +28,12 @@
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/jaxb" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/configurations" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/att" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/att/grappa" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/org/processmining/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/org/processmining/framework/models" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/org/processmining/importing" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/org/processmining/importing/bpmn" />
       <excludeFolder url="file://$MODULE_DIR$/system" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
@@ -86,6 +92,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="Maven: org.processmining.framework.models:prom:5.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/ProMmodels.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="Maven: att.grappa:prom:5.2">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/others/att.jar!/" />
@@ -134,42 +149,6 @@
       <library name="Maven: org.processmining.lib:prom:5.2">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/others/MXMLib.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.jdom:prom:5.2">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/others/jdom.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.jfree:prom:1.0.5">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/others/jfreechart-1.0.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.semanticweb:prom:1.0.5">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/others/kaon2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.apache.commons.math:prom:1.0.5">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/others/commons-math-1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

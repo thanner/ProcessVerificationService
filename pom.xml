@@ -202,7 +202,6 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/ProM.jar</systemPath>
         </dependency>
-        <!--
         <dependency>
             <groupId>org.processmining.framework.models</groupId>
             <artifactId>prom</artifactId>
@@ -210,7 +209,6 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/ProMmodels.jar</systemPath>
         </dependency>
-        -->
         <dependency>
             <groupId>att.grappa</groupId>
             <artifactId>prom</artifactId>
@@ -257,6 +255,7 @@
         </dependency>
 
         <!-- REMOVER QUANDO USAR ProMmodels -->
+        <!--
         <dependency>
             <groupId>org.jdom</groupId>
             <artifactId>prom</artifactId>
@@ -285,7 +284,7 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/commons-math-1.1.jar</systemPath>
         </dependency>
-
+        -->
 
         <!-- Apache -->
         <!-- IO https://mvnrepository.com/artifact/commons-io/commons-io -->
