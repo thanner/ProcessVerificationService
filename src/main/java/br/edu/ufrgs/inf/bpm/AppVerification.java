@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class App {
+public class AppVerification {
 
     private static YCondition _aCondition;
     private static YTask _validTask;

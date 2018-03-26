@@ -1,7 +1,7 @@
 /**
  *
  */
-package br.edu.ufrgs.inf.bpm.changes;
+package br.edu.ufrgs.inf.bpm.changes.prom;
 
 /**
  * @author JianHong.YE, collaborate with LiJie.WEN and Feng

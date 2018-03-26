@@ -3,7 +3,7 @@ package br.edu.ufrgs.inf.bpm.builder;
 import br.edu.ufrgs.inf.bpm.bpmn.TActivity;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
 import br.edu.ufrgs.inf.bpm.bpmn.TProcess;
-import br.edu.ufrgs.inf.bpm.changes.BpmnProcessModelAdapter;
+import br.edu.ufrgs.inf.bpm.changes.prom.BpmnProcessModelAdapter;
 import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
 import org.processmining.framework.models.bpmn.BpmnElement;
 import org.processmining.framework.models.bpmn.BpmnGraph;

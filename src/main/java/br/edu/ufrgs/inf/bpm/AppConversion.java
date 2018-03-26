@@ -1,6 +1,6 @@
 package br.edu.ufrgs.inf.bpm;
 
-import br.edu.ufrgs.inf.bpm.changes.BpmnImportAdapter;
+import br.edu.ufrgs.inf.bpm.changes.prom.BpmnImportAdapter;
 import org.processmining.converting.bpmn2yawl.BPMNToYAWL;
 import org.processmining.exporting.yawl.YAWLExport;
 import org.processmining.framework.models.bpmn.BpmnGraph;
@@ -13,7 +13,7 @@ import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
 
-public class Ferramenta {
+public class AppConversion {
     public static void main(String[] args) {
         BpmnImportAdapter bpmnImportAdapter = new BpmnImportAdapter();
 

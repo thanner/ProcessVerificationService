@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm.changes;
+package br.edu.ufrgs.inf.bpm.changes.prom;
 
 /***********************************************************
  *      This software is part of the ProM package          *

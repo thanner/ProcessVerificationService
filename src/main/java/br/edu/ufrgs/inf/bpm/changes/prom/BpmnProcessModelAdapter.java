@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm.changes;
+package br.edu.ufrgs.inf.bpm.changes.prom;
 
 import org.processmining.framework.models.bpmn.*;
 import org.w3c.dom.Element;
