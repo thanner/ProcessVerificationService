@@ -35,6 +35,15 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         }
     }
 
+    public String getParentId() {
+        return this.parentId;
+    }
+
+    public void putNode(String id, BpmnObject bpmnObject) {
+        nodes.put(id, bpmnObject);
+    }
+
+
     @Override
     protected BpmnElement parseElement(Element element) {
         // TODO: SET TYPE das classes estão todas comentadas (7 no total). Talvez a soluação ideal seja herdar essa classe e sobrescrever os métodos
@@ -144,4 +153,6 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         }
         return null;
     }
+
+
 }

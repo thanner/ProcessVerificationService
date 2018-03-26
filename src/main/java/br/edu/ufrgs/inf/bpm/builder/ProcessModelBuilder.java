@@ -2,16 +2,16 @@ package br.edu.ufrgs.inf.bpm.builder;
 
 import br.edu.ufrgs.inf.bpm.bpmn.TActivity;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
+import br.edu.ufrgs.inf.bpm.bpmn.TFlowElement;
 import br.edu.ufrgs.inf.bpm.bpmn.TProcess;
 import br.edu.ufrgs.inf.bpm.changes.prom.BpmnProcessModelAdapter;
 import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
-import org.processmining.framework.models.bpmn.BpmnElement;
-import org.processmining.framework.models.bpmn.BpmnGraph;
-import org.processmining.framework.models.bpmn.BpmnSwimLane;
-import org.processmining.framework.models.bpmn.BpmnTask;
+import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
+import org.processmining.framework.models.bpmn.*;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.bpmnmining.BpmnResult;
 
+import javax.xml.bind.JAXBElement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,9 +42,8 @@ public class ProcessModelBuilder {
         List<TProcess> processList = processModelWrapper.getProcessList();
 
         for (TProcess process : processList) {
-            processModel = new BpmnProcessModelAdapter("Process Model");
+            processModel = new BpmnProcessModelAdapter("Process Model Id");
             bpmnGraph = new BpmnGraph("Graph", processModel);
-
             processModel.addNode(new BpmnTask("1")); // Pegar do DOC?
 
             //bpmnGraph.addPool(createPool(process));
@@ -56,17 +55,20 @@ public class ProcessModelBuilder {
             }
             */
 
-            /*
             for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
                 if (flowElement.getValue() instanceof TActivity) {
-                    processModel.addActivity(createActivity((TActivity) flowElement.getValue()));
-                } else if (flowElement.getValue() instanceof TEvent) {
+                    createActivity((TActivity) flowElement.getValue(), processModel);
+                }
+                /*
+                else if (flowElement.getValue() instanceof TEvent) {
                     processModel.addEvent(createEvent((TEvent) flowElement.getValue()));
                 } else if (flowElement.getValue() instanceof TGateway) {
                     processModel.addGateway(createGateway((TGateway) flowElement.getValue()));
                 }
+                */
             }
 
+            /*
             for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
                 if (flowElement.getValue() instanceof TSequenceFlow) {
                     processModel.addArc(createArc((TSequenceFlow) flowElement.getValue()));
@@ -96,18 +98,22 @@ public class ProcessModelBuilder {
     }
     */
 
-    private BpmnTask createTask(TActivity activity) {
-        /*
+    private void createActivity(TActivity activity, BpmnProcessModelAdapter processModel) {
         // Task and activities starting with the tag "Task"
-        BpmnTask task = new BpmnTask(element);
-        String id = task.getId();
-        // set the type by the starting tag name
-        task.setTypeTag(BpmnTaskType.valueOf(tag));
-        // set the parent id
-        task.setpid(this.parentId);
-        // save the node
-        nodes.put(id, task);
+        BpmnTask task = new BpmnTask(JaxbWrapper.convertObjectToXML(activity));
 
+        // TODO: Tá considerando o ID o texto inteiro! (A transformação de BPMNTask pra Acvtivity não está boa)
+        String id = task.getId();
+
+        // set the type by the starting tag name
+        task.setTypeTag(BpmnTaskType.Task);
+        // set the parent id
+        task.setpid(processModel.getParentId());
+
+        // save the node
+        processModel.putNode(id, task);
+
+        /*
         //handle its child of intermediate event type
         NodeList childNodes = element.getElementsByTagName(BpmnXmlTags.BPMN_INTERMEDIATE);
         int childrenNum = childNodes.getLength();
@@ -133,7 +139,6 @@ public class ProcessModelBuilder {
         }
         return task;
         */
-        return null;
     }
 
     /*
