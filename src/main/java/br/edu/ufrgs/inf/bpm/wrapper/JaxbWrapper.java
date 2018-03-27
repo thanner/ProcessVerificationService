@@ -4,9 +4,16 @@ import br.edu.ufrgs.inf.bpm.bpmn.ObjectFactory;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
 import br.edu.ufrgs.inf.bpm.util.Paths;
 import org.apache.commons.io.IOUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
 import javax.xml.bind.*;
 import javax.xml.namespace.QName;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 
@@ -37,6 +44,20 @@ public class JaxbWrapper {
             System.err.println(String.format("Exception while marshalling: %s", e.getMessage()));
         }
         return null;
+    }
+
+    public static <T> Element convertObjectToElement(T object) {
+        Document doc = null;
+        try {
+            String xml = JaxbWrapper.convertObjectToXML(object);
+
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            doc = db.parse(new ByteArrayInputStream(xml.getBytes("UTF-8")));
+        } catch (ParserConfigurationException | IOException | SAXException e) {
+            e.printStackTrace();
+        }
+        return doc != null ? doc.getDocumentElement() : null;
     }
 
     public static <T> String convertToXML(TDefinitions definition) {

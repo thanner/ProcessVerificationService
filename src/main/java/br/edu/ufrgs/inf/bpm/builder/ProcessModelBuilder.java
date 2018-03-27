@@ -1,15 +1,16 @@
 package br.edu.ufrgs.inf.bpm.builder;
 
-import br.edu.ufrgs.inf.bpm.bpmn.TActivity;
-import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
-import br.edu.ufrgs.inf.bpm.bpmn.TFlowElement;
-import br.edu.ufrgs.inf.bpm.bpmn.TProcess;
+import br.edu.ufrgs.inf.bpm.bpmn.*;
 import br.edu.ufrgs.inf.bpm.changes.prom.BpmnProcessModelAdapter;
 import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
+import br.edu.ufrgs.inf.bpm.wrapper.elementType.ActivityType;
+import br.edu.ufrgs.inf.bpm.wrapper.elementType.EventType;
+import br.edu.ufrgs.inf.bpm.wrapper.elementType.GatewayType;
 import org.processmining.framework.models.bpmn.*;
 import org.processmining.mining.MiningResult;
 import org.processmining.mining.bpmnmining.BpmnResult;
+import org.w3c.dom.Element;
 
 import javax.xml.bind.JAXBElement;
 import java.util.HashMap;
@@ -22,7 +23,8 @@ public class ProcessModelBuilder {
     private Map<String, BpmnSwimLane> laneMap;
     private Map<String, BpmnProcessModelAdapter> poolMap;
     private Map<String, BpmnElement> elementMap;
-    private BpmnWrapper processModelWrapper;
+    private BpmnWrapper bpmnWrapper;
+    private BpmnProcessModelAdapter bpmnProcessModel;
 
     public ProcessModelBuilder() {
         genericId = 0;
@@ -33,48 +35,43 @@ public class ProcessModelBuilder {
 
     public MiningResult buildProcess(TDefinitions definitions) {
 
-        processModelWrapper = new BpmnWrapper(definitions);
+        bpmnWrapper = new BpmnWrapper(definitions);
 
         int newId = generateModelId("ProcessModel1");
-        BpmnProcessModelAdapter processModel = new BpmnProcessModelAdapter("Process Model");
-        BpmnGraph bpmnGraph = new BpmnGraph("Graph", processModel);
+        bpmnProcessModel = new BpmnProcessModelAdapter("Process Model");
+        BpmnGraph bpmnGraph = new BpmnGraph("Graph", bpmnProcessModel);
 
-        List<TProcess> processList = processModelWrapper.getProcessList();
+        List<TProcess> processList = bpmnWrapper.getProcessList();
 
         for (TProcess process : processList) {
-            processModel = new BpmnProcessModelAdapter("Process Model Id");
-            bpmnGraph = new BpmnGraph("Graph", processModel);
-            processModel.addNode(new BpmnTask("1")); // Pegar do DOC?
+            bpmnProcessModel = new BpmnProcessModelAdapter("Process Model Id");
+            bpmnGraph = new BpmnGraph("Graph", bpmnProcessModel);
+            bpmnProcessModel.addNode(new BpmnTask("1")); // Pegar do DOC?
 
-            //bpmnGraph.addPool(createPool(process));
+            // bpmnGraph.addPool(createPool(process));
             /*
             for (TLaneSet laneSet : process.getLaneSet()) {
                 for (TLane lane : laneSet.getLane()) {
-                    processModel.addLane(createLane(lane, process));
+                    bpmnProcessModel.addLane(createLane(lane, process));
                 }
             }
             */
 
             for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
                 if (flowElement.getValue() instanceof TActivity) {
-                    createActivity((TActivity) flowElement.getValue(), processModel);
-                }
-                /*
-                else if (flowElement.getValue() instanceof TEvent) {
-                    processModel.addEvent(createEvent((TEvent) flowElement.getValue()));
+                    createActivity((TActivity) flowElement.getValue());
+                } else if (flowElement.getValue() instanceof TEvent) {
+                    createEvent((TEvent) flowElement.getValue());
                 } else if (flowElement.getValue() instanceof TGateway) {
-                    processModel.addGateway(createGateway((TGateway) flowElement.getValue()));
+                    createGateway((TGateway) flowElement.getValue());
                 }
-                */
             }
 
-            /*
             for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
                 if (flowElement.getValue() instanceof TSequenceFlow) {
-                    processModel.addArc(createArc((TSequenceFlow) flowElement.getValue()));
+                    createArc((TSequenceFlow) flowElement.getValue());
                 }
             }
-            */
 
         }
 
@@ -88,6 +85,14 @@ public class ProcessModelBuilder {
         Pool modelPool = new Pool(newId, processModelWrapper.getProcessName(process));
         poolMap.put(process.getId(), modelPool);
         return modelPool.getName();
+
+
+        // Olha o que aconselha
+        BpmnSwimPool pool = new BpmnSwimPool(element);
+        pool.setType(BpmnSwimType.valueOf(tag));
+        String poolid = pool.getId();
+        pool.setpid(this.parentId);
+        nodes.put(poolid, pool);
     }
 
     private String createLane(TLane lane, TProcess process) {
@@ -95,105 +100,103 @@ public class ProcessModelBuilder {
         Lane modelLane = new Lane(newId, getName(lane.getName()), poolMap.get(process.getId()));
         laneMap.put(lane.getId(), modelLane);
         return modelLane.getName();
+
+        // Olha o que aconselha
+        BpmnSwimLane lane = new BpmnSwimLane(element);
+        lane.setType(BpmnSwimType.valueOf(tag));
+        String laneid = lane.getId();
+        lane.setpid(this.parentId);
+        nodes.put(laneid, lane);
     }
     */
 
-    private void createActivity(TActivity activity, BpmnProcessModelAdapter processModel) {
-        // Task and activities starting with the tag "Task"
-        BpmnTask task = new BpmnTask(JaxbWrapper.convertObjectToXML(activity));
+    private void createActivity(TActivity tActivity) {
+        BpmnTask bpmnTask = new BpmnTask(tActivity.getId());
 
-        // TODO: Tá considerando o ID o texto inteiro! (A transformação de BPMNTask pra Acvtivity não está boa)
-        String id = task.getId();
+        bpmnTask.setName(tActivity.getName());
+        bpmnTask.setLane(bpmnWrapper.getLaneByFlowNode(tActivity).getId());
+        bpmnTask.setTypeTag(getActivityType(tActivity));
+        bpmnTask.setpid(bpmnProcessModel.getParentId());
 
-        // set the type by the starting tag name
-        task.setTypeTag(BpmnTaskType.Task);
-        // set the parent id
-        task.setpid(processModel.getParentId());
+        bpmnProcessModel.putNode(bpmnTask.getId(), bpmnTask);
 
-        // save the node
-        processModel.putNode(id, task);
+        /**
+         //handle its child of intermediate event type
+         NodeList childNodes = element.getElementsByTagName(BpmnXmlTags.BPMN_INTERMEDIATE);
+         int childrenNum = childNodes.getLength();
+         for (int i = 0; i < childrenNum; i++)
+         {
+         Node nd = childNodes.item(i);
+         if (nd instanceof Element)
+         {
+         BpmnEvent event = (BpmnEvent)parseElement((Element) nd);
+         event.setLane(task.getLane());
+         if(event != null)
+         {
+         String edgeId = event.getId() + "_" + id;
+         BpmnEdge edge = new BpmnEdge(event.getId(), id);
+         edge.setType(BpmnEdgeType.Flow);
+         // set the parent id
+         edge.setpid(bpmnProcessModel.getParentId());
+         edge.setId(edgeId);
+         // save the node
+         bpmnProcessModel.putEdge(edgeId, edge);
+         }
+         }
+         }
+         **/
+    }
 
-        /*
-        //handle its child of intermediate event type
-        NodeList childNodes = element.getElementsByTagName(BpmnXmlTags.BPMN_INTERMEDIATE);
-        int childrenNum = childNodes.getLength();
-        for (int i = 0; i < childrenNum; i++)
-        {
-            Node nd = childNodes.item(i);
-            if (nd instanceof Element)
-            {
-                BpmnEvent event = (BpmnEvent)parseElement((Element) nd);
-                event.setLane(task.getLane());
-                if(event != null)
-                {
-                    String edgeId = event.getId() + "_" + id;
-                    BpmnEdge edge = new BpmnEdge(event.getId(), id);
-                    edge.setType(BpmnEdgeType.Flow);
-                    // set the parent id
-                    edge.setpid(this.parentId);
-                    edge.setId(edgeId);
-                    // save the node
-                    edges.put(edgeId, edge);
-                }
-            }
+    private void createEvent(TEvent tEvent) {
+        BpmnEvent bpmnEvent = new BpmnEvent(tEvent.getId());
+
+        bpmnEvent.setpid(bpmnProcessModel.getParentId());
+        bpmnEvent.setName(tEvent.getName());
+        bpmnEvent.setLane(bpmnWrapper.getLaneByFlowNode(tEvent).getId());
+        bpmnEvent.setTypeTag(getEventType(tEvent));
+
+        bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
+    }
+
+    private void createGateway(TGateway tGateway) {
+        BpmnGateway bpmnGateway = new BpmnGateway(tGateway.getId());
+
+        bpmnGateway.setpid(bpmnProcessModel.getParentId());
+        bpmnGateway.setName(tGateway.getName());
+        bpmnGateway.setLane(bpmnWrapper.getLaneByFlowNode(tGateway).getId());
+        bpmnGateway.setType(getGatewayType(tGateway));
+
+        bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+    }
+
+    private void createArc(TSequenceFlow tSequenceFlow) {
+        Element element = JaxbWrapper.convertObjectToElement(tSequenceFlow);
+        if (element != null) {
+            BpmnEdge bpmnEdge = new BpmnEdge(element);
+            bpmnEdge.setType(BpmnEdgeType.Flow);
+            bpmnEdge.setpid(bpmnProcessModel.getParentId());
+
+            bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
         }
-        return task;
-        */
     }
 
-    /*
-    private BpmnEvent createEvent(TEvent event) {
+    private BpmnTaskType getActivityType(TActivity tActivity) throws IllegalArgumentException {
         try {
-            int newId = generateModelId(event.getId());
-            int eventType = getEventType(event);
-            Event modelEvent = new Event(newId, getName(event.getName()), getLaneByObject(event), getPoolByObject(event), eventType);
-            elementMap.put(event.getId(), modelEvent);
-            return modelEvent;
-        } catch (IllegalArgumentException i) {
-            i.printStackTrace();
-        }
-        return null;
-    }
-
-    private BpmnGateway createGateway(TGateway gateway) {
-        try {
-            int newId = generateModelId(gateway.getId());
-            int gatewayType = getGatewayType(gateway);
-            Gateway modelGateway = new Gateway(newId, getName(gateway.getName()), getLaneByObject(gateway), getPoolByObject(gateway), gatewayType);
-            elementMap.put(gateway.getId(), modelGateway);
-            return modelGateway;
-        } catch (IllegalArgumentException i) {
-            i.printStackTrace();
-        }
-        return null;
-    }
-
-    private BPMNEdge createArc(TSequenceFlow arc) {
-        int newId = generateModelId(arc.getId());
-        return new Arc(newId, getName(arc.getName()), elementMap.get(((TFlowNode) arc.getSourceRef()).getId()), elementMap.get(((TFlowNode) arc.getTargetRef()).getId()));
-    }
-
-    private String getName(String name) {
-        return name != null ? name : "";
-    }
-
-    private int getActivityType(TActivity activity) throws IllegalArgumentException {
-        try {
-            return ActivityType.valueOf(activity.getClass().getSimpleName()).getValue();
+            return ActivityType.valueOf(tActivity.getClass().getSimpleName()).getValue();
         } catch (IllegalArgumentException e) {
-            throw getIllegalTypeException(activity);
+            throw getIllegalTypeException(tActivity);
         }
     }
 
-    private int getEventType(TEvent event) throws IllegalArgumentException {
+    private BpmnEventType getEventType(TEvent tEvent) throws IllegalArgumentException {
         try {
-            return EventType.valueOf(event.getClass().getSimpleName()).getValue();
+            return EventType.valueOf(tEvent.getClass().getSimpleName()).getValue();
         } catch (IllegalArgumentException e) {
-            throw getIllegalTypeException(event);
+            throw getIllegalTypeException(tEvent);
         }
     }
 
-    private int getGatewayType(TGateway gateway) throws IllegalArgumentException {
+    private BpmnGatewayType getGatewayType(TGateway gateway) throws IllegalArgumentException {
         try {
             return GatewayType.valueOf(gateway.getClass().getSimpleName()).getValue();
         } catch (IllegalArgumentException e) {
@@ -205,6 +208,7 @@ public class ProcessModelBuilder {
         return new IllegalArgumentException("Can not find element type (Element: " + flowNode.getClass().getSimpleName() + ". Id: " + flowNode.getId() + ")");
     }
 
+    /*
     private Pool getPoolByObject(TFlowNode flowNode) {
         TProcess process = processModelWrapper.getProcessByFlowNode(flowNode);
         return process != null ? poolMap.get(process.getId()) : null;

@@ -43,6 +43,9 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         nodes.put(id, bpmnObject);
     }
 
+    public void putEdge(String id, BpmnEdge bpmnEdge) {
+        edges.put(id, bpmnEdge);
+    }
 
     @Override
     protected BpmnElement parseElement(Element element) {
@@ -153,6 +156,4 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         }
         return null;
     }
-
-
 }
