@@ -39,6 +39,14 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         return this.parentId;
     }
 
+    public void setStart(BpmnEvent start) {
+        this.start = start;
+    }
+
+    public void setEnd(BpmnEvent end) {
+        this.end = end;
+    }
+
     public void putNode(String id, BpmnObject bpmnObject) {
         nodes.put(id, bpmnObject);
     }

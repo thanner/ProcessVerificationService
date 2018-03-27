@@ -30,6 +30,8 @@ public class ApplicationRest {
         ProcessModelBuilder processModelBuilder = new ProcessModelBuilder();
         MiningResult processModel = processModelBuilder.buildProcess(definitions);
 
+        System.out.println("Fim");
+
         //return Response.ok().build();
         return null;
     }

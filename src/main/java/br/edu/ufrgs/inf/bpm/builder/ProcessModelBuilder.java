@@ -13,102 +13,171 @@ import org.processmining.mining.bpmnmining.BpmnResult;
 import org.w3c.dom.Element;
 
 import javax.xml.bind.JAXBElement;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ProcessModelBuilder {
 
-    private int genericId;
-    private Map<String, BpmnSwimLane> laneMap;
-    private Map<String, BpmnProcessModelAdapter> poolMap;
-    private Map<String, BpmnElement> elementMap;
+    //private int genericId;
+    //private Map<String, BpmnSwimLane> laneMap;
+    //private Map<String, BpmnProcessModelAdapter> poolMap;
+    //private Map<String, BpmnElement> elementMap;
+    List<BpmnEvent> eventList;
+    List<BpmnEdge> arcList;
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
 
     public ProcessModelBuilder() {
-        genericId = 0;
-        laneMap = new HashMap<>();
-        poolMap = new HashMap<>();
-        elementMap = new HashMap<>();
+        //genericId = 0;
+        //laneMap = new HashMap<>();
+        //poolMap = new HashMap<>();
+        //elementMap = new HashMap<>();
     }
 
     public MiningResult buildProcess(TDefinitions definitions) {
-
         bpmnWrapper = new BpmnWrapper(definitions);
+        BpmnGraph bpmnGraph = null;
 
-        int newId = generateModelId("ProcessModel1");
-        bpmnProcessModel = new BpmnProcessModelAdapter("Process Model");
-        BpmnGraph bpmnGraph = new BpmnGraph("Graph", bpmnProcessModel);
-
+        int id = 1;
         List<TProcess> processList = bpmnWrapper.getProcessList();
+        for (TProcess tProcess : processList) {
+            eventList = new ArrayList<>();
+            arcList = new ArrayList<>();
 
-        for (TProcess process : processList) {
-            bpmnProcessModel = new BpmnProcessModelAdapter("Process Model Id");
-            bpmnGraph = new BpmnGraph("Graph", bpmnProcessModel);
-            bpmnProcessModel.addNode(new BpmnTask("1")); // Pegar do DOC?
+            bpmnProcessModel = new BpmnProcessModelAdapter("Process Model " + id++);
+            createPool(tProcess);
 
-            // bpmnGraph.addPool(createPool(process));
-            /*
-            for (TLaneSet laneSet : process.getLaneSet()) {
+            for (TLaneSet laneSet : tProcess.getLaneSet()) {
                 for (TLane lane : laneSet.getLane()) {
-                    bpmnProcessModel.addLane(createLane(lane, process));
+                    createLane(lane, tProcess);
                 }
             }
-            */
 
-            for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
+            for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
                 if (flowElement.getValue() instanceof TActivity) {
                     createActivity((TActivity) flowElement.getValue());
                 } else if (flowElement.getValue() instanceof TEvent) {
-                    createEvent((TEvent) flowElement.getValue());
+                    prepareEvent((TEvent) flowElement.getValue());
                 } else if (flowElement.getValue() instanceof TGateway) {
                     createGateway((TGateway) flowElement.getValue());
                 }
             }
 
-            for (JAXBElement<? extends TFlowElement> flowElement : process.getFlowElement()) {
+            for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
                 if (flowElement.getValue() instanceof TSequenceFlow) {
                     createArc((TSequenceFlow) flowElement.getValue());
                 }
             }
 
+            setStartEvent();
+            setEndEvent();
+
+            bpmnGraph = new BpmnGraph("Graph", bpmnProcessModel);
         }
 
-        MiningResult miningResult = new BpmnResult(null, bpmnGraph);
-        return miningResult;
+        return new BpmnResult(null, bpmnGraph);
     }
 
-    /*
-    private String createPool(TProcess process) {
-        int newId = generateModelId(process.getId());
-        Pool modelPool = new Pool(newId, processModelWrapper.getProcessName(process));
-        poolMap.put(process.getId(), modelPool);
-        return modelPool.getName();
+    private void setStartEvent() {
+        List<BpmnEvent> startEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.Start)).collect(Collectors.toList());
+        BpmnEvent startEvent = null;
+        switch (startEvents.size()) {
+            case 0:
+                // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
+                // startEvent = new BpmnEvent("Bpmn Start Event 1");
+                break;
+            case 1:
+                startEvent = startEvents.get(0);
+                break;
+            default:
+                startEvent = new BpmnEvent("Bpmn Start Event 1");
+                startEvent.setTypeTag(BpmnEventType.Start);
 
+                BpmnGateway bpmnGateway = new BpmnGateway("Bpmn Start XOR 1");
+                bpmnGateway.setType(BpmnGatewayType.XOR);
+                bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
 
-        // Olha o que aconselha
-        BpmnSwimPool pool = new BpmnSwimPool(element);
-        pool.setType(BpmnSwimType.valueOf(tag));
-        String poolid = pool.getId();
-        pool.setpid(this.parentId);
-        nodes.put(poolid, pool);
+                createEdge("Start - XOR", startEvent, bpmnGateway);
+                for (BpmnEdge bpmnEdge : arcList) {
+                    for (BpmnEvent event : startEvents) {
+                        if (bpmnEdge.getFromId().equals(event.getId())) {
+                            bpmnEdge.setFromId(startEvent.getId());
+                        }
+                    }
+                }
+
+                break;
+        }
+
+        if (startEvent != null) {
+            bpmnProcessModel.setStart(startEvent);
+            bpmnProcessModel.putNode(startEvent.getId(), startEvent);
+        }
     }
 
-    private String createLane(TLane lane, TProcess process) {
-        int newId = generateModelId(lane.getId());
-        Lane modelLane = new Lane(newId, getName(lane.getName()), poolMap.get(process.getId()));
-        laneMap.put(lane.getId(), modelLane);
-        return modelLane.getName();
+    private void setEndEvent() {
+        List<BpmnEvent> endEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.End)).collect(Collectors.toList());
+        BpmnEvent endEvent = null;
+        switch (endEvents.size()) {
+            case 0:
+                // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
+                // startEvent = new BpmnEvent("Bpmn Start Event 1");
+                break;
+            case 1:
+                endEvent = endEvents.get(0);
+                break;
+            default:
+                endEvent = new BpmnEvent("Bpmn Start Event 1");
+                endEvent.setTypeTag(BpmnEventType.End);
 
-        // Olha o que aconselha
-        BpmnSwimLane lane = new BpmnSwimLane(element);
-        lane.setType(BpmnSwimType.valueOf(tag));
-        String laneid = lane.getId();
-        lane.setpid(this.parentId);
-        nodes.put(laneid, lane);
+                BpmnGateway bpmnGateway = new BpmnGateway("Bpmn End XOR 1");
+                bpmnGateway.setType(BpmnGatewayType.XOR);
+                bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+
+                createEdge("End - XOR", bpmnGateway, endEvent);
+                for (BpmnEdge bpmnEdge : arcList) {
+                    for (BpmnEvent event : endEvents) {
+                        if (bpmnEdge.getToId().equals(event.getId())) {
+                            bpmnEdge.setToId(endEvent.getId());
+                        }
+                    }
+                }
+
+                break;
+        }
+
+        if (endEvent != null) {
+            bpmnProcessModel.setEnd(endEvent);
+            bpmnProcessModel.putNode(endEvent.getId(), endEvent);
+        }
     }
-    */
+
+    private void createPool(TProcess tProcess) {
+        Element element = JaxbWrapper.convertObjectToElement(tProcess);
+        if (element != null) {
+            BpmnSwimPool pool = new BpmnSwimPool(element);
+
+            pool.setName(tProcess.getName());
+            pool.setType(BpmnSwimType.Pool);
+            pool.setpid(bpmnProcessModel.getParentId());
+
+            bpmnProcessModel.putNode(pool.getId(), pool);
+        }
+    }
+
+    private void createLane(TLane tLane, TProcess tProcess) {
+        Element element = JaxbWrapper.convertObjectToElement(tLane);
+        if (element != null) {
+            BpmnSwimLane bpmnSwimLane = new BpmnSwimLane(element);
+
+            bpmnSwimLane.setName(tLane.getName());
+            bpmnSwimLane.setType(BpmnSwimType.Lane);
+            bpmnSwimLane.setpid(bpmnProcessModel.getParentId());
+
+            bpmnProcessModel.putNode(bpmnSwimLane.getId(), bpmnSwimLane);
+        }
+    }
 
     private void createActivity(TActivity tActivity) {
         BpmnTask bpmnTask = new BpmnTask(tActivity.getId());
@@ -147,7 +216,7 @@ public class ProcessModelBuilder {
          **/
     }
 
-    private void createEvent(TEvent tEvent) {
+    private void prepareEvent(TEvent tEvent) {
         BpmnEvent bpmnEvent = new BpmnEvent(tEvent.getId());
 
         bpmnEvent.setpid(bpmnProcessModel.getParentId());
@@ -155,7 +224,11 @@ public class ProcessModelBuilder {
         bpmnEvent.setLane(bpmnWrapper.getLaneByFlowNode(tEvent).getId());
         bpmnEvent.setTypeTag(getEventType(tEvent));
 
-        bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
+        eventList.add(bpmnEvent);
+
+        if (bpmnEvent.getTypeTag().equals(BpmnEventType.Intermediate)) {
+            bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
+        }
     }
 
     private void createGateway(TGateway tGateway) {
@@ -176,8 +249,23 @@ public class ProcessModelBuilder {
             bpmnEdge.setType(BpmnEdgeType.Flow);
             bpmnEdge.setpid(bpmnProcessModel.getParentId());
 
+            arcList.add(bpmnEdge);
+
             bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
         }
+    }
+
+    // TODO: Fazer
+    private void createEdge(String edgeId, BpmnElement from, BpmnElement to) {
+        /*
+        BpmnEdge bpmnEdge = new BpmnEdge(edgeId);
+
+        bpmnEdge.setType(BpmnEdgeType.Flow);
+        bpmnEdge.setpid(bpmnProcessModel.getParentId());
+        bpmnEdge.setFromId(from.getId());
+        bpmnEdge.setToId(to.getId());
+        bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
+        */
     }
 
     private BpmnTaskType getActivityType(TActivity tActivity) throws IllegalArgumentException {
@@ -219,11 +307,10 @@ public class ProcessModelBuilder {
         return lane != null ? laneMap.get(lane.getId()) : null;
     }
 
-    */
-
     private int generateModelId(String oldId) {
         int newId = genericId++;
         return newId;
     }
+    */
 
 }
