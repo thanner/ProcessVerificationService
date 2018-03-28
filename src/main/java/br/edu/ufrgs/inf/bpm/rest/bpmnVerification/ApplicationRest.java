@@ -32,6 +32,7 @@ public class ApplicationRest {
     @Consumes(MediaType.TEXT_PLAIN)
     public Response getBpmnXml(String bpmnString) {
 
+        String yawlFileName = "src/main/others/testData/bpmn/teste.yawl";
         try {
             TDefinitions definitions = JaxbWrapper.convertXMLToObject(bpmnString);
 
@@ -40,7 +41,7 @@ public class ApplicationRest {
 
             BPMNToYAWL bpmnToYawl = new BPMNToYAWL();
             YAWLExport yawlExport = new YAWLExport();
-            OutputStream outputStream = new FileOutputStream("src/main/others/testData/bpmn/teste.yawl");
+            OutputStream outputStream = new FileOutputStream(yawlFileName);
             for (ProvidedObject providedObjectBpmn : bpmnResult.getProvidedObjects()) {
                 YAWLResult yawlResult = (YAWLResult) bpmnToYawl.convert(providedObjectBpmn);
                 for (ProvidedObject providedObjectYawl : yawlResult.getProvidedObjects()) {
@@ -48,7 +49,9 @@ public class ApplicationRest {
                 }
             }
 
-
+            //FIXME: TEM QUE TERMINAR A CAPTURA E A VALIDAÇÃO DOS DADOS
+            // SpecificationReader specificationReader = new SpecificationReader(yawlFileName);
+            // List<ValidationMessage> o = (new ValidationResultsParser()).parse((new SpecificationValidator()).getValidationResults());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -83,6 +83,33 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="Maven: org.yawlfoundation.yawl:YAWLEditor:4.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/YAWLEditor4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: org.yawlfoundation.yawl:jgraph4yawl:4.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/yawl/jgraph4yawl-4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: org.yawlfoundation.yawl:YAWLEditor-core:4.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/others/yawl/YAWLEditor-core-4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="Maven: org.processmining.framework:prom:5.2">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/others/ProM.jar!/" />
