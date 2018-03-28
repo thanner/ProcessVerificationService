@@ -8,7 +8,7 @@
     </bpmn:collaboration>
     <bpmn:process id="Process_1" isExecutable="false">
         <bpmn:laneSet>
-            <bpmn:lane id="Lane_1ozmkmd" name="Resource 1&#10;">
+            <bpmn:lane id="Lane_1ozmkmd" name="Resource 1">
                 <bpmn:flowNodeRef>StartEvent_0yvscqj</bpmn:flowNodeRef>
                 <bpmn:flowNodeRef>Task_0s103l3</bpmn:flowNodeRef>
                 <bpmn:flowNodeRef>Task_0luvwvs</bpmn:flowNodeRef>
@@ -17,25 +17,25 @@
                 <bpmn:flowNodeRef>Task_0xo7z93</bpmn:flowNodeRef>
                 <bpmn:flowNodeRef>EndEvent_0ysrzuz</bpmn:flowNodeRef>
             </bpmn:lane>
-            <bpmn:lane id="Lane_1i2h5ro" name="Resource 2&#10;">
+            <bpmn:lane id="Lane_1i2h5ro" name="Resource 2">
                 <bpmn:flowNodeRef>ExclusiveGateway_16ri3j0</bpmn:flowNodeRef>
                 <bpmn:flowNodeRef>Task_0rm191f</bpmn:flowNodeRef>
                 <bpmn:flowNodeRef>ExclusiveGateway_0yon0kv</bpmn:flowNodeRef>
             </bpmn:lane>
-            <bpmn:lane id="Lane_1dxqepv" name="Resource 3&#10;">
+            <bpmn:lane id="Lane_1dxqepv" name="Resource 3">
                 <bpmn:flowNodeRef>Task_0l3dd4f</bpmn:flowNodeRef>
             </bpmn:lane>
         </bpmn:laneSet>
         <bpmn:startEvent id="StartEvent_0yvscqj">
             <bpmn:outgoing>SequenceFlow_0d1g06n</bpmn:outgoing>
         </bpmn:startEvent>
-        <bpmn:task id="Task_0s103l3" name="Do Activity 1&#10;">
+        <bpmn:task id="Task_0s103l3" name="Do Activity 1">
             <bpmn:incoming>SequenceFlow_0d1g06n</bpmn:incoming>
             <bpmn:outgoing>SequenceFlow_0g3lqez</bpmn:outgoing>
         </bpmn:task>
         <bpmn:sequenceFlow id="SequenceFlow_0d1g06n" sourceRef="StartEvent_0yvscqj" targetRef="Task_0s103l3"/>
         <bpmn:sequenceFlow id="SequenceFlow_0g3lqez" sourceRef="Task_0s103l3" targetRef="ExclusiveGateway_1uodd1l"/>
-        <bpmn:task id="Task_0luvwvs" name="Do Activity 2&#10;">
+        <bpmn:task id="Task_0luvwvs" name="Do Activity 2">
             <bpmn:incoming>SequenceFlow_199k8xr</bpmn:incoming>
             <bpmn:outgoing>SequenceFlow_1kugiy1</bpmn:outgoing>
         </bpmn:task>
@@ -52,12 +52,12 @@
             <bpmn:outgoing>SequenceFlow_199k8xr</bpmn:outgoing>
             <bpmn:outgoing>SequenceFlow_1dxkje5</bpmn:outgoing>
         </bpmn:parallelGateway>
-        <bpmn:task id="Task_0rm191f" name="Do Activity 3&#10;">
+        <bpmn:task id="Task_0rm191f" name="Do Activity 3">
             <bpmn:incoming>SequenceFlow_0kn5zws</bpmn:incoming>
             <bpmn:outgoing>SequenceFlow_1jnssmx</bpmn:outgoing>
         </bpmn:task>
         <bpmn:sequenceFlow id="SequenceFlow_0kn5zws" sourceRef="ExclusiveGateway_16ri3j0" targetRef="Task_0rm191f"/>
-        <bpmn:task id="Task_0l3dd4f" name="Do Activity 4&#10;">
+        <bpmn:task id="Task_0l3dd4f" name="Do Activity 4">
             <bpmn:incoming>SequenceFlow_1x70mgs</bpmn:incoming>
             <bpmn:outgoing>SequenceFlow_0v22pqm</bpmn:outgoing>
         </bpmn:task>
@@ -77,7 +77,7 @@
         </bpmn:parallelGateway>
         <bpmn:sequenceFlow id="SequenceFlow_0044p4i" sourceRef="ExclusiveGateway_0yon0kv"
                            targetRef="ExclusiveGateway_1ambgbs"/>
-        <bpmn:task id="Task_0xo7z93" name="Do Activity 5&#10;">
+        <bpmn:task id="Task_0xo7z93" name="Do Activity 5">
             <bpmn:incoming>SequenceFlow_0j2d80f</bpmn:incoming>
             <bpmn:outgoing>SequenceFlow_1h35wxg</bpmn:outgoing>
         </bpmn:task>

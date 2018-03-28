@@ -426,9 +426,11 @@ public class BPMNToYAWL implements ConvertingPlugin {
         String[] arParams = new String[] {"", fromId, toId};
         //search the common predecessor of the two nodes
         bpmn.constructEdge(arParams);
+        arParams[0] = "root"; // Thanner add
         //construct the edge in YAWL
         YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.
                                            getDecomposition(arParams[0]);
+
         YAWLEdge ye = thisDecomp.addEdge(arParams[1], arParams[2],
                                              edge.isDefaultFlag(),
                                              edge.getCondition() != null ?

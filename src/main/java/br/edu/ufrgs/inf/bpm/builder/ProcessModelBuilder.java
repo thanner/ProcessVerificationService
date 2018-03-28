@@ -8,7 +8,6 @@ import br.edu.ufrgs.inf.bpm.wrapper.elementType.ActivityType;
 import br.edu.ufrgs.inf.bpm.wrapper.elementType.EventType;
 import br.edu.ufrgs.inf.bpm.wrapper.elementType.GatewayType;
 import org.processmining.framework.models.bpmn.*;
-import org.processmining.mining.MiningResult;
 import org.processmining.mining.bpmnmining.BpmnResult;
 import org.w3c.dom.Element;
 
@@ -19,23 +18,12 @@ import java.util.stream.Collectors;
 
 public class ProcessModelBuilder {
 
-    //private int genericId;
-    //private Map<String, BpmnSwimLane> laneMap;
-    //private Map<String, BpmnProcessModelAdapter> poolMap;
-    //private Map<String, BpmnElement> elementMap;
-    List<BpmnEvent> eventList;
-    List<BpmnEdge> arcList;
+    private List<BpmnEvent> eventList;
+    private List<BpmnEdge> arcList;
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
 
-    public ProcessModelBuilder() {
-        //genericId = 0;
-        //laneMap = new HashMap<>();
-        //poolMap = new HashMap<>();
-        //elementMap = new HashMap<>();
-    }
-
-    public MiningResult buildProcess(TDefinitions definitions) {
+    public BpmnResult buildProcess(TDefinitions definitions) {
         bpmnWrapper = new BpmnWrapper(definitions);
         BpmnGraph bpmnGraph = null;
 
@@ -249,23 +237,24 @@ public class ProcessModelBuilder {
             bpmnEdge.setType(BpmnEdgeType.Flow);
             bpmnEdge.setpid(bpmnProcessModel.getParentId());
 
+            bpmnEdge.setFromId(((TFlowElement) tSequenceFlow.getSourceRef()).getId());
+            bpmnEdge.setToId(((TFlowElement) tSequenceFlow.getTargetRef()).getId());
+
             arcList.add(bpmnEdge);
 
             bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
         }
     }
 
-    // TODO: Fazer
+    // TODO: New BPMNEdge exige um element
     private void createEdge(String edgeId, BpmnElement from, BpmnElement to) {
-        /*
-        BpmnEdge bpmnEdge = new BpmnEdge(edgeId);
+        BpmnEdge bpmnEdge = new BpmnEdge(null);
 
         bpmnEdge.setType(BpmnEdgeType.Flow);
         bpmnEdge.setpid(bpmnProcessModel.getParentId());
         bpmnEdge.setFromId(from.getId());
         bpmnEdge.setToId(to.getId());
         bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
-        */
     }
 
     private BpmnTaskType getActivityType(TActivity tActivity) throws IllegalArgumentException {
@@ -295,22 +284,5 @@ public class ProcessModelBuilder {
     private IllegalArgumentException getIllegalTypeException(TFlowNode flowNode) {
         return new IllegalArgumentException("Can not find element type (Element: " + flowNode.getClass().getSimpleName() + ". Id: " + flowNode.getId() + ")");
     }
-
-    /*
-    private Pool getPoolByObject(TFlowNode flowNode) {
-        TProcess process = processModelWrapper.getProcessByFlowNode(flowNode);
-        return process != null ? poolMap.get(process.getId()) : null;
-    }
-
-    private Lane getLaneByObject(TFlowNode flowNode) {
-        TLane lane = processModelWrapper.getLaneByFlowNode(flowNode);
-        return lane != null ? laneMap.get(lane.getId()) : null;
-    }
-
-    private int generateModelId(String oldId) {
-        int newId = genericId++;
-        return newId;
-    }
-    */
 
 }

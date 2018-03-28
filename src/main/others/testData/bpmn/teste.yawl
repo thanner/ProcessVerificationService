@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet
+	xmlns="http://www.citi.qut.edu.au/yawl"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="Beta 4"
+	xsi:schemaLocation="http://www.citi.qut.edu.au/yawl d:/yawl/schema/YAWL_SchemaBeta4.xsd"
+>
+	<specification uri="Bpmnnet">
+		<name>Bpmnnet</name>
+		<documentation>Bpmnnet</documentation>
+		<metaData/>
+		<decomposition
+			id="root"
+			isRootNet="true"
+			xsi:type="NetFactsType"
+		>
+			<processControlElements>
+				<inputCondition
+					id="Node0"
+				>
+					<flowsInto>
+						<nextElementRef id="Node1"/>
+					</flowsInto>
+				</inputCondition>
+				<task
+					id="Node1"
+				>
+					<name>inTask_root</name>
+					<documentation>inTask_root</documentation>
+					<flowsInto>
+						<nextElementRef id="Node7"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node3"
+				>
+					<name>outTask_root</name>
+					<documentation>outTask_root</documentation>
+					<flowsInto>
+						<nextElementRef id="Node2"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node4"
+				>
+					<name>Do Activity 4</name>
+					<documentation>Do Activity 4</documentation>
+					<flowsInto>
+						<nextElementRef id="Node6"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node5"
+				>
+					<name>Do Activity 2</name>
+					<documentation>Do Activity 2</documentation>
+					<flowsInto>
+						<nextElementRef id="Node14"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node6"
+				>
+					<name></name>
+					<documentation></documentation>
+					<flowsInto>
+						<nextElementRef id="Node14"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<condition
+					id="Node7"
+				>
+					<name></name>
+					<flowsInto>
+						<nextElementRef id="Node13"/>
+					</flowsInto>
+				</condition>
+				<task
+					id="Node8"
+				>
+					<name>Do Activity 3</name>
+					<documentation>Do Activity 3</documentation>
+					<flowsInto>
+						<nextElementRef id="Node6"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node9"
+				>
+					<name>Do Activity 5</name>
+					<documentation>Do Activity 5</documentation>
+					<flowsInto>
+						<nextElementRef id="Node12"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node10"
+				>
+					<name></name>
+					<documentation></documentation>
+					<flowsInto>
+						<nextElementRef id="Node5"/>
+					</flowsInto>
+					<flowsInto>
+						<nextElementRef id="Node11"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node11"
+				>
+					<name></name>
+					<documentation></documentation>
+					<flowsInto>
+						<nextElementRef id="Node4"/>
+					</flowsInto>
+					<flowsInto>
+						<nextElementRef id="Node8"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="xor"/>
+				</task>
+				<condition
+					id="Node12"
+				>
+					<name></name>
+					<flowsInto>
+						<nextElementRef id="Node3"/>
+					</flowsInto>
+				</condition>
+				<task
+					id="Node13"
+				>
+					<name>Do Activity 1</name>
+					<documentation>Do Activity 1</documentation>
+					<flowsInto>
+						<nextElementRef id="Node10"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node14"
+				>
+					<name></name>
+					<documentation></documentation>
+					<flowsInto>
+						<nextElementRef id="Node9"/>
+					</flowsInto>
+					<join code="and"/>
+					<split code="and"/>
+				</task>
+				<outputCondition id="Node2"/>
+			</processControlElements>
+		</decomposition>
+	</specification>
+</specificationSet>

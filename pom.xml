@@ -230,7 +230,6 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/colt.jar</systemPath>
         </dependency>
-
         <!-- ProM Outros -->
         <dependency>
             <groupId>org.deckfour.gantzgraf</groupId>
