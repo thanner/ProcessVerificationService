@@ -24,19 +24,28 @@ public class VerificationWrapper {
         for (YSpecification ySpecification : specifications) {
             ySpecification.verify(handler);
             if (handler.hasMessages()) {
-                verificationElementList.add(getVerificationElement(ySpecification, handler));
+                verificationElementList.add(getVerificationElement(ySpecification.getID(), ySpecification.getName(), handler));
             }
+
+            /*
+            for(YDecomposition yDecomposition : ySpecification.getDecompositions()){
+                yDecomposition.verify(handler);
+                if(handler.hasMessages()){
+                    verificationElementList.add(getVerificationElement(yDecomposition.getID(), yDecomposition.getName(), handler));
+                }
+            }
+            */
         }
 
 
         return verificationElementList;
     }
 
-    private VerificationElement getVerificationElement(YSpecification ySpecification, YVerificationHandler handler) {
+    private VerificationElement getVerificationElement(String id, String name, YVerificationHandler handler) {
         VerificationElement verificationElement = new VerificationElement();
 
-        verificationElement.setId(ySpecification.getID());
-        verificationElement.setName(ySpecification.getName());
+        verificationElement.setId(id);
+        verificationElement.setName(name);
         for (YVerificationMessage message : handler.getMessages()) {
             verificationElement.addMessage(message.getMessage());
         }
