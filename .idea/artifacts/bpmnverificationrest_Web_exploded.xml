@@ -276,6 +276,7 @@
           <element id="library" level="module" name="Maven: org.yawlfoundation.yawl:jgraph4yawl:4.2" module-name="bpmnverificationrest" />
           <element id="library" level="module" name="Maven: org.yawlfoundation.yawl:YAWLEditor-core:4.2" module-name="bpmnverificationrest" />
           <element id="library" level="module" name="Maven: org.yawlfoundation.yawl:YAWLEditor:4.2" module-name="bpmnverificationrest" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
         </element>
       </element>
     </root>

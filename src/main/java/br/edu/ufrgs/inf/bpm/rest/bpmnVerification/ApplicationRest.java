@@ -7,6 +7,7 @@ import br.edu.ufrgs.inf.bpm.util.ResourceLoader;
 import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.VerificationElement;
 import br.edu.ufrgs.inf.bpm.wrapper.VerificationWrapper;
+import com.google.gson.Gson;
 import org.processmining.mining.bpmnmining.BpmnResult;
 import org.yawlfoundation.yawl.exceptions.YSyntaxException;
 
@@ -31,7 +32,7 @@ public class ApplicationRest {
 
     @POST
     @Path("/getVerification")
-    @Consumes(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response getVerificationXml(String bpmnString) {
         List<VerificationElement> verifications;
         try {
@@ -54,7 +55,8 @@ public class ApplicationRest {
         } catch (IOException | YSyntaxException e) {
             return Response.serverError().build();
         }
-        return Response.ok().entity(verifications).build();
+        Gson gson = new Gson();
+        return Response.ok().entity(gson.toJson(verifications)).build();
     }
 
 }
