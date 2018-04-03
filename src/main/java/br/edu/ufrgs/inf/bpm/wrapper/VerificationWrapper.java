@@ -14,9 +14,9 @@ import java.util.List;
 
 public class VerificationWrapper {
 
-    public List<VerificationElement> verify(String yawlFileName) throws IOException, YSyntaxException {
+    public List<VerificationElement> verify(File yawlFile) throws IOException, YSyntaxException {
 
-        String spec = FileUtils.readFileToString(new File(yawlFileName), "UTF-8");
+        String spec = FileUtils.readFileToString(yawlFile, "UTF-8");
         YVerificationHandler handler = new YVerificationHandler();
 
         List<VerificationElement> verificationElementList = new ArrayList<>();

@@ -11,7 +11,7 @@ public class YawlApp {
         try {
             ApplicationRest applicationRest = new ApplicationRest();
             String bpmnString = FileUtils.readFileToString(new File("src/main/others/testData/bpmn/diagram2.bpmn"), "UTF-8");
-            applicationRest.getBpmnXml(bpmnString);
+            applicationRest.getVerificationXml(bpmnString);
         } catch (Exception e) {
             e.printStackTrace();
         }

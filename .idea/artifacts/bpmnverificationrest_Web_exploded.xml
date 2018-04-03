@@ -273,6 +273,9 @@
           <element id="library" level="module" name="Maven: org.processmining.framework.models:prom:5.2" module-name="bpmnverificationrest" />
           <element id="library" level="module" name="Maven: org.processmining.framework:prom:5.2" module-name="bpmnverificationrest" />
           <element id="library" level="module" name="Maven: org.processmining.lib:prom:5.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.yawlfoundation.yawl:jgraph4yawl:4.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.yawlfoundation.yawl:YAWLEditor-core:4.2" module-name="bpmnverificationrest" />
+          <element id="library" level="module" name="Maven: org.yawlfoundation.yawl:YAWLEditor:4.2" module-name="bpmnverificationrest" />
         </element>
       </element>
     </root>
