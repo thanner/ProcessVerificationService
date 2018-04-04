@@ -3,9 +3,10 @@ package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
 import br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder;
 import br.edu.ufrgs.inf.bpm.builder.YAWLBuilder;
+import br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model.VerificationElement;
 import br.edu.ufrgs.inf.bpm.util.ResourceLoader;
 import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
-import br.edu.ufrgs.inf.bpm.wrapper.VerificationElement;
+import br.edu.ufrgs.inf.bpm.wrapper.JsonWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.VerificationWrapper;
 import com.google.gson.Gson;
 import org.processmining.mining.bpmnmining.BpmnResult;
@@ -56,7 +57,7 @@ public class ApplicationRest {
             return Response.serverError().build();
         }
         Gson gson = new Gson();
-        return Response.ok().entity(gson.toJson(verifications)).build();
+        return Response.ok().entity(JsonWrapper.getJson(verifications)).build();
     }
 
 }

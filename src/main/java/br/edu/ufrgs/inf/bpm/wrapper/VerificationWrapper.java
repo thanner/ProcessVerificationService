@@ -1,5 +1,6 @@
 package br.edu.ufrgs.inf.bpm.wrapper;
 
+import br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model.VerificationElement;
 import org.apache.commons.io.FileUtils;
 import org.yawlfoundation.yawl.elements.YSpecification;
 import org.yawlfoundation.yawl.exceptions.YSyntaxException;

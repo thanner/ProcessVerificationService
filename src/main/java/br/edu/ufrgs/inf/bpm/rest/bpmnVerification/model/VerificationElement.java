@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm.wrapper;
+package br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model;
 
 import java.util.ArrayList;
 import java.util.List;
