@@ -8,8 +8,8 @@ import br.edu.ufrgs.inf.bpm.util.ResourceLoader;
 import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.JsonWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.VerificationWrapper;
-import com.google.gson.Gson;
 import org.processmining.mining.bpmnmining.BpmnResult;
+import org.processmining.mining.yawlmining.YAWLResult;
 import org.yawlfoundation.yawl.exceptions.YSyntaxException;
 
 import javax.ws.rs.Consumes;
@@ -20,6 +20,7 @@ import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 // The Java class will be hosted at the URI path "/application"
 @Path("/application")
@@ -43,20 +44,22 @@ public class ApplicationRest {
             // Conversion (BPMN - BPMN)
             ProcessModelBuilder processModelBuilder = new ProcessModelBuilder();
             BpmnResult bpmnResult = processModelBuilder.buildProcess(definitions);
+            Map<String, String> bpmnIdMap = processModelBuilder.getIdMap();
 
             // Conversion (BPMN - YAWL)
             YAWLBuilder yawlBuilder = new YAWLBuilder();
-            yawlBuilder.buildYawl(bpmnResult, tempFile);
+            YAWLResult yawlResult = yawlBuilder.buildYawl(bpmnResult, tempFile);
+            Map<String, String> bpmnYawlIdMap = yawlBuilder.buildBpmnYawlIdMap(yawlResult, bpmnIdMap);
 
             // Verification
             VerificationWrapper verificationWrapper = new VerificationWrapper();
-            verifications = verificationWrapper.verify(tempFile);
+            verifications = verificationWrapper.verify(tempFile, bpmnYawlIdMap);
 
             verifications.forEach(System.out::println);
         } catch (IOException | YSyntaxException e) {
             return Response.serverError().build();
         }
-        Gson gson = new Gson();
+
         return Response.ok().entity(JsonWrapper.getJson(verifications)).build();
     }
 

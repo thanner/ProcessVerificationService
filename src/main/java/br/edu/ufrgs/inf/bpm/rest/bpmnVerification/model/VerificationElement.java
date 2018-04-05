@@ -6,35 +6,61 @@ import java.util.List;
 public class VerificationElement {
 
     private String id;
+    private String elementId;
     private String name;
-    private List<String> messages;
+    private List<Message> messages;
 
     public VerificationElement() {
         this.messages = new ArrayList<>();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getElementId() {
+        return elementId;
+    }
+
+    public void setElementId(String elementId) {
+        this.elementId = elementId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
+    public List<Message> getMessages() {
+        return messages;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public void addMessage(String message) {
+    public void addMessage(String elementId, String description) {
+        Message message = new Message();
+        message.setElementId(elementId);
+        message.setDescription(description);
         this.messages.add(message);
     }
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("ID: ").append(id).append("\n");
-        stringBuilder.append("Name: ").append(name).append("\n");
+        stringBuilder.append("Id: ").append(id).append("\n");
+        stringBuilder.append("Element Id: ").append(elementId).append("\n");
 
+        stringBuilder.append("Name: ").append(name).append("\n");
         stringBuilder.append("Messages:").append("\n");
-        for (String message : messages) {
-            stringBuilder.append("\t").append(message).append("\n");
+        for (Message message : messages) {
+            stringBuilder.append("\t").append(message.getElementId()).append(" ").append(message.getDescription()).append("\n");
         }
 
         return stringBuilder.toString();
     }
+
 }

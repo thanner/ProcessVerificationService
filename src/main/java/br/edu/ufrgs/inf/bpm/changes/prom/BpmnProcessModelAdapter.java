@@ -1,9 +1,14 @@
 package br.edu.ufrgs.inf.bpm.changes.prom;
 
-import org.processmining.framework.models.bpmn.*;
+import org.processmining.framework.models.bpmn.BpmnEdge;
+import org.processmining.framework.models.bpmn.BpmnEvent;
+import org.processmining.framework.models.bpmn.BpmnObject;
+import org.processmining.framework.models.bpmn.BpmnProcessModel;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.util.HashMap;
 
 // FIXME: Pode invalidar process model builder
 public class BpmnProcessModelAdapter extends BpmnProcessModel {
@@ -47,14 +52,23 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         this.end = end;
     }
 
+    public HashMap<String, BpmnObject> getNodes() {
+        return nodes;
+    }
+
     public void putNode(String id, BpmnObject bpmnObject) {
         nodes.put(id, bpmnObject);
+    }
+
+    public HashMap<String, BpmnEdge> getEdges() {
+        return edges;
     }
 
     public void putEdge(String id, BpmnEdge bpmnEdge) {
         edges.put(id, bpmnEdge);
     }
 
+    /*
     @Override
     protected BpmnElement parseElement(Element element) {
         // TODO: SET TYPE das classes estão todas comentadas (7 no total). Talvez a soluação ideal seja herdar essa classe e sobrescrever os métodos
@@ -164,4 +178,5 @@ public class BpmnProcessModelAdapter extends BpmnProcessModel {
         }
         return null;
     }
+    */
 }

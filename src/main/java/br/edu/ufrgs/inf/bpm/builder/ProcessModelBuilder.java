@@ -13,7 +13,9 @@ import org.w3c.dom.Element;
 
 import javax.xml.bind.JAXBElement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ProcessModelBuilder {
@@ -22,8 +24,10 @@ public class ProcessModelBuilder {
     private List<BpmnEdge> arcList;
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
+    private Map<String, String> idMap;
 
     public BpmnResult buildProcess(TDefinitions definitions) {
+        idMap = new HashMap<>();
         bpmnWrapper = new BpmnWrapper(definitions);
         BpmnGraph bpmnGraph = null;
 
@@ -38,7 +42,7 @@ public class ProcessModelBuilder {
 
             for (TLaneSet laneSet : tProcess.getLaneSet()) {
                 for (TLane lane : laneSet.getLane()) {
-                    createLane(lane, tProcess);
+                    createLane(lane);
                 }
             }
 
@@ -67,6 +71,10 @@ public class ProcessModelBuilder {
         return new BpmnResult(null, bpmnGraph);
     }
 
+    public Map<String, String> getIdMap() {
+        return idMap;
+    }
+
     private void setStartEvent() {
         List<BpmnEvent> startEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.Start)).collect(Collectors.toList());
         BpmnEvent startEvent = null;
@@ -85,6 +93,7 @@ public class ProcessModelBuilder {
                 BpmnGateway bpmnGateway = new BpmnGateway("Bpmn Start XOR 1");
                 bpmnGateway.setType(BpmnGatewayType.XOR);
                 bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+                idMap.put(bpmnGateway.getNameAndId(), "");
 
                 createEdge("Start - XOR", startEvent, bpmnGateway);
                 for (BpmnEdge bpmnEdge : arcList) {
@@ -101,6 +110,7 @@ public class ProcessModelBuilder {
         if (startEvent != null) {
             bpmnProcessModel.setStart(startEvent);
             bpmnProcessModel.putNode(startEvent.getId(), startEvent);
+            idMap.put(startEvent.getNameAndId(), "");
         }
     }
 
@@ -122,6 +132,7 @@ public class ProcessModelBuilder {
                 BpmnGateway bpmnGateway = new BpmnGateway("Bpmn End XOR 1");
                 bpmnGateway.setType(BpmnGatewayType.XOR);
                 bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+                idMap.put(bpmnGateway.getNameAndId(), "");
 
                 createEdge("End - XOR", bpmnGateway, endEvent);
                 for (BpmnEdge bpmnEdge : arcList) {
@@ -138,6 +149,7 @@ public class ProcessModelBuilder {
         if (endEvent != null) {
             bpmnProcessModel.setEnd(endEvent);
             bpmnProcessModel.putNode(endEvent.getId(), endEvent);
+            idMap.put(endEvent.getNameAndId(), "");
         }
     }
 
@@ -151,10 +163,11 @@ public class ProcessModelBuilder {
             pool.setpid(bpmnProcessModel.getParentId());
 
             bpmnProcessModel.putNode(pool.getId(), pool);
+            idMap.put(pool.getId(), tProcess.getId());
         }
     }
 
-    private void createLane(TLane tLane, TProcess tProcess) {
+    private void createLane(TLane tLane) {
         Element element = JaxbWrapper.convertObjectToElement(tLane);
         if (element != null) {
             BpmnSwimLane bpmnSwimLane = new BpmnSwimLane(element);
@@ -164,6 +177,7 @@ public class ProcessModelBuilder {
             bpmnSwimLane.setpid(bpmnProcessModel.getParentId());
 
             bpmnProcessModel.putNode(bpmnSwimLane.getId(), bpmnSwimLane);
+            idMap.put(bpmnSwimLane.getId(), tLane.getId());
         }
     }
 
@@ -176,6 +190,7 @@ public class ProcessModelBuilder {
         bpmnTask.setpid(bpmnProcessModel.getParentId());
 
         bpmnProcessModel.putNode(bpmnTask.getId(), bpmnTask);
+        idMap.put(bpmnTask.getNameAndId(), tActivity.getId());
 
         /**
          //handle its child of intermediate event type
@@ -216,6 +231,7 @@ public class ProcessModelBuilder {
 
         if (bpmnEvent.getTypeTag().equals(BpmnEventType.Intermediate)) {
             bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
+            idMap.put(bpmnEvent.getNameAndId(), tEvent.getId());
         }
     }
 
@@ -228,6 +244,7 @@ public class ProcessModelBuilder {
         bpmnGateway.setType(getGatewayType(tGateway));
 
         bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+        idMap.put(bpmnGateway.getNameAndId(), tGateway.getId());
     }
 
     private void createArc(TSequenceFlow tSequenceFlow) {
@@ -243,6 +260,7 @@ public class ProcessModelBuilder {
             arcList.add(bpmnEdge);
 
             bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
+            idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
         }
     }
 
@@ -255,6 +273,7 @@ public class ProcessModelBuilder {
         bpmnEdge.setFromId(from.getId());
         bpmnEdge.setToId(to.getId());
         bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
+        idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
     }
 
     private BpmnTaskType getActivityType(TActivity tActivity) throws IllegalArgumentException {
