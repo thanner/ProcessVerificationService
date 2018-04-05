@@ -3,7 +3,6 @@ package br.edu.ufrgs.inf.bpm.wrapper;
 import br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model.VerificationElement;
 import org.apache.commons.io.FileUtils;
 import org.yawlfoundation.yawl.elements.YAtomicTask;
-import org.yawlfoundation.yawl.elements.YDecomposition;
 import org.yawlfoundation.yawl.elements.YSpecification;
 import org.yawlfoundation.yawl.exceptions.YSyntaxException;
 import org.yawlfoundation.yawl.unmarshal.YMarshal;
@@ -29,13 +28,6 @@ public class VerificationWrapper {
             ySpecification.verify(handler);
             if (handler.hasMessages()) {
                 verificationElementList.add(getVerificationElement(ySpecification.getID(), bpmnYawlIdMap, ySpecification.getName(), handler));
-            }
-
-            for(YDecomposition yDecomposition : ySpecification.getDecompositions()){
-                yDecomposition.verify(handler);
-                if(handler.hasMessages()){
-                    verificationElementList.add(getVerificationElement(yDecomposition.getID(), bpmnYawlIdMap, yDecomposition.getName(), handler));
-                }
             }
         }
 
