@@ -6,7 +6,6 @@ import java.util.List;
 public class VerificationElement {
 
     private String id;
-    private String elementId;
     private String name;
     private List<Message> messages;
 
@@ -16,14 +15,6 @@ public class VerificationElement {
 
     public String getId() {
         return id;
-    }
-
-    public String getElementId() {
-        return elementId;
-    }
-
-    public void setElementId(String elementId) {
-        this.elementId = elementId;
     }
 
     public String getName() {
@@ -52,7 +43,6 @@ public class VerificationElement {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Id: ").append(id).append("\n");
-        stringBuilder.append("Element Id: ").append(elementId).append("\n");
 
         stringBuilder.append("Name: ").append(name).append("\n");
         stringBuilder.append("Messages:").append("\n");
