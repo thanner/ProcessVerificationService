@@ -12,10 +12,7 @@ import org.processmining.mining.bpmnmining.BpmnResult;
 import org.w3c.dom.Element;
 
 import javax.xml.bind.JAXBElement;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ProcessModelBuilder {
@@ -25,9 +22,12 @@ public class ProcessModelBuilder {
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
     private Map<String, String> idMap;
+    private Set<String> defaultPath;
 
     public BpmnResult buildProcess(TDefinitions definitions) {
         idMap = new HashMap<>();
+        defaultPath = new HashSet<>();
+
         bpmnWrapper = new BpmnWrapper(definitions);
         BpmnGraph bpmnGraph = null;
 
@@ -185,7 +185,7 @@ public class ProcessModelBuilder {
         BpmnTask bpmnTask = new BpmnTask(tActivity.getId());
 
         bpmnTask.setName(tActivity.getName());
-        bpmnTask.setLane(bpmnWrapper.getLaneByFlowNode(tActivity).getId());
+        bpmnTask.setLane(getLaneId(tActivity));
         bpmnTask.setTypeTag(getActivityType(tActivity));
         bpmnTask.setpid(bpmnProcessModel.getParentId());
 
@@ -224,7 +224,8 @@ public class ProcessModelBuilder {
 
         bpmnEvent.setpid(bpmnProcessModel.getParentId());
         bpmnEvent.setName(tEvent.getName());
-        bpmnEvent.setLane(bpmnWrapper.getLaneByFlowNode(tEvent).getId());
+        bpmnEvent.setLane(getLaneId(tEvent));
+
         bpmnEvent.setTypeTag(getEventType(tEvent));
 
         eventList.add(bpmnEvent);
@@ -240,11 +241,31 @@ public class ProcessModelBuilder {
 
         bpmnGateway.setpid(bpmnProcessModel.getParentId());
         bpmnGateway.setName(tGateway.getName());
-        bpmnGateway.setLane(bpmnWrapper.getLaneByFlowNode(tGateway).getId());
+        bpmnGateway.setLane(getLaneId(tGateway));
         bpmnGateway.setType(getGatewayType(tGateway));
+        setPathDefault(bpmnGateway, tGateway);
 
         bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
         idMap.put(bpmnGateway.getNameAndId(), tGateway.getId());
+    }
+
+    private void setPathDefault(BpmnGateway bpmnGateway, TGateway tGateway) {
+        TSequenceFlow path = null;
+
+        if (tGateway instanceof TExclusiveGateway) {
+            path = (TSequenceFlow) ((TExclusiveGateway) tGateway).getDefault();
+        } else if (tGateway instanceof TInclusiveGateway) {
+            path = (TSequenceFlow) ((TInclusiveGateway) tGateway).getDefault();
+        }
+
+        if (path != null) {
+            defaultPath.add(path.getId());
+        }
+    }
+
+    private String getLaneId(TFlowNode node) {
+        TLane lane = bpmnWrapper.getLaneByFlowNode(node);
+        return lane != null ? lane.getId() : "";
     }
 
     private void createArc(TSequenceFlow tSequenceFlow) {
@@ -253,6 +274,8 @@ public class ProcessModelBuilder {
             BpmnEdge bpmnEdge = new BpmnEdge(element);
             bpmnEdge.setType(BpmnEdgeType.Flow);
             bpmnEdge.setpid(bpmnProcessModel.getParentId());
+
+            bpmnEdge.setDefaultFlag(defaultPath.contains(tSequenceFlow.getId()));
 
             bpmnEdge.setFromId(((TFlowElement) tSequenceFlow.getSourceRef()).getId());
             bpmnEdge.setToId(((TFlowElement) tSequenceFlow.getTargetRef()).getId());

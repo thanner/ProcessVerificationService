@@ -57,7 +57,7 @@
       <bpmn:incoming>SequenceFlow_1x70mgs</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0v22pqm</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:sequenceFlow id="SequenceFlow_1x70mgs" sourceRef="ExclusiveGateway_16ri3j0" targetRef="Task_0l3dd4f" />
+    <bpmn:sequenceFlow id="SequenceFlow_1x70mgs" name="One Predicate&#10;" sourceRef="ExclusiveGateway_16ri3j0" targetRef="Task_0l3dd4f" />
     <bpmn:sequenceFlow id="SequenceFlow_1jnssmx" sourceRef="Task_0rm191f" targetRef="ExclusiveGateway_0yon0kv" />
     <bpmn:sequenceFlow id="SequenceFlow_0v22pqm" sourceRef="Task_0l3dd4f" targetRef="ExclusiveGateway_0yon0kv" />
     <bpmn:exclusiveGateway id="ExclusiveGateway_0yon0kv">
@@ -166,7 +166,7 @@
         <di:waypoint x="547" y="479" />
         <di:waypoint x="640" y="479" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="562" y="414.5" width="0" height="13" />
+          <dc:Bounds x="554" y="418" width="73" height="26" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ExclusiveGateway_0yon0kv_di" bpmnElement="ExclusiveGateway_0yon0kv" isMarkerVisible="true">

@@ -54,6 +54,9 @@ public class VerificationWrapper {
     }
 
     private String convertMessage(String elementId, YVerificationMessage message) {
+        if (elementId == null) {
+            return message.getMessage();
+        }
         return message.getMessage().replaceAll(message.getSource().toString(), elementId);
     }
 

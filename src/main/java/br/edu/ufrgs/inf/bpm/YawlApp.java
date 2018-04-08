@@ -10,7 +10,7 @@ public class YawlApp {
     public static void main(String[] args) {
         try {
             ApplicationRest applicationRest = new ApplicationRest();
-            String bpmnString = FileUtils.readFileToString(new File("src/main/others/testData/bpmn/diagram2.bpmn"), "UTF-8");
+            String bpmnString = FileUtils.readFileToString(new File("src/main/others/testData/bpmn/diagram5.bpmn"), "UTF-8");
             applicationRest.getVerificationXml(bpmnString);
         } catch (Exception e) {
             e.printStackTrace();
