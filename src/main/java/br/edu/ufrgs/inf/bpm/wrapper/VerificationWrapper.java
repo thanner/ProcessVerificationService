@@ -41,21 +41,21 @@ public class VerificationWrapper {
         verificationElement.setName(name);
 
         for (YVerificationMessage message : handler.getMessages()) {
-            String elementId = "";
+            String elementId = "Process";
             if (message.getSource() instanceof YAtomicTask) {
                 YAtomicTask task = (YAtomicTask) message.getSource();
                 elementId = bpmnYawlIdMap.get(task.getID());
             }
 
-            verificationElement.addMessage(elementId, convertMessage(elementId, message.getMessage()));
+            verificationElement.addMessage(elementId, convertMessage(elementId, message));
         }
 
         return verificationElement;
     }
 
     // TODO: Fazer
-    private String convertMessage(String elementId, String description) {
-        return description;
+    private String convertMessage(String elementId, YVerificationMessage message) {
+        return message.getMessage().replaceAll(message.getSource().toString(), elementId);
     }
 
 }
