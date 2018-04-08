@@ -47,10 +47,15 @@ public class VerificationWrapper {
                 elementId = bpmnYawlIdMap.get(task.getID());
             }
 
-            verificationElement.addMessage(elementId, message.getMessage());
+            verificationElement.addMessage(elementId, convertMessage(elementId, message.getMessage()));
         }
 
         return verificationElement;
+    }
+
+    // TODO: Fazer
+    private String convertMessage(String elementId, String description) {
+        return description;
     }
 
 }
