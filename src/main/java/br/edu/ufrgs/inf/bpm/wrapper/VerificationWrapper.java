@@ -53,7 +53,6 @@ public class VerificationWrapper {
         return verificationElement;
     }
 
-    // TODO: Fazer
     private String convertMessage(String elementId, YVerificationMessage message) {
         return message.getMessage().replaceAll(message.getSource().toString(), elementId);
     }
