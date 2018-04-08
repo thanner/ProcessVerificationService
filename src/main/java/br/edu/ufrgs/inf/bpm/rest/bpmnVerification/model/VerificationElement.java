@@ -1,16 +1,16 @@
 package br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class VerificationElement {
 
     private String id;
     private String name;
-    private List<Message> messages;
+    private Set<Message> messages;
 
     public VerificationElement() {
-        this.messages = new ArrayList<>();
+        this.messages = new HashSet<>();
     }
 
     public String getId() {
@@ -25,7 +25,7 @@ public class VerificationElement {
         this.id = id;
     }
 
-    public List<Message> getMessages() {
+    public Set<Message> getMessages() {
         return messages;
     }
 
