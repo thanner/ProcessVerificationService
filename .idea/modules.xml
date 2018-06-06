@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bpmnverificationrest.iml" filepath="$PROJECT_DIR$/bpmnverificationrest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bpmnverification.iml" filepath="$PROJECT_DIR$/bpmnverification.iml" />
     </modules>
   </component>
 </project>
