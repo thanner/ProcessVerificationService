@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm;
+package br.edu.ufrgs.inf.bpm.application;
 
 import br.edu.ufrgs.inf.bpm.rest.bpmnVerification.ApplicationRest;
 import org.apache.commons.io.FileUtils;

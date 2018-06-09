@@ -1,4 +1,4 @@
-package br.edu.ufrgs.inf.bpm;
+package br.edu.ufrgs.inf.bpm.application;
 
 import br.edu.ufrgs.inf.bpm.changes.prom.BpmnImportAdapter;
 import org.processmining.converting.bpmn2yawl.BPMNToYAWL;

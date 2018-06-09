@@ -2,6 +2,7 @@ package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
 import br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder;
+import br.edu.ufrgs.inf.bpm.builder.VerificationGenerator;
 import br.edu.ufrgs.inf.bpm.builder.YAWLBuilder;
 import br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model.VerificationElement;
 import br.edu.ufrgs.inf.bpm.util.ResourceLoader;
@@ -38,24 +39,7 @@ public class ApplicationRest {
     public Response getVerificationXml(String bpmnString) {
         List<VerificationElement> verifications;
         try {
-            File tempFile = ResourceLoader.createResourceFile("yawlFile", ".yawl");
-            TDefinitions definitions = JaxbWrapper.convertXMLToObject(bpmnString);
-
-            // Conversion (BPMN - BPMN)
-            ProcessModelBuilder processModelBuilder = new ProcessModelBuilder();
-            BpmnResult bpmnResult = processModelBuilder.buildProcess(definitions);
-            Map<String, String> bpmnIdMap = processModelBuilder.getIdMap();
-
-            // Conversion (BPMN - YAWL)
-            YAWLBuilder yawlBuilder = new YAWLBuilder();
-            YAWLResult yawlResult = yawlBuilder.buildYawl(bpmnResult, tempFile);
-            Map<String, String> bpmnYawlIdMap = yawlBuilder.buildBpmnYawlIdMap(yawlResult, bpmnIdMap);
-
-            // Verification
-            VerificationWrapper verificationWrapper = new VerificationWrapper();
-            verifications = verificationWrapper.verify(tempFile, bpmnYawlIdMap);
-
-            verifications.forEach(System.out::println);
+            verifications = VerificationGenerator.generateVerification(bpmnString);
         } catch (IOException | YSyntaxException e) {
             return Response.serverError().build();
         }
