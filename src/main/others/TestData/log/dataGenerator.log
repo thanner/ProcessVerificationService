@@ -1,10 +1,10 @@
-Jun 09, 2018 3:13:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B8 - eng - process
-Jun 09, 2018 3:13:45 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:13:45 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:32:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Active VOS - tutorial - process
-Jun 09, 2018 3:13:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:11 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -16,9 +16,9 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:13:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:11 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Reijers Workflow - shortened - process
-Jun 09, 2018 3:14:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -30,13 +30,31 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B7 - eng - process
-Jun 09, 2018 3:14:05 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:32:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B2 - eng - process
+Jun 27, 2018 8:32:26 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:32:26 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Tutorial - eng - process
+Jun 27, 2018 8:32:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Verification - Done
-Jun 09, 2018 3:14:05 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-2 Conduct Directions Hearing - process
-Jun 09, 2018 3:14:08 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:38 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -48,13 +66,25 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:08 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:38 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - D3 - eng - process
+Jun 27, 2018 8:32:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-6)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:32:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2010-3 Claims handling process - process
-Jun 09, 2018 3:14:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:14:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:32:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B6 - eng - process
-Jun 09, 2018 3:14:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -66,9 +96,37 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:32:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Incident Management Process - process
+Jun 27, 2018 8:32:46 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:32:46 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex3 - Hotel Service - process
+Jun 27, 2018 8:32:55 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:32:55 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - TU Berlin - Supplier Switch - process
-Jun 09, 2018 3:14:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:11 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -80,21 +138,77 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:11 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 154 - HR Process - functional department - eng - process
+Jun 27, 2018 8:33:14 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jun 27, 2018 8:33:14 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Frank - loop example - process
+Jun 27, 2018 8:33:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:33:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2010-2 Claims Creation - process
-Jun 09, 2018 3:14:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:14:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:33:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - TU Berlin - SLA Violation - process
+Jun 27, 2018 8:33:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateThrowEvent. Id: id-24)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:33:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 150 - Simple HR-Process - eng - process
-Jun 09, 2018 3:14:29 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:14:29 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:33:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - D2 - eng - process
-Jun 09, 2018 3:14:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:14:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:33:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - C1 - eng - process
+Jun 27, 2018 8:33:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:33:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Turbopixel - eng - process
+Jun 27, 2018 8:33:24 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-24)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:33:24 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex2 - Computer Repair - process
-Jun 09, 2018 3:14:35 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -106,9 +220,9 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:35 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-3 repetition-cycles - process
-Jun 09, 2018 3:14:38 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -120,9 +234,9 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:38 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex1 - process
-Jun 09, 2018 3:14:43 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -134,9 +248,9 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:43 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - C2 - eng - process
-Jun 09, 2018 3:14:46 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -148,9 +262,9 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:46 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - ACME - eng - process
-Jun 09, 2018 3:14:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -162,13 +276,17 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:14:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-1 MC Finalise SCT Warrant Possession - process
-Jun 09, 2018 3:14:59 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:33:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex3b - process
+Jun 27, 2018 8:33:55 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Verification - Done
-Jun 09, 2018 3:14:59 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:55 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - BizAgi - tutorial1 - process
-Jun 09, 2018 3:15:02 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -180,9 +298,9 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:15:02 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:33:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Reijers Workflow - process
-Jun 09, 2018 3:15:14 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -194,13 +312,25 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:15:14 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - D1 - eng - process
+Jun 27, 2018 8:34:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-8)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B5.1 - eng  - process
-Jun 09, 2018 3:15:19 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:15:19 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:34:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 153 - HR Process - HR department - eng - process
-Jun 09, 2018 3:15:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:16 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -212,17 +342,13 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:15:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:16 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex1 - bycicle manufacturing - process
-Jun 09, 2018 3:15:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:15:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Input File - B5.2 - eng - process
-Jun 09, 2018 3:15:30 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification - Done
-Jun 09, 2018 3:15:30 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Input File - BizAgi - tutorial2 - process
-Jun 09, 2018 3:15:35 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:16 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:34:16 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2010-1 Claims Notification - process
+Jun 27, 2018 8:34:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 WARNING: java.lang.NullPointerException
 	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
 	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
@@ -234,7 +360,97 @@ WARNING: java.lang.NullPointerException
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
 	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
 
-Jun 09, 2018 3:15:35 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B5.2 - eng - process
+Jun 27, 2018 8:34:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:34:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex3a - process
+Jun 27, 2018 8:34:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jun 27, 2018 8:34:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex2 - process
+Jun 27, 2018 8:34:24 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateThrowEvent. Id: id-9)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:24 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Oracle - Expense Report Process - eng - process
+Jun 27, 2018 8:34:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateThrowEvent. Id: id-20)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - BizAgi - tutorial2 - process
+Jun 27, 2018 8:34:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - C3 - eng - process
-Jun 09, 2018 3:15:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jun 27, 2018 8:34:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jun 27, 2018 8:34:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Powerlicht - eng - process
+Jun 27, 2018 8:34:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex4 - process
+Jun 27, 2018 8:34:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-4)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:327)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:314)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:229)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B4 - eng - process
+Jun 27, 2018 8:34:43 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.bpmn.BpmnEdge.extractAttributes(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnElement.<init>(Unknown Source)
+	at org.processmining.framework.models.bpmn.BpmnEdge.<init>(Unknown Source)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.createEdge(ProcessModelBuilder.java:292)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.setEndEvent(ProcessModelBuilder.java:137)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:66)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jun 27, 2018 8:34:43 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2009-5 PandE - Lodge Originating Document by Post - process
+Jun 27, 2018 8:34:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Verification - Done
