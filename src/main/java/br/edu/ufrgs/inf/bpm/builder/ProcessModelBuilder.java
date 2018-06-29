@@ -287,7 +287,7 @@ public class ProcessModelBuilder {
         }
     }
 
-    // TODO: New BPMNEdge exige um element
+    // FIXME: New BPMNEdge exige um element
     private void createEdge(String edgeId, BpmnElement from, BpmnElement to) {
         BpmnEdge bpmnEdge = new BpmnEdge(null);
 
@@ -323,6 +323,7 @@ public class ProcessModelBuilder {
         }
     }
 
+    // FIXME: NÃO SEI
     private IllegalArgumentException getIllegalTypeException(TFlowNode flowNode) {
         return new IllegalArgumentException("Can not find element type (Element: " + flowNode.getClass().getSimpleName() + ". Id: " + flowNode.getId() + ")");
     }
