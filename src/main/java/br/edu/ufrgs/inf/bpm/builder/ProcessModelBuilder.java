@@ -126,7 +126,7 @@ public class ProcessModelBuilder {
                 endEvent = endEvents.get(0);
                 break;
             default:
-                endEvent = new BpmnEvent("Bpmn Start Event 1");
+                endEvent = new BpmnEvent("Bpmn End Event 1");
                 endEvent.setTypeTag(BpmnEventType.End);
 
                 BpmnGateway bpmnGateway = new BpmnGateway("Bpmn End XOR 1");
@@ -271,10 +271,10 @@ public class ProcessModelBuilder {
     private void createArc(TSequenceFlow tSequenceFlow) {
         Element element = JaxbWrapper.convertObjectToElement(tSequenceFlow);
         if (element != null) {
+
             BpmnEdge bpmnEdge = new BpmnEdge(element);
             bpmnEdge.setType(BpmnEdgeType.Flow);
             bpmnEdge.setpid(bpmnProcessModel.getParentId());
-
             bpmnEdge.setDefaultFlag(defaultPath.contains(tSequenceFlow.getId()));
 
             bpmnEdge.setFromId(((TFlowElement) tSequenceFlow.getSourceRef()).getId());
@@ -287,14 +287,24 @@ public class ProcessModelBuilder {
         }
     }
 
-    // FIXME: New BPMNEdge exige um element
-    private void createEdge(String edgeId, BpmnElement from, BpmnElement to) {
-        BpmnEdge bpmnEdge = new BpmnEdge(null);
+    private void createEdge(String edgeId, BpmnElement fromElement, BpmnElement toElement) {
+        // FIXME: New BPMNEdge exige um element
+        TSequenceFlow tSequenceFlow = new TSequenceFlow();
+        tSequenceFlow.setId(edgeId);
+        tSequenceFlow.setSourceRef(fromElement);
+        tSequenceFlow.setTargetRef(toElement);
 
+        Element element = JaxbWrapper.convertObjectToElement(tSequenceFlow);
+
+        BpmnEdge bpmnEdge = new BpmnEdge(element);
         bpmnEdge.setType(BpmnEdgeType.Flow);
         bpmnEdge.setpid(bpmnProcessModel.getParentId());
-        bpmnEdge.setFromId(from.getId());
-        bpmnEdge.setToId(to.getId());
+
+        bpmnEdge.setFromId(fromElement.getId());
+        bpmnEdge.setToId(toElement.getId());
+
+        // arcList.add(bpmnEdge);
+
         bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
         idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
     }
