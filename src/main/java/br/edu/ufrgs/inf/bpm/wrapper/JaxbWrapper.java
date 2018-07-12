@@ -2,6 +2,7 @@ package br.edu.ufrgs.inf.bpm.wrapper;
 
 import br.edu.ufrgs.inf.bpm.bpmn.ObjectFactory;
 import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
+import br.edu.ufrgs.inf.bpm.bpmn.TSequenceFlow;
 import br.edu.ufrgs.inf.bpm.util.Paths;
 import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Document;
@@ -42,6 +43,7 @@ public class JaxbWrapper {
             return stringWriter.toString();
         } catch (JAXBException e) {
             System.err.println(String.format("Exception while marshalling: %s", e.getMessage()));
+            e.printStackTrace();
         }
         return null;
     }
@@ -49,6 +51,10 @@ public class JaxbWrapper {
     public static <T> Element convertObjectToElement(T object) {
         Document doc = null;
         try {
+            if (object instanceof TSequenceFlow) {
+                TSequenceFlow tSequenceFlow = (TSequenceFlow) object;
+            }
+
             String xml = JaxbWrapper.convertObjectToXML(object);
 
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

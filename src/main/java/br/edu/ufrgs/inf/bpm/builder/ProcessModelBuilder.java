@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ProcessModelBuilder {
 
     private List<BpmnEvent> eventList;
-    private List<BpmnEdge> arcList;
+    private List<BpmnEdge> sequenceFLowList;
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
     private Map<String, String> idMap;
@@ -35,7 +35,7 @@ public class ProcessModelBuilder {
         List<TProcess> processList = bpmnWrapper.getProcessList();
         for (TProcess tProcess : processList) {
             eventList = new ArrayList<>();
-            arcList = new ArrayList<>();
+            sequenceFLowList = new ArrayList<>();
 
             bpmnProcessModel = new BpmnProcessModelAdapter("Process Model " + id++);
             createPool(tProcess);
@@ -58,7 +58,7 @@ public class ProcessModelBuilder {
 
             for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
                 if (flowElement.getValue() instanceof TSequenceFlow) {
-                    createArc((TSequenceFlow) flowElement.getValue());
+                    createSequenceFlow((TSequenceFlow) flowElement.getValue());
                 }
             }
 
@@ -90,16 +90,23 @@ public class ProcessModelBuilder {
                 startEvent = new BpmnEvent("Bpmn Start Event 1");
                 startEvent.setTypeTag(BpmnEventType.Start);
 
-                BpmnGateway bpmnGateway = new BpmnGateway("Bpmn Start XOR 1");
-                bpmnGateway.setType(BpmnGatewayType.XOR);
-                bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
-                idMap.put(bpmnGateway.getNameAndId(), "");
+                TStartEvent tStartEvent = new TStartEvent();
+                tStartEvent.setId(startEvent.getId());
 
-                createEdge("Start - XOR", startEvent, bpmnGateway);
-                for (BpmnEdge bpmnEdge : arcList) {
+                //BpmnGateway bpmnGateway = new BpmnGateway("Bpmn Start XOR 1");
+                //bpmnGateway.setType(BpmnGatewayType.XOR);
+                //bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+                //idMap.put(bpmnGateway.getNameAndId(), "");
+
+                TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
+                tExclusiveGateway.setId("Exclusive XOR");
+
+                createSequenceFlow("Start - XOR", tStartEvent, tExclusiveGateway);
+
+                for (BpmnEdge bpmnEdge : sequenceFLowList) {
                     for (BpmnEvent event : startEvents) {
                         if (bpmnEdge.getFromId().equals(event.getId())) {
-                            bpmnEdge.setFromId(startEvent.getId());
+                            bpmnEdge.setFromId(tStartEvent.getId());
                         }
                     }
                 }
@@ -120,7 +127,7 @@ public class ProcessModelBuilder {
         switch (endEvents.size()) {
             case 0:
                 // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
-                // startEvent = new BpmnEvent("Bpmn Start Event 1");
+                // endEvent = new BpmnEvent("Bpmn End Event 1");
                 break;
             case 1:
                 endEvent = endEvents.get(0);
@@ -129,16 +136,23 @@ public class ProcessModelBuilder {
                 endEvent = new BpmnEvent("Bpmn End Event 1");
                 endEvent.setTypeTag(BpmnEventType.End);
 
-                BpmnGateway bpmnGateway = new BpmnGateway("Bpmn End XOR 1");
-                bpmnGateway.setType(BpmnGatewayType.XOR);
-                bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
-                idMap.put(bpmnGateway.getNameAndId(), "");
+                TEndEvent tEndEvent = new TEndEvent();
+                tEndEvent.setId(endEvent.getId());
 
-                createEdge("End - XOR", bpmnGateway, endEvent);
-                for (BpmnEdge bpmnEdge : arcList) {
+                // BpmnGateway bpmnGateway = new BpmnGateway("Bpmn End XOR 1");
+                // bpmnGateway.setType(BpmnGatewayType.XOR);
+                // bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
+                // idMap.put(bpmnGateway.getNameAndId(), "");
+
+                TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
+                tExclusiveGateway.setId("Exclusive XOR");
+
+                createSequenceFlow("End - XOR", tExclusiveGateway, tEndEvent);
+
+                for (BpmnEdge bpmnEdge : sequenceFLowList) {
                     for (BpmnEvent event : endEvents) {
                         if (bpmnEdge.getToId().equals(event.getId())) {
-                            bpmnEdge.setToId(endEvent.getId());
+                            bpmnEdge.setToId(tEndEvent.getId());
                         }
                     }
                 }
@@ -268,7 +282,7 @@ public class ProcessModelBuilder {
         return lane != null ? lane.getId() : "";
     }
 
-    private void createArc(TSequenceFlow tSequenceFlow) {
+    private void createSequenceFlow(TSequenceFlow tSequenceFlow) {
         Element element = JaxbWrapper.convertObjectToElement(tSequenceFlow);
         if (element != null) {
 
@@ -280,20 +294,23 @@ public class ProcessModelBuilder {
             bpmnEdge.setFromId(((TFlowElement) tSequenceFlow.getSourceRef()).getId());
             bpmnEdge.setToId(((TFlowElement) tSequenceFlow.getTargetRef()).getId());
 
-            arcList.add(bpmnEdge);
+            sequenceFLowList.add(bpmnEdge);
 
             bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
             idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
         }
     }
 
-    private void createEdge(String edgeId, BpmnElement fromElement, BpmnElement toElement) {
-        // FIXME: New BPMNEdge exige um element
+    private void createSequenceFlow(String edgeId, TFlowElement fromElement, TFlowElement toElement) {
         TSequenceFlow tSequenceFlow = new TSequenceFlow();
         tSequenceFlow.setId(edgeId);
+
         tSequenceFlow.setSourceRef(fromElement);
         tSequenceFlow.setTargetRef(toElement);
 
+        createSequenceFlow(tSequenceFlow);
+
+        /*
         Element element = JaxbWrapper.convertObjectToElement(tSequenceFlow);
 
         BpmnEdge bpmnEdge = new BpmnEdge(element);
@@ -303,10 +320,11 @@ public class ProcessModelBuilder {
         bpmnEdge.setFromId(fromElement.getId());
         bpmnEdge.setToId(toElement.getId());
 
-        // arcList.add(bpmnEdge);
+        // sequenceFLowList.add(bpmnEdge);
 
         bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
         idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
+        */
     }
 
     private BpmnTaskType getActivityType(TActivity tActivity) throws IllegalArgumentException {

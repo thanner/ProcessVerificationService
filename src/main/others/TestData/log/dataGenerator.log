@@ -1,4 +1,524 @@
-Jul 11, 2018 2:58:48 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp getInputFiles
+Jul 12, 2018 3:58:59 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp getInputFiles
 WARNING: InputFiles not loading
-Jul 11, 2018 2:58:48 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 12, 2018 3:58:59 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - C1 - eng - process
+Jul 12, 2018 3:59:06 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:06 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - C3 - eng - process
+Jul 12, 2018 3:59:06 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:06 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex1 - process
+Jul 12, 2018 3:59:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex1 - bycicle manufacturing - process
+Jul 12, 2018 3:59:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B5.1 - eng  - process
+Jul 12, 2018 3:59:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Turbopixel - eng - process
+Jul 12, 2018 3:59:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-24)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Reijers Workflow - process
+Jul 12, 2018 3:59:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - BizAgi - tutorial2 - process
+Jul 12, 2018 3:59:30 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:30 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - D1 - eng - process
+Jul 12, 2018 3:59:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-8)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:31 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex2 - process
+Jul 12, 2018 3:59:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateThrowEvent. Id: id-9)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - TU Berlin - SLA Violation - process
+Jul 12, 2018 3:59:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateThrowEvent. Id: id-24)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2009-5 PandE - Lodge Originating Document by Post - process
+Jul 12, 2018 3:59:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2010-3 Claims handling process - process
+Jul 12, 2018 3:59:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex2 - Computer Repair - process
+Jul 12, 2018 3:59:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2010-2 Claims Creation - process
+Jul 12, 2018 3:59:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B7 - eng - process
+Jul 12, 2018 3:59:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2009-2 Conduct Directions Hearing - process
+Jul 12, 2018 3:59:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:39 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Powerlicht - eng - process
+Jul 12, 2018 3:59:43 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:43 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B4 - eng - process
+Jul 12, 2018 3:59:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2009-1 MC Finalise SCT Warrant Possession - process
+Jul 12, 2018 3:59:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Oracle - Expense Report Process - eng - process
+Jul 12, 2018 3:59:48 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateThrowEvent. Id: id-20)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:48 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - D3 - eng - process
+Jul 12, 2018 3:59:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-6)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Tutorial - eng - process
+Jul 12, 2018 3:59:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - D2 - eng - process
+Jul 12, 2018 3:59:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - C2 - eng - process
+Jul 12, 2018 3:59:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 3:59:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex3a - process
+Jul 12, 2018 3:59:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 3:59:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Reijers Workflow - shortened - process
+Jul 12, 2018 4:00:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Active VOS - tutorial - process
+Jul 12, 2018 4:00:04 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:04 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - ACME - eng - process
+Jul 12, 2018 4:00:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 150 - Simple HR-Process - eng - process
+Jul 12, 2018 4:00:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 4:00:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B5.2 - eng - process
+Jul 12, 2018 4:00:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 4:00:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B2 - eng - process
+Jul 12, 2018 4:00:15 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:15 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - BizAgi - tutorial1 - process
+Jul 12, 2018 4:00:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 154 - HR Process - functional department - eng - process
+Jul 12, 2018 4:00:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 4:00:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex4 - process
+Jul 12, 2018 4:00:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.IllegalArgumentException: Can not find element type (Element: TIntermediateCatchEvent. Id: id-4)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getIllegalTypeException(ProcessModelBuilder.java:356)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.getEventType(ProcessModelBuilder.java:342)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.prepareEvent(ProcessModelBuilder.java:243)
+	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:53)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:18 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Incident Management Process - process
+Jul 12, 2018 4:00:21 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:21 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex3b - process
+Jul 12, 2018 4:00:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 4:00:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2010-1 Claims Notification - process
+Jul 12, 2018 4:00:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Ex3 - Hotel Service - process
+Jul 12, 2018 4:00:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B8 - eng - process
+Jul 12, 2018 4:00:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification already exists
+Jul 12, 2018 4:00:32 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 153 - HR Process - HR department - eng - process
+Jul 12, 2018 4:00:34 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:34 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - B6 - eng - process
+Jul 12, 2018 4:00:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:36 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - TU Berlin - Supplier Switch - process
+Jul 12, 2018 4:00:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - 2009-3 repetition-cycles - process
+Jul 12, 2018 4:00:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
+Jul 12, 2018 4:00:49 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Input File - Frank - loop example - process
+Jul 12, 2018 4:00:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+WARNING: java.lang.NullPointerException
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.ModelGraphEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLEdge.<init>(Unknown Source)
+	at org.processmining.framework.models.yawl.YAWLDecomposition.addEdge(Unknown Source)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addEdge(BPMNToYAWL.java:434)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.addSubprocess(BPMNToYAWL.java:283)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:96)
+	at org.processmining.converting.bpmn2yawl.BPMNToYAWL.convert(BPMNToYAWL.java:73)
+	at br.edu.ufrgs.inf.bpm.builder.YAWLBuilder.buildYawl(YAWLBuilder.java:27)
+	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:30)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
+	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
+
