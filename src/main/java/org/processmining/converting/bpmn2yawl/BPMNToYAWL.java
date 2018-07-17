@@ -425,11 +425,17 @@ public class BPMNToYAWL implements ConvertingPlugin {
         String toId = edge.getToId();
         String[] arParams = new String[] {"", fromId, toId};
         //search the common predecessor of the two nodes
-        bpmn.constructEdge(arParams);
-        arParams[0] = "root"; // Thanner add
+        // Antigo
+        // bpmn.constructEdge(arParams);
+        // Atual
+        arParams = constructEdge(arParams, bpmn);
+        // Mexi por mexer
+        if(arParams[0] == null) {
+            arParams[0] = "root";
+        }
+
         //construct the edge in YAWL
-        YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.
-                                           getDecomposition(arParams[0]);
+        YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.getDecomposition(arParams[0]);
 
         YAWLEdge ye = thisDecomp.addEdge(arParams[1], arParams[2],
                                              edge.isDefaultFlag(),
@@ -458,5 +464,38 @@ public class BPMNToYAWL implements ConvertingPlugin {
                 elem.setAttribute(arNames[i], arValues[i]);
             }
         }
+    }
+
+
+    // Thanner: Extra
+    public String[] constructEdge(String[] var1, BpmnGraph bpmnGraph) {
+        if (var1.length == 3) {
+            ArrayList var2 = bpmnGraph.getPreds(var1[1]);
+            ArrayList var3 = bpmnGraph.getPreds(var1[2]);
+
+            int var4;
+            for(var4 = 1; var2.size() > var4 && var3.size() > var4 && ((String)var2.get(var4)).equals(var3.get(var4)); ++var4) {
+                ;
+            }
+
+            var1[0] = (String)var2.get(var4 - 1);
+            if (var1[0] == null) {
+                var1[0] = "root";
+            } else {
+                var1[0] = bpmnGraph.getNameAndId(var1[0]);
+            }
+
+            if (var2.size() != var4) {
+                var1[1] = (String)var2.get(var4);
+            }
+
+            var1[1] = bpmnGraph.getNameAndId(var1[1]);
+            if (var3.size() != var4) {
+                var1[2] = (String)var3.get(var4);
+            }
+
+            var1[2] = bpmnGraph.getNameAndId(var1[2]);
+        }
+        return var1;
     }
 }
