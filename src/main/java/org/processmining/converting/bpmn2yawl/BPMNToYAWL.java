@@ -425,11 +425,15 @@ public class BPMNToYAWL implements ConvertingPlugin {
         String toId = edge.getToId();
         String[] arParams = new String[] {"", fromId, toId};
         //search the common predecessor of the two nodes
-        // Antigo
-        // bpmn.constructEdge(arParams);
-        // Atual
-        arParams = constructEdge(arParams, bpmn);
-        // Mexi por mexer
+
+        // Correto
+        bpmn.constructEdge(arParams);
+        // Substituto para testes
+        // TODO: Seria o problema n ter resultado para "bpmnGraph.getNameAndId(var1[0]);"?
+        // TODO: Mas qual seria a resposta se o var1[0] está vazio??? Deveria estar vazio mesmo?
+        // arParams = constructEdge(arParams, bpmn);
+
+        // Mexi por mexer (talvez arrumando o erro suma)
         if(arParams[0] == null) {
             arParams[0] = "root";
         }
@@ -468,6 +472,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
 
 
     // Thanner: Extra
+    /*
     public String[] constructEdge(String[] var1, BpmnGraph bpmnGraph) {
         if (var1.length == 3) {
             ArrayList var2 = bpmnGraph.getPreds(var1[1]);
@@ -498,4 +503,5 @@ public class BPMNToYAWL implements ConvertingPlugin {
         }
         return var1;
     }
+    */
 }
