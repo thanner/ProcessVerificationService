@@ -430,7 +430,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
         bpmn.constructEdge(arParams);
         // Substituto para testes
         // TODO: Seria o problema n ter resultado para "bpmnGraph.getNameAndId(var1[0]);"?
-        // TODO: Mas qual seria a resposta se o var1[0] está vazio??? Deveria estar vazio mesmo?
+        // TODO: Mas qual seria a resposta se o var1[0] está vazio??? Deveria estar vazio mesmo? BpmnGraph deveria entender Vazio?
         // arParams = constructEdge(arParams, bpmn);
 
         // Mexi por mexer (talvez arrumando o erro suma)
