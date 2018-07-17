@@ -457,6 +457,35 @@ public class BPMNToYAWL implements ConvertingPlugin {
         return true;
     }
 
+    /*
+    // Antigo
+    private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl,
+                            HashMap<String, YAWLEdge> edges) {
+        String fromId = edge.getFromId();
+        String toId = edge.getToId();
+        String[] arParams = new String[] {"", fromId, toId};
+        //search the common predecessor of the two nodes
+        bpmn.constructEdge(arParams);
+        //construct the edge in YAWL
+        YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.
+                getDecomposition(arParams[0]);
+        YAWLEdge ye = thisDecomp.addEdge(arParams[1], arParams[2],
+                edge.isDefaultFlag(),
+                edge.getCondition() != null ?
+                        edge.getCondition() :
+                        edge.getMessage(), null);
+        if (ye == null) {
+            return false;
+        }
+        setAttributes(ye, BpmnXmlTags.EDGETYPE,
+                new String[] {String.valueOf(edge.getType()),
+                        edge.getCondition(), edge.isDefaultFlag() ? "true" : null,
+                        edge.getMessage()});
+        edges.put(arParams[1] + "_" + arParams[2], ye);
+        return true;
+    }
+    */
+
     private void setAttributes(att.grappa.Element elem, String[] arNames,
                                String[] arValues) {
         if (arNames.length != arValues.length) {
