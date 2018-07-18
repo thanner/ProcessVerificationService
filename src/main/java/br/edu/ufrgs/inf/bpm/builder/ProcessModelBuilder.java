@@ -89,17 +89,14 @@ public class ProcessModelBuilder {
             default:
                 startEvent = new BpmnEvent("Bpmn Start Event 1");
                 startEvent.setTypeTag(BpmnEventType.Start);
+                startEvent.setpid(bpmnProcessModel.getParentId());
 
                 TStartEvent tStartEvent = new TStartEvent();
                 tStartEvent.setId(startEvent.getId());
 
-                //BpmnGateway bpmnGateway = new BpmnGateway("Bpmn Start XOR 1");
-                //bpmnGateway.setType(BpmnGatewayType.XOR);
-                //bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
-                //idMap.put(bpmnGateway.getNameAndId(), "");
-
                 TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
                 tExclusiveGateway.setId("Exclusive XOR");
+                createGateway(tExclusiveGateway);
 
                 createSequenceFlow("Start - XOR", tStartEvent, tExclusiveGateway);
 
@@ -135,17 +132,14 @@ public class ProcessModelBuilder {
             default:
                 endEvent = new BpmnEvent("Bpmn End Event 1");
                 endEvent.setTypeTag(BpmnEventType.End);
+                endEvent.setpid(bpmnProcessModel.getParentId());
 
                 TEndEvent tEndEvent = new TEndEvent();
                 tEndEvent.setId(endEvent.getId());
 
-                // BpmnGateway bpmnGateway = new BpmnGateway("Bpmn End XOR 1");
-                // bpmnGateway.setType(BpmnGatewayType.XOR);
-                // bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
-                // idMap.put(bpmnGateway.getNameAndId(), "");
-
                 TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
                 tExclusiveGateway.setId("Exclusive XOR");
+                createGateway(tExclusiveGateway);
 
                 createSequenceFlow("End - XOR", tExclusiveGateway, tEndEvent);
 
@@ -242,6 +236,9 @@ public class ProcessModelBuilder {
 
         bpmnEvent.setTypeTag(getEventType(tEvent));
 
+        // Default
+        bpmnEvent.setTrigger(BpmnEventTriggerType.None);
+
         eventList.add(bpmnEvent);
 
         if (bpmnEvent.getTypeTag().equals(BpmnEventType.Intermediate)) {
@@ -309,22 +306,6 @@ public class ProcessModelBuilder {
         tSequenceFlow.setTargetRef(toElement);
 
         createSequenceFlow(tSequenceFlow);
-
-        /*
-        Element element = JaxbWrapper.convertObjectToElement(tSequenceFlow);
-
-        BpmnEdge bpmnEdge = new BpmnEdge(element);
-        bpmnEdge.setType(BpmnEdgeType.Flow);
-        bpmnEdge.setpid(bpmnProcessModel.getParentId());
-
-        bpmnEdge.setFromId(fromElement.getId());
-        bpmnEdge.setToId(toElement.getId());
-
-        // sequenceFLowList.add(bpmnEdge);
-
-        bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
-        idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
-        */
     }
 
     private BpmnTaskType getActivityType(TActivity tActivity) throws IllegalArgumentException {
@@ -351,7 +332,6 @@ public class ProcessModelBuilder {
         }
     }
 
-    // FIXME: NÃO SEI
     private IllegalArgumentException getIllegalTypeException(TFlowNode flowNode) {
         return new IllegalArgumentException("Can not find element type (Element: " + flowNode.getClass().getSimpleName() + ". Id: " + flowNode.getId() + ")");
     }

@@ -58,7 +58,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
 
         for (int i = 0; i < object.getObjects().length; i++) {
             if (providedPN == null &&
-                object.getObjects()[i] instanceof BpmnGraph) {
+                    object.getObjects()[i] instanceof BpmnGraph) {
                 providedPN = (BpmnGraph) object.getObjects()[i];
             }
             if (log == null && object.getObjects()[i] instanceof LogReader) {
@@ -107,47 +107,47 @@ public class BPMNToYAWL implements ConvertingPlugin {
         YAWLCondition inputCond = ydRoot.addInputCondition(inCondId);
         String inTaskId = "inTask_" + ydRoot.getIdentifier();
         YAWLTask inputTask = ydRoot.addTask(inTaskId, "or",
-                                                isAdhoc ? "and" : "or", "", null);
+                isAdhoc ? "and" : "or", "", null);
         YAWLEdge inputEdge = ydRoot.addEdge(inCondId, inTaskId, false, null, null);
         //Manual for manual added input condition, will be deleted when converted back to BPMN
         setAttributes(inputCond, BpmnXmlTags.EVENTYPE,
-                      new String[] {BpmnXmlTags.BPMN_MANUAL, null,
-                      BpmnXmlTags.BPMN_START, null});
+                new String[]{BpmnXmlTags.BPMN_MANUAL, null,
+                        BpmnXmlTags.BPMN_START, null});
         setAttributes(inputTask, BpmnXmlTags.TASKTYPE,
-                      new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null, null, null, null, null, null});
+                new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null, null, null, null, null, null});
         setAttributes(inputEdge, BpmnXmlTags.EDGETYPE,
-                      new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
         //add the only output condition
         String outCondId = "outCond_" + ydRoot.getIdentifier();
         YAWLCondition outputCond = ydRoot.addOutputCondition(outCondId);
         String outTaskId = "outTask_" + ydRoot.getIdentifier();
         YAWLTask outputTask = ydRoot.addTask(outTaskId,
-                                                 isAdhoc ? "and" : "or", "or",
-                                                 "", null);
+                isAdhoc ? "and" : "or", "or",
+                "", null);
         YAWLEdge outputEdge = ydRoot.addEdge(outTaskId, outCondId, false, null, null);
         //Manual for manual added output condition, will be deleted when converted back to BPMN
         setAttributes(outputCond, BpmnXmlTags.EVENTYPE,
-                      new String[] {BpmnXmlTags.BPMN_MANUAL, null,
-                      BpmnXmlTags.BPMN_END, null});
+                new String[]{BpmnXmlTags.BPMN_MANUAL, null,
+                        BpmnXmlTags.BPMN_END, null});
         setAttributes(outputTask, BpmnXmlTags.TASKTYPE,
-                      new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null, null, null, null, null, null});
+                new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null, null, null, null, null, null});
         setAttributes(outputEdge, BpmnXmlTags.EDGETYPE,
-                      new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
         //the control condition for the ad hoc subprocess
         String controlCondId = "controlCond_" + ydRoot.getIdentifier();
         if (isAdhoc) {
             YAWLCondition controlCond = ydRoot.addCondition(controlCondId);
             controlCond.setAttribute("nodeid", "prefix_" + controlCondId);
             setAttributes(controlCond, BpmnXmlTags.EVENTYPE,
-                          new String[] {BpmnXmlTags.BPMN_MANUAL, null,
-                          BpmnXmlTags.BPMN_INTERMEDIATE, null});
+                    new String[]{BpmnXmlTags.BPMN_MANUAL, null,
+                            BpmnXmlTags.BPMN_INTERMEDIATE, null});
             YAWLEdge inControlEdge = ydRoot.addEdge(inTaskId, controlCondId, false, null, null);
             setAttributes(inControlEdge, BpmnXmlTags.EDGETYPE,
-                          new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                    new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
             YAWLEdge outControlEdge = ydRoot.addEdge(controlCondId,
                     outTaskId, false, null, null);
             setAttributes(outControlEdge, BpmnXmlTags.EDGETYPE,
-                          new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                    new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
         }
 
         inputTask.setAttribute("nodeid", "prefix_" + inTaskId);
@@ -168,21 +168,21 @@ public class BPMNToYAWL implements ConvertingPlugin {
             YAWLDecompositionBPMN ydNextRoot = new YAWLDecompositionBPMN(name,
                     "false", "NetFactsType");
             YAWLTask task = ydRoot.addTask(name, isAdhoc ? "and" : "or",
-                                               isAdhoc ? "and" : "or", name, null);
+                    isAdhoc ? "and" : "or", name, null);
             task.setAttribute("nodeid", "prefix_" + name);
             setAttributes(task, BpmnXmlTags.TASKTYPE,
-                          new String[] {BpmnXmlTags.BPMN_SUBPROCESS,
-                          bsp.getLane(), null, bsp.getLoopType(), bsp.isTiming(),
-                          bsp.isCompensation() ? "true" : null,
-                          bsp.isAdHoc() ? "true" : null,
-                          bsp.isExpanded() ? "true" : null,
-                          bsp.getTransaction()});
+                    new String[]{BpmnXmlTags.BPMN_SUBPROCESS,
+                            bsp.getLane(), null, bsp.getLoopType(), bsp.isTiming(),
+                            bsp.isCompensation() ? "true" : null,
+                            bsp.isAdHoc() ? "true" : null,
+                            bsp.isExpanded() ? "true" : null,
+                            bsp.getTransaction()});
             if (isAdhoc) {
                 adhocTasks.add(task);
             }
             yawl.addDecomposition(name, ydNextRoot);
             addSubprocess(bpmn, yawl, bsp.getProcessModel(), ydNextRoot,
-                          bsp.isAdHoc());
+                    bsp.isAdHoc());
         }
 
         //enumerate all nodes
@@ -195,10 +195,10 @@ public class BPMNToYAWL implements ConvertingPlugin {
                         isAdhoc ? "and" : "or", isAdhoc ? "and" : "or", "", null);
                 task.setAttribute("nodeid", "prefix_" + nameAndId);
                 setAttributes(task, BpmnXmlTags.TASKTYPE,
-                              new String[] {BpmnXmlTags.BPMN_TASK, t.getLane(), null,
-                              t.getLoopType(), t.isTiming(),
-                              t.isCompensation() ? "true" : null, null, null,
-                              t.getTransaction()});
+                        new String[]{BpmnXmlTags.BPMN_TASK, t.getLane(), null,
+                                t.getLoopType(), t.isTiming(),
+                                t.isCompensation() ? "true" : null, null, null,
+                                t.getTransaction()});
                 if (isAdhoc) {
                     adhocTasks.add(task);
                 }
@@ -217,25 +217,25 @@ public class BPMNToYAWL implements ConvertingPlugin {
                 YAWLCondition cond = ydRoot.addCondition(nameAndId);
                 cond.setAttribute("nodeid", "prefix_" + nameAndId);
                 setAttributes(cond, BpmnXmlTags.EVENTYPE,
-                              new String[] {BpmnXmlTags.BPMN_ORIGINAL,
-                              event.getLane(), bet.toString(),
-                              bett == null ? null : bett.toString()});
+                        new String[]{BpmnXmlTags.BPMN_ORIGINAL,
+                                event.getLane(), bet.toString(),
+                                bett == null ? null : bett.toString()});
                 if (bet == BpmnEventType.Start) {
                     //create an edge to connect the inputTask and this start event
                     YAWLEdge edge = ydRoot.addEdge(inTaskId, nameAndId, false,
                             bett == null ? null : bett.toString(), null);
                     setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                                  new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                            new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                 } else if (bet == BpmnEventType.End) {
                     //create an edge to connect this end event and the output task
                     YAWLEdge edge = ydRoot.addEdge(nameAndId, outTaskId, false,
                             bett == null ? null : bett.toString(), null);
                     setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                                  new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                            new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                 } else {
                     if (bett == BpmnEventTriggerType.Cancel ||
-                        bett == BpmnEventTriggerType.Exception ||
-                        bett == BpmnEventTriggerType.Error) {
+                            bett == BpmnEventTriggerType.Exception ||
+                            bett == BpmnEventTriggerType.Error) {
                         arCancels.add(cond);
                     }
                 }
@@ -246,34 +246,34 @@ public class BPMNToYAWL implements ConvertingPlugin {
                 String subType = null;
                 if (bgt == BpmnGatewayType.AND) {
                     task = ydRoot.addTask(nameAndId,
-                                              BpmnXmlTags.BPMN_GWT_AND,
-                                              BpmnXmlTags.BPMN_GWT_AND, "", null);
+                            BpmnXmlTags.BPMN_GWT_AND,
+                            BpmnXmlTags.BPMN_GWT_AND, "", null);
                     subType = BpmnXmlTags.BPMN_GWT_AND;
                 } else if (bgt == BpmnGatewayType.XOR) {
                     task = ydRoot.addTask(nameAndId,
-                                              BpmnXmlTags.BPMN_GWT_XOR,
-                                              BpmnXmlTags.BPMN_GWT_XOR, "", null);
+                            BpmnXmlTags.BPMN_GWT_XOR,
+                            BpmnXmlTags.BPMN_GWT_XOR, "", null);
                     subType = BpmnXmlTags.BPMN_GWT_XOR;
                 } else if (bgt == BpmnGatewayType.OR) {
                     task = ydRoot.addTask(nameAndId,
-                                              BpmnXmlTags.BPMN_GWT_OR,
-                                              BpmnXmlTags.BPMN_GWT_OR, "", null);
+                            BpmnXmlTags.BPMN_GWT_OR,
+                            BpmnXmlTags.BPMN_GWT_OR, "", null);
                     subType = BpmnXmlTags.BPMN_GWT_OR;
                 } else if (bgt == BpmnGatewayType.Complex) {
                     task = ydRoot.addTask(nameAndId,
-                                              BpmnXmlTags.BPMN_GWT_OR,
-                                              BpmnXmlTags.BPMN_GWT_OR, "", null);
+                            BpmnXmlTags.BPMN_GWT_OR,
+                            BpmnXmlTags.BPMN_GWT_OR, "", null);
                     subType = BpmnXmlTags.BPMN_GWT_COMPLEX;
                 } else {
                     task = ydRoot.addTask(nameAndId,
-                                              BpmnXmlTags.BPMN_GWT_OR,
-                                              BpmnXmlTags.BPMN_GWT_OR, "", null);
+                            BpmnXmlTags.BPMN_GWT_OR,
+                            BpmnXmlTags.BPMN_GWT_OR, "", null);
                     subType = BpmnXmlTags.BPMN_GWT_NORMAL;
                 }
                 task.setAttribute("nodeid", "prefix_" + nameAndId);
                 setAttributes(task, BpmnXmlTags.TASKTYPE,
-                              new String[] {BpmnXmlTags.BPMN_GATEWAY,
-                              bg.getLane(), subType, null, null, null, null, null, null});
+                        new String[]{BpmnXmlTags.BPMN_GATEWAY,
+                                bg.getLane(), subType, null, null, null, null, null, null});
             }
         }
 
@@ -299,30 +299,30 @@ public class BPMNToYAWL implements ConvertingPlugin {
                 if (node.getPredecessors().size() == 0) {
                     if (node != outputTask) {
                         YAWLEdge edge = ydRoot.addEdge(inTaskId,((String)node.getAttributeValue("nodeid")).substring(7), false, null, null);
-                            setAttributes(edge, BpmnXmlTags.EDGETYPE, new String[]
-                                      {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                        setAttributes(edge, BpmnXmlTags.EDGETYPE, new String[]
+                                {BpmnXmlTags.BPMN_MANUAL, null, null, null});
                         setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                                      new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                                new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                     }
                 }
                 if (node.getSuccessors().size() == 0) {
                     if (node != inputTask) {
-                      YAWLEdge edge = ydRoot.addEdge(((String)node.getAttributeValue("nodeid")).substring(7), outTaskId, false, null, null);
+                        YAWLEdge edge = ydRoot.addEdge(((String) node.getAttributeValue("nodeid")).substring(7), outTaskId, false, null, null);
                         setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                                      new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                                new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                     }
                 }
             } else if (node instanceof YAWLCondition) {
                 if (node.getPredecessors().size() == 0 &&
-                    node.getSuccessors().size() == 0) {
+                        node.getSuccessors().size() == 0) {
                     String nodeId = ((String)node.getAttributeValue("nodeid")).substring(7);
                     YAWLEdge edge = ydRoot.addEdge(inTaskId, nodeId, false, null, null);
                     setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                                  new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                            new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                     edges.put(inTaskId + "_" + nodeId, edge);
                     edge = ydRoot.addEdge(nodeId, outTaskId, false, null, null);
                     setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                                  new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                            new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                     edges.put(nodeId + "_" + outTaskId, edge);
                 }
             }
@@ -333,10 +333,10 @@ public class BPMNToYAWL implements ConvertingPlugin {
             String name = ((String)task.getAttributeValue("nodeid")).substring(7);
             YAWLEdge fromControlEdge = ydRoot.addEdge(controlCondId, name, false, null, null);
             setAttributes(fromControlEdge, BpmnXmlTags.EDGETYPE,
-                          new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                    new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
             YAWLEdge toControlEdge = ydRoot.addEdge(name, controlCondId, false, null, null);
             setAttributes(toControlEdge, BpmnXmlTags.EDGETYPE,
-                          new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                    new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
         }
 
         //find all cancel events' predecessors and successors with the same name
@@ -344,7 +344,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
         ArrayList<String> arCancelEdges = new ArrayList<String>();
         for (YAWLNode node : arCancels) {
             String name = node.getAttributeValue(BpmnXmlTags.BPMN_PROP_TRIGGER) +
-                          "_" + node.getIdentifier();
+                    "_" + node.getIdentifier();
             if (!arDiffCancels.contains(name)) {
                 arDiffCancels.add(name);
             }
@@ -360,7 +360,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
                     alPreds.add(pred);
                 }
                 arCancelEdges.add(((String)pred.getAttributeValue("nodeid")).substring(7) + "_" +
-                                  ((String)node.getAttributeValue("nodeid")).substring(7));
+                        ((String) node.getAttributeValue("nodeid")).substring(7));
             }
             ArrayList<YAWLNode> alSuccs = arCancelSuccs.get(name);
             if (alSuccs == null) {
@@ -374,7 +374,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
                     alSuccs.add(succ);
                 }
                 arCancelEdges.add(((String)node.getAttributeValue("nodeid")).substring(7) + "_" +
-                                  ((String)succ.getAttributeValue("nodeid")).substring(7));
+                        ((String) succ.getAttributeValue("nodeid")).substring(7));
             }
         }
         //handle the conversion from cancel events to reset edges
@@ -386,24 +386,24 @@ public class BPMNToYAWL implements ConvertingPlugin {
                     BpmnXmlTags.BPMN_GWT_OR, BpmnXmlTags.BPMN_GWT_AND, "", null);
             int idx = name.indexOf('_');
             setAttributes(cancelTask, BpmnXmlTags.TASKTYPE,
-                          new String[] {name.substring(0, idx), null, null, null, null, null, null, null, null});
-			//add an edge to its self with manual type
-			YAWLEdge selfEdge = ydRoot.addEdge(cancelId, cancelId, false, null, null);
-			setAttributes(selfEdge, BpmnXmlTags.EDGETYPE,
-                              new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                    new String[]{name.substring(0, idx), null, null, null, null, null, null, null, null});
+            //add an edge to its self with manual type
+            YAWLEdge selfEdge = ydRoot.addEdge(cancelId, cancelId, false, null, null);
+            setAttributes(selfEdge, BpmnXmlTags.EDGETYPE,
+                    new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
             ArrayList<YAWLNode> alPreds = arCancelPreds.get(name);
             for (YAWLNode pred : alPreds) {
                 String predId = ((String)pred.getAttributeValue("nodeid")).substring(7);
                 YAWLEdge inEdge = ydRoot.addEdge(predId, cancelId, false, null, null);
                 setAttributes(inEdge, BpmnXmlTags.EDGETYPE,
-                              new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                        new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
             }
             ArrayList<YAWLNode> alSuccs = arCancelSuccs.get(name);
             for (YAWLNode succ : alSuccs) {
                 String succId = ((String)succ.getAttributeValue("nodeid")).substring(7);
                 YAWLEdge outEdge = ydRoot.addEdge(cancelId, succId, false, null, null);
                 setAttributes(outEdge, BpmnXmlTags.EDGETYPE,
-                              new String[] {BpmnXmlTags.BPMN_MANUAL, null, null, null});
+                        new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                 outEdge.setType(YAWLEdge.RESET);
             }
         }
@@ -425,47 +425,13 @@ public class BPMNToYAWL implements ConvertingPlugin {
         String toId = edge.getToId();
         String[] arParams = new String[] {"", fromId, toId};
         //search the common predecessor of the two nodes
-
-        // Correto
         bpmn.constructEdge(arParams);
-        // Substituto para testes
-        // TODO: Seria o problema n ter resultado para "bpmnGraph.getNameAndId(var1[0]);"?
-        // TODO: Mas qual seria a resposta se o var1[0] está vazio??? Deveria estar vazio mesmo? BpmnGraph deveria entender Vazio?
-        // arParams = constructEdge(arParams, bpmn);
 
-        // Mexi por mexer (talvez arrumando o erro suma)
-        if(arParams[0] == null) {
+        // TODO: Adicionei para evitar erro | arParams[0] = bpmn.getNameAndId(arParams[0]); | Sendo arParams[0] == "Process Model 1" | retornava null
+        if (arParams[0] == null) {
             arParams[0] = "root";
         }
 
-        //construct the edge in YAWL
-        YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.getDecomposition(arParams[0]);
-
-        YAWLEdge ye = thisDecomp.addEdge(arParams[1], arParams[2],
-                                             edge.isDefaultFlag(),
-                                             edge.getCondition() != null ?
-                                             edge.getCondition() :
-                                             edge.getMessage(), null);
-        if (ye == null) {
-            return false;
-        }
-        setAttributes(ye, BpmnXmlTags.EDGETYPE,
-                      new String[] {String.valueOf(edge.getType()),
-                      edge.getCondition(), edge.isDefaultFlag() ? "true" : null,
-                      edge.getMessage()});
-        edges.put(arParams[1] + "_" + arParams[2], ye);
-        return true;
-    }
-
-    /*
-    // Antigo
-    private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl,
-                            HashMap<String, YAWLEdge> edges) {
-        String fromId = edge.getFromId();
-        String toId = edge.getToId();
-        String[] arParams = new String[] {"", fromId, toId};
-        //search the common predecessor of the two nodes
-        bpmn.constructEdge(arParams);
         //construct the edge in YAWL
         YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.
                 getDecomposition(arParams[0]);
@@ -484,7 +450,6 @@ public class BPMNToYAWL implements ConvertingPlugin {
         edges.put(arParams[1] + "_" + arParams[2], ye);
         return true;
     }
-    */
 
     private void setAttributes(att.grappa.Element elem, String[] arNames,
                                String[] arValues) {
@@ -499,38 +464,72 @@ public class BPMNToYAWL implements ConvertingPlugin {
         }
     }
 
+    /**
+     // Teste
+     public void constructEdge(String[] arParams, BpmnGraph bpmn) {
 
-    // Thanner: Extra
-    /*
-    public String[] constructEdge(String[] var1, BpmnGraph bpmnGraph) {
-        if (var1.length == 3) {
-            ArrayList var2 = bpmnGraph.getPreds(var1[1]);
-            ArrayList var3 = bpmnGraph.getPreds(var1[2]);
+     if (arParams.length == 3) {
+     ArrayList predsFrom = bpmn.getPreds(arParams[1]);
+     ArrayList predsTo = bpmn.getPreds(arParams[2]);
 
-            int var4;
-            for(var4 = 1; var2.size() > var4 && var3.size() > var4 && ((String)var2.get(var4)).equals(var3.get(var4)); ++var4) {
-                ;
-            }
+     int num;
+     for(num = 1; predsFrom.size() > num && predsTo.size() > num && ((String)predsFrom.get(num)).equals(predsTo.get(num)); ++num) {
+     ;
+     }
 
-            var1[0] = (String)var2.get(var4 - 1);
-            if (var1[0] == null) {
-                var1[0] = "root";
-            } else {
-                var1[0] = bpmnGraph.getNameAndId(var1[0]);
-            }
+     arParams[0] = (String)predsFrom.get(num - 1);
+     if (arParams[0] == null) {
+     arParams[0] = "root";
+     } else {
+     arParams[0] = bpmn.getNameAndId(arParams[0]);
+     // TODO: 1 - Adicionei
+     if(arParams[0] == null){
+     arParams[0] = "root";
+     }
+     }
 
-            if (var2.size() != var4) {
-                var1[1] = (String)var2.get(var4);
-            }
 
-            var1[1] = bpmnGraph.getNameAndId(var1[1]);
-            if (var3.size() != var4) {
-                var1[2] = (String)var3.get(var4);
-            }
+     // TODO: 2 - Para "Exclusive XOR", getNameAndId está retornando NULL (isso buga lá na frente)
+     if(arParams[1].equals("Exclusive XOR")){
+     System.out.println("achei");
+     }
+     if (predsFrom.size() != num) {
+     arParams[1] = (String)predsFrom.get(num);
+     }
+     arParams[1] = getNameAndId(arParams[1], bpmn);
 
-            var1[2] = bpmnGraph.getNameAndId(var1[2]);
-        }
-        return var1;
-    }
-    */
+
+     if (predsTo.size() != num) {
+     arParams[2] = (String)predsTo.get(num);
+     }
+     arParams[2] = bpmn.getNameAndId(arParams[2]);
+
+     }
+     }
+
+     public String getNameAndId(String var1, BpmnGraph bpmn) {
+     // TODO: 3 - bpmn.getProcess().getNode(var1) retorna null
+     // TODO: Isso significa que o nó Exclusive XOR não existe em bpmn.getProcess();
+     // TODO: De fato, não existe NENHUM Node com nome "Exclusive XOR" no processo do BPMN!!!
+     BpmnObject var2 = bpmn.getProcess().getNode(var1);
+     if (var2 == null) {
+     BpmnSubProcess[] var4 = bpmn.getProcess().getBpmnSubProcesses();
+     BpmnSubProcess[] var5 = var4;
+     int var6 = var4.length;
+
+     for(int var7 = 0; var7 < var6; ++var7) {
+     BpmnSubProcess var8 = var5[var7];
+     String var9 = var8.getSubGraph().getNameAndId(var1);
+     if (var9 != null) {
+     return var9;
+     }
+     }
+
+     return null;
+     } else {
+     return var2.getNameAndId();
+     }
+     }
+     */
+
 }
