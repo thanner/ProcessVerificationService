@@ -24,20 +24,20 @@ public class ProcessModelBuilder {
     private Map<String, String> idMap;
     private Set<String> defaultPath;
 
-    public BpmnResult buildProcess(TDefinitions definitions) {
+    public List<BpmnResult> buildProcess(TDefinitions definitions) {
         idMap = new HashMap<>();
         defaultPath = new HashSet<>();
-
         bpmnWrapper = new BpmnWrapper(definitions);
-        BpmnGraph bpmnGraph = null;
 
-        int id = 1;
+        List<BpmnResult> bpmnResultList = new ArrayList<>();
+        int processId = 1;
+
         List<TProcess> processList = bpmnWrapper.getProcessList();
         for (TProcess tProcess : processList) {
             eventList = new ArrayList<>();
             sequenceFLowList = new ArrayList<>();
 
-            bpmnProcessModel = new BpmnProcessModelAdapter("Process Model " + id++);
+            bpmnProcessModel = new BpmnProcessModelAdapter("Process Model " + processId);
             createPool(tProcess);
 
             for (TLaneSet laneSet : tProcess.getLaneSet()) {
@@ -65,10 +65,12 @@ public class ProcessModelBuilder {
             setStartEvent();
             setEndEvent();
 
-            bpmnGraph = new BpmnGraph("Graph", bpmnProcessModel);
+            BpmnGraph bpmnGraph = new BpmnGraph("Graph " + processId, bpmnProcessModel);
+            bpmnResultList.add(new BpmnResult(null, bpmnGraph));
+            processId++;
         }
 
-        return new BpmnResult(null, bpmnGraph);
+        return bpmnResultList;
     }
 
     public Map<String, String> getIdMap() {

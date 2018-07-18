@@ -1,212 +1,194 @@
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp getInputFiles
+Jul 18, 2018 1:37:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp getInputFiles
 WARNING: InputFiles not loading
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:37:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - C1 - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:37:57 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:37:57 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - C3 - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:01 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex1 - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:06 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:06 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex1 - bycicle manufacturing - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:11 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:11 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B5.1 - eng  - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:16 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:16 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Turbopixel - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:22 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Reijers Workflow - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:33 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - BizAgi - tutorial2 - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:38 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:38 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - D1 - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex2 - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:38:44 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:38:44 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - TU Berlin - SLA Violation - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:00 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:00 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-5 PandE - Lodge Originating Document by Post - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:04 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:04 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2010-3 Claims handling process - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:07 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:07 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex2 - Computer Repair - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:10 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:10 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2010-2 Claims Creation - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:12 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B7 - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:14 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:14 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-2 Conduct Directions Hearing - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:17 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Powerlicht - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:21 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:21 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B4 - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-1 MC Finalise SCT Warrant Possession - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:28 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Oracle - Expense Report Process - eng - process
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:51 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:34 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:34 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - D3 - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:40 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:40 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Tutorial - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:41 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - D2 - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:42 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:42 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - C2 - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:45 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:45 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex3a - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:47 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Reijers Workflow - shortened - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:55 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:55 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Active VOS - tutorial - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:39:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:39:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - ACME - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:05 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:05 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 150 - Simple HR-Process - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:07 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:07 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B5.2 - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:09 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:09 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B2 - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:10 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:10 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - BizAgi - tutorial1 - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:13 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 154 - HR Process - functional department - eng - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:15 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:15 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex4 - process
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:52 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex5 - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-WARNING: java.lang.NullPointerException
-	at org.processmining.mining.bpmnmining.BpmnResult.<init>(BpmnResult.java:63)
-	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:71)
-	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
-	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
-	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
-
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:20 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Incident Management Process - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:23 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex3b - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:25 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2010-1 Claims Notification - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:29 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:29 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Ex3 - Hotel Service - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:35 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:35 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B8 - eng - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:37 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 153 - HR Process - HR department - eng - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:40 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:40 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - B6 - eng - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:42 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:42 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - TU Berlin - Supplier Switch - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:53 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:53 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-3 repetition-cycles - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - Frank - loop example - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-INFO: Verification already exists
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - lemon chicken - process
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-WARNING: java.lang.NullPointerException
-	at org.processmining.mining.bpmnmining.BpmnResult.<init>(BpmnResult.java:63)
-	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:71)
-	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
-	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
-	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
-
-Jul 18, 2018 1:23:56 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+Jul 18, 2018 1:40:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done
+Jul 18, 2018 1:40:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
 INFO: Input File - 2009-4 event based gateways - process
-Jul 18, 2018 1:23:57 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
-WARNING: java.lang.NullPointerException
-	at org.processmining.mining.bpmnmining.BpmnResult.<init>(BpmnResult.java:63)
-	at br.edu.ufrgs.inf.bpm.builder.ProcessModelBuilder.buildProcess(ProcessModelBuilder.java:71)
-	at br.edu.ufrgs.inf.bpm.builder.VerificationGenerator.generateVerification(VerificationGenerator.java:25)
-	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.generateData(DataGeneratorApp.java:68)
-	at br.edu.ufrgs.inf.bpm.application.DataGeneratorApp.main(DataGeneratorApp.java:29)
-
+Jul 18, 2018 1:40:58 PM br.edu.ufrgs.inf.bpm.application.DataGeneratorApp generateData
+INFO: Verification - Done

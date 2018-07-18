@@ -11,6 +11,7 @@ import org.yawlfoundation.yawl.exceptions.YSyntaxException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,20 +20,26 @@ public class VerificationGenerator {
     public static List<VerificationElement> generateVerification(String bpmnString) throws IOException, YSyntaxException {
         File tempFile = ResourceLoader.createResourceFile("yawlFile", ".yawl");
         TDefinitions definitions = JaxbWrapper.convertXMLToObject(bpmnString);
+        List<VerificationElement> verificationElementList = new ArrayList<>();
 
         // Conversion (BPMN - BPMN)
         ProcessModelBuilder processModelBuilder = new ProcessModelBuilder();
-        BpmnResult bpmnResult = processModelBuilder.buildProcess(definitions);
-        Map<String, String> bpmnIdMap = processModelBuilder.getIdMap();
+        List<BpmnResult> bpmnResultList = processModelBuilder.buildProcess(definitions);
 
-        // Conversion (BPMN - YAWL)
-        YAWLBuilder yawlBuilder = new YAWLBuilder();
-        YAWLResult yawlResult = yawlBuilder.buildYawl(bpmnResult, tempFile);
-        Map<String, String> bpmnYawlIdMap = yawlBuilder.buildBpmnYawlIdMap(yawlResult, bpmnIdMap);
+        for (BpmnResult bpmnResult : bpmnResultList) {
+            Map<String, String> bpmnIdMap = processModelBuilder.getIdMap();
 
-        // Verification
-        VerificationWrapper verificationWrapper = new VerificationWrapper();
-        return verificationWrapper.verify(tempFile, bpmnYawlIdMap);
+            // Conversion (BPMN - YAWL)
+            YAWLBuilder yawlBuilder = new YAWLBuilder();
+            YAWLResult yawlResult = yawlBuilder.buildYawl(bpmnResult, tempFile);
+            Map<String, String> bpmnYawlIdMap = yawlBuilder.buildBpmnYawlIdMap(yawlResult, bpmnIdMap);
+
+            // Verification
+            VerificationWrapper verificationWrapper = new VerificationWrapper();
+            verificationElementList.addAll(verificationWrapper.verify(tempFile, bpmnYawlIdMap));
+        }
+
+        return verificationElementList;
     }
 
 }

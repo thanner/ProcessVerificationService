@@ -67,6 +67,9 @@
         "description": "id-9 any flow from any XOR/OR-split [id-9] must have either a predicate or be a default flow."
       },
       {
+        "description": "AtomicTask:Node1 any flow from any AND-split [AtomicTask:Node1] may not have an xpath predicate."
+      },
+      {
         "elementId": "id-22",
         "description": "id-22 the postset of any OR/XOR split must have exactly one default flow (not 0)"
       },

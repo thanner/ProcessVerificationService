@@ -53,11 +53,11 @@
       },
       {
         "elementId": "Process",
-        "description": "AtomicTask:Node10 is not on a forward directed path from i to o."
+        "description": "Condition:c{Node24_Node23} is not on a forward directed path from i to o."
       },
       {
         "elementId": "Process",
-        "description": "Condition:c{Node24_Node23} is not on a forward directed path from i to o."
+        "description": "AtomicTask:Node10 is not on a forward directed path from i to o."
       },
       {
         "elementId": "Process",
