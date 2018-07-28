@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Bpmnnet",
+    "messages": [
+      {
+        "elementId": "Process",
+        "description": "It may be possible for the net [Process] to complete without any generated work. Check the empty tasks linking from i to o."
+      },
+      {
+        "description": "AtomicTask:Node1 any flow from any AND-split [AtomicTask:Node1] may not have an xpath predicate."
+      }
+    ]
+  },
+  {
+    "name": "Bpmnnet",
+    "messages": [
+      {
+        "elementId": "Process",
+        "description": "It may be possible for the net [Process] to complete without any generated work. Check the empty tasks linking from i to o."
+      },
+      {
+        "description": "AtomicTask:Node1 any flow from any AND-split [AtomicTask:Node1] may not have an xpath predicate."
+      }
+    ]
+  }
+]

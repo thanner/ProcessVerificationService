@@ -51,75 +51,7 @@
         </plugins>
     </build>
 
-    <!-- Stardog Repository -->
-    <!--
-    <repositories>
-        <repository>
-            <id>stardog-public</id>
-            <url>http://maven.stardog.com</url>
-        </repository>
-    </repositories>
-    -->
-
     <dependencies>
-
-        <!-- Stardog -->
-        <!-- Stardog (ICV) hibernate.validator.cdi.internal.ValidationExtension da erro -->
-        <!--
-        <dependency>
-            <groupId>com.complexible.stardog</groupId>
-            <artifactId>client-embedded</artifactId>
-            <version>5.0.4</version>
-        </dependency>
-        -->
-
-        <!--
-        <dependency>
-        <groupId>com.complexible.stardog</groupId>
-        <artifactId>client-http</artifactId>
-        <version>5.0.4</version>
-        <type>pom</type>
-        </dependency>
-        -->
-        <!--
-        <dependency>
-        <groupId>com.complexible.stardog</groupId>
-        <artifactId>server</artifactId>
-        <version>5.0.4</version>
-        <type>pom</type>
-        </dependency>
-        -->
-
-        <!-- VERSÕES OWLAPI -->
-        <!-- https://mvnrepository.com/artifact/net.sourceforge.owlapi/owlapi-distribution -->
-        <!--
-        <dependency>
-            <groupId>net.sourceforge.owlapi</groupId>
-            <artifactId>owlapi-distribution</artifactId>
-            <version>5.1.0</version>
-        </dependency>
-        -->
-        <!-- https://mvnrepository.com/artifact/com.github.ansell.pellet/pellet-owlapiv3 -->
-        <dependency>
-            <groupId>com.github.ansell.pellet</groupId>
-            <artifactId>pellet-owlapiv3</artifactId>
-            <version>2.3.6-ansell</version>
-        </dependency>
-
-        <!-- Java REST https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.0</version>
-        </dependency>
-
-        <!-- SERVLET https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.0</version>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- YAWL Local - Standalone -->
         <dependency>
@@ -150,62 +82,6 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/others/yawl/YAWLEditor-core-4.2.jar</systemPath>
         </dependency>
-
-        <!-- YAWL Outra versão -->
-        <!--
-        <dependency>
-            <groupId>org.jdom2</groupId>
-            <artifactId>jdom</artifactId>
-            <version>2.0.5</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/jdom-2.0.5.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons.codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.9</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/commons-codec-1.9.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.yawlfoundation.yawl</groupId>
-            <artifactId>yawl-lib</artifactId>
-            <version>4.2</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/yawl-lib-4.2.jar</systemPath>
-        </dependency>
-        -->
-        <!-- YAWL - LOG4J -->
-        <!--
-        <dependency>
-            <groupId>org.apache.log4j</groupId>
-            <artifactId>log4j-1.2-api-2.3</artifactId>
-            <version>2.3</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-1.2-api-2.3.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.log4j</groupId>
-            <artifactId>log4j-api-2.3</artifactId>
-            <version>2.3</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-api-2.3.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.log4j</groupId>
-            <artifactId>log4j-core-2.3</artifactId>
-            <version>2.3</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-core-2.3.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.log4j</groupId>
-            <artifactId>log4j-slf4j-impl-2.33</artifactId>
-            <version>2.3</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/yawl/log4j/log4j-slf4j-impl-2.3.jar</systemPath>
-        </dependency>
-        -->
 
         <!-- Prom -->
         <dependency>
@@ -266,38 +142,6 @@
             <systemPath>${basedir}/src/main/others/MXMLib.jar</systemPath>
         </dependency>
 
-        <!-- REMOVER QUANDO USAR ProMmodels -->
-        <!--
-        <dependency>
-            <groupId>org.jdom</groupId>
-            <artifactId>prom</artifactId>
-            <version>5.2</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/jdom.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.jfree</groupId>
-            <artifactId>prom</artifactId>
-            <version>1.0.5</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/jfreechart-1.0.5.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.semanticweb</groupId>
-            <artifactId>prom</artifactId>
-            <version>1.0.5</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/kaon2.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons.math</groupId>
-            <artifactId>prom</artifactId>
-            <version>1.0.5</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/others/commons-math-1.1.jar</systemPath>
-        </dependency>
-        -->
-
         <!-- Apache -->
         <!-- IO https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
@@ -323,6 +167,33 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.2</version>
+        </dependency>
+
+        <!-- REST -->
+        <!-- Jersey https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.19.4</version>
+        </dependency>
+        <!-- Jersey Wadl https://mvnrepository.com/artifact/com.sun.jersey.contribs/jersey-wadl-json-schema -->
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-wadl-json-schema</artifactId>
+            <version>1.19.4</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- REST-WS https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
         </dependency>
 
         <!-- Log4J https://mvnrepository.com/artifact/log4j/log4j -->

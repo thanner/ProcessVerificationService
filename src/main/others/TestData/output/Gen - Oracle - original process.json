@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Bpmnnet",
+    "messages": [
+      {
+        "elementId": "id-27",
+        "description": "id-27 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "Process",
+        "description": "It may be possible for the net [Process] to complete without any generated work. Check the empty tasks linking from i to o."
+      },
+      {
+        "description": "AtomicTask:Node1 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "id-30",
+        "description": "id-30 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "description": "AtomicTask:Node1 any flow from any OR-split [AtomicTask:Node1] must have a predicate."
+      },
+      {
+        "elementId": "id-27",
+        "description": "id-27 any flow from any XOR/OR-split [id-27] must have either a predicate or be a default flow."
+      },
+      {
+        "elementId": "id-32",
+        "description": "id-32 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "id-32",
+        "description": "id-32 any flow from any XOR/OR-split [id-32] must have either a predicate or be a default flow."
+      },
+      {
+        "description": "AtomicTask:Node1 any flow from any XOR/OR-split [AtomicTask:Node1] must have either a predicate or be a default flow."
+      },
+      {
+        "elementId": "id-29",
+        "description": "id-29 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "id-6",
+        "description": "id-6 any flow from any OR-split [id-6] must have a predicate."
+      },
+      {
+        "elementId": "id-30",
+        "description": "id-30 any flow from any XOR/OR-split [id-30] must have either a predicate or be a default flow."
+      },
+      {
+        "elementId": "id-29",
+        "description": "id-29 any flow from any XOR/OR-split [id-29] must have either a predicate or be a default flow."
+      },
+      {
+        "elementId": "id-6",
+        "description": "id-6 any flow from any XOR/OR-split [id-6] must have either a predicate or be a default flow."
+      },
+      {
+        "elementId": "id-25",
+        "description": "id-25 any flow from any XOR/OR-split [id-25] must have either a predicate or be a default flow."
+      },
+      {
+        "elementId": "id-25",
+        "description": "id-25 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "id-6",
+        "description": "id-6 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      }
+    ]
+  }
+]

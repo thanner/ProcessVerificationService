@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Bpmnnet",
+    "messages": [
+      {
+        "elementId": "Process",
+        "description": "It may be possible for the net [Process] to complete without any generated work. Check the empty tasks linking from i to o."
+      },
+      {
+        "elementId": "id-4",
+        "description": "id-4 any flow from any OR-split [id-4] must have a predicate."
+      },
+      {
+        "description": "AtomicTask:Node1 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "id-4",
+        "description": "id-4 any flow from any XOR/OR-split [id-4] must have either a predicate or be a default flow."
+      },
+      {
+        "description": "AtomicTask:Node1 any flow from any OR-split [AtomicTask:Node1] must have a predicate."
+      },
+      {
+        "elementId": "id-4",
+        "description": "id-4 the postset of any OR/XOR split must have exactly one default flow (not 0)"
+      },
+      {
+        "elementId": "id-5",
+        "description": "The element (id-5) plays a part in an infinite loop/recursion in which no work items may be created."
+      },
+      {
+        "elementId": "id-4",
+        "description": "The element (id-4) plays a part in an infinite loop/recursion in which no work items may be created."
+      },
+      {
+        "description": "AtomicTask:Node1 any flow from any XOR/OR-split [AtomicTask:Node1] must have either a predicate or be a default flow."
+      }
+    ]
+  }
+]
