@@ -31,6 +31,10 @@ public class VerificationElement {
         return messages;
     }
 
+    public void setMessages(Set<Message> messages) {
+        this.messages = messages;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
