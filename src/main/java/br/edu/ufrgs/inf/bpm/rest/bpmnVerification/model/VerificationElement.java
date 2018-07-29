@@ -1,8 +1,10 @@
 package br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashSet;
 import java.util.Set;
 
+@XmlRootElement
 public class VerificationElement {
 
     private String id;
