@@ -1,8 +1,8 @@
 package br.edu.ufrgs.inf.bpm.application;
 
 import br.edu.ufrgs.inf.bpm.builder.VerificationGenerator;
-import br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model.VerificationElement;
 import br.edu.ufrgs.inf.bpm.util.Paths;
+import br.edu.ufrgs.inf.bpm.verificationmessages.TBpmnVerification;
 import br.edu.ufrgs.inf.bpm.wrapper.JsonWrapper;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -10,7 +10,6 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -28,6 +27,8 @@ public class DataGeneratorApp {
         for (File fileEntry : folder.listFiles()) {
             generateData(fileEntry, true);
         }
+
+        // File file = new File(Paths.LocalOthersPath + Paths.dataInputPath + "154 - HR Process - functional department - eng - process.bpmn");
     }
 
     private static void prepareLogger() {
@@ -65,7 +66,7 @@ public class DataGeneratorApp {
             if (verifyOnlyNewFiles && processFile.exists()) {
                 logger.info("Verification already exists");
             } else {
-                List<VerificationElement> verification = VerificationGenerator.generateVerification(bpmnProcess);
+                TBpmnVerification verification = VerificationGenerator.generateVerification(bpmnProcess);
                 String metaTextString = JsonWrapper.getJson(verification);
                 FileUtils.writeStringToFile(processFile, metaTextString, "UTF-8");
                 logger.info("Verification - Done");

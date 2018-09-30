@@ -1,10 +1,10 @@
 package br.edu.ufrgs.inf.bpm.wrapper;
 
-import br.edu.ufrgs.inf.bpm.bpmn.ObjectFactory;
-import br.edu.ufrgs.inf.bpm.bpmn.TDefinitions;
-import br.edu.ufrgs.inf.bpm.bpmn.TSequenceFlow;
 import br.edu.ufrgs.inf.bpm.util.Paths;
 import org.apache.commons.io.IOUtils;
+import org.omg.spec.bpmn._20100524.model.ObjectFactory;
+import org.omg.spec.bpmn._20100524.model.TDefinitions;
+import org.omg.spec.bpmn._20100524.model.TSequenceFlow;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -43,9 +43,22 @@ public class JaxbWrapper {
             return stringWriter.toString();
         } catch (JAXBException e) {
             System.err.println(String.format("Exception while marshalling: %s", e.getMessage()));
-            e.printStackTrace();
         }
         return null;
+    }
+
+    public static <T> String convertToXML(TDefinitions definition) {
+        StringWriter stringWriter = new StringWriter();
+        try {
+            JAXBContext context = JAXBContext.newInstance(Paths.PackageBpmnPath);
+            Marshaller marshaller = context.createMarshaller();
+            JAXBElement<TDefinitions> element = new ObjectFactory().createDefinitions(definition);
+            // file = File.createTempFile("temp", ".bpmn");
+            marshaller.marshal(element, stringWriter);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return stringWriter.toString();
     }
 
     public static <T> Element convertObjectToElement(T object) {
@@ -64,20 +77,6 @@ public class JaxbWrapper {
             e.printStackTrace();
         }
         return doc != null ? doc.getDocumentElement() : null;
-    }
-
-    public static <T> String convertToXML(TDefinitions definition) {
-        StringWriter stringWriter = new StringWriter();
-        try {
-            JAXBContext context = JAXBContext.newInstance(Paths.PackageBpmnPath);
-            Marshaller marshaller = context.createMarshaller();
-            JAXBElement<TDefinitions> element = new ObjectFactory().createDefinitions(definition);
-            // file = File.createTempFile("temp", ".bpmn");
-            marshaller.marshal(element, stringWriter);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-        return stringWriter.toString();
     }
 
     public static <T> String convertObjectToXMLS(T object) {

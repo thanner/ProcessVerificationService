@@ -1,5 +1,6 @@
 package br.edu.ufrgs.inf.bpm.builder;
 
+import org.omg.spec.bpmn._20100524.model.TBaseElement;
 import org.processmining.converting.bpmn2yawl.BPMNToYAWL;
 import org.processmining.exporting.yawl.YAWLExport;
 import org.processmining.framework.models.yawl.YAWLDecomposition;
@@ -32,8 +33,8 @@ public class YAWLBuilder {
         return yawlResult;
     }
 
-    public Map<String, String> buildBpmnYawlIdMap(YAWLResult yawlResult, Map<String, String> bpmnIdMap) {
-        Map<String, String> bpmnYawlIdMap = new HashMap<>();
+    public Map<String, TBaseElement> buildBpmnYawlIdMap(YAWLResult yawlResult, Map<String, TBaseElement> bpmnIdMap) {
+        Map<String, TBaseElement> bpmnYawlIdMap = new HashMap<>();
 
         for (ProvidedObject providedObjectYawl : yawlResult.getProvidedObjects()) {
             for (Object object : providedObjectYawl.getObjects()) {

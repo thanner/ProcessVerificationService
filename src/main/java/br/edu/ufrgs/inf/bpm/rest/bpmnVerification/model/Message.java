@@ -1,3 +1,4 @@
+/*
 package br.edu.ufrgs.inf.bpm.rest.bpmnVerification.model;
 
 import java.util.Objects;
@@ -38,3 +39,4 @@ public class Message {
     }
 
 }
+*/

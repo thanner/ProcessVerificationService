@@ -1,6 +1,6 @@
 package br.edu.ufrgs.inf.bpm.wrapper;
 
-import br.edu.ufrgs.inf.bpm.bpmn.*;
+import org.omg.spec.bpmn._20100524.model.*;
 
 import javax.xml.bind.JAXBElement;
 import java.util.ArrayList;
@@ -52,6 +52,25 @@ public class BpmnWrapper {
         return null;
     }
 
+    public TLane getLaneByFlowElement(TFlowElement tFlowElement) {
+        List<TProcess> processList = getProcessList();
+        for (TProcess process : processList) {
+            for (TLaneSet laneSet : process.getLaneSet()) {
+                for (TLane lane : laneSet.getLane()) {
+                    for (JAXBElement<Object> flowNodeRefObject : lane.getFlowNodeRef()) {
+                        if (flowNodeRefObject.getValue() instanceof TFlowNode) {
+                            TFlowNode flowNodeAux = (TFlowNode) flowNodeRefObject.getValue();
+                            if (tFlowElement.getId().equals(flowNodeAux.getId())) {
+                                return lane;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     public List<TCollaboration> getCollaborationList() {
         List<TCollaboration> collaborationList = new ArrayList<>();
         List<JAXBElement<? extends TRootElement>> rootElementList = definitions.getRootElement();
@@ -66,10 +85,11 @@ public class BpmnWrapper {
 
     public List<TProcess> getProcessList() {
         List<TProcess> processList = new ArrayList<>();
+
         List<JAXBElement<? extends TRootElement>> rootElementList = definitions.getRootElement();
-        for (JAXBElement<? extends TRootElement> rootElement : rootElementList) {
-            if (rootElement.getValue() instanceof TProcess) {
-                TProcess process = (TProcess) rootElement.getValue();
+        for (JAXBElement<? extends TRootElement> root : rootElementList) {
+            if (root.getValue() instanceof TProcess) {
+                TProcess process = (TProcess) root.getValue();
                 processList.add(process);
             }
         }
@@ -87,4 +107,53 @@ public class BpmnWrapper {
         }
         return "";
     }
+
+    public TParticipant getParticipantFromProcess(TProcess tProcess) {
+        List<TCollaboration> collaborationList = getCollaborationList();
+        for (TCollaboration collaboration : collaborationList) {
+            for (TParticipant participant : collaboration.getParticipant()) {
+                if (tProcess.getId().equals(participant.getProcessRef().toString())) {
+                    return participant;
+                }
+            }
+        }
+        return null;
+    }
+
+    public boolean hasParticipant(TProcess process) {
+        List<TCollaboration> collaborationList = getCollaborationList();
+        for (TCollaboration collaboration : collaborationList) {
+            for (TParticipant participant : collaboration.getParticipant()) {
+                if (process.getId().equals(participant.getProcessRef().toString())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public List<TSequenceFlow> getSequenceFlowList() {
+        List<TSequenceFlow> tSequenceFlowList = new ArrayList<>();
+        for (TProcess tProcess : getProcessList()) {
+            for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
+                if (flowElement.getValue() instanceof TSequenceFlow) {
+                    tSequenceFlowList.add((TSequenceFlow) flowElement.getValue());
+                }
+            }
+        }
+        return tSequenceFlowList;
+    }
+
+    public List<TActivity> getActivityList() {
+        List<TActivity> tActivityList = new ArrayList<>();
+        for (TProcess tProcess : getProcessList()) {
+            for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
+                if (flowElement.getValue() instanceof TActivity) {
+                    tActivityList.add((TActivity) flowElement.getValue());
+                }
+            }
+        }
+        return tActivityList;
+    }
+
 }

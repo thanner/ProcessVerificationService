@@ -1,12 +1,12 @@
 package br.edu.ufrgs.inf.bpm.builder;
 
-import br.edu.ufrgs.inf.bpm.bpmn.*;
 import br.edu.ufrgs.inf.bpm.changes.prom.BpmnProcessModelAdapter;
 import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.JaxbWrapper;
 import br.edu.ufrgs.inf.bpm.wrapper.elementType.ActivityType;
 import br.edu.ufrgs.inf.bpm.wrapper.elementType.EventType;
 import br.edu.ufrgs.inf.bpm.wrapper.elementType.GatewayType;
+import org.omg.spec.bpmn._20100524.model.*;
 import org.processmining.framework.models.bpmn.*;
 import org.processmining.mining.bpmnmining.BpmnResult;
 import org.w3c.dom.Element;
@@ -21,11 +21,11 @@ public class ProcessModelBuilder {
     private List<BpmnEdge> sequenceFLowList;
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
-    private Map<String, String> idMap;
+    private Map<String, TBaseElement> bpmnResultBpmnMap;
     private Set<String> defaultPath;
 
     public List<BpmnResult> buildProcess(TDefinitions definitions) {
-        idMap = new HashMap<>();
+        bpmnResultBpmnMap = new HashMap<>();
         defaultPath = new HashSet<>();
         bpmnWrapper = new BpmnWrapper(definitions);
 
@@ -73,8 +73,8 @@ public class ProcessModelBuilder {
         return bpmnResultList;
     }
 
-    public Map<String, String> getIdMap() {
-        return idMap;
+    public Map<String, TBaseElement> getBpmnResultBpmnMap() {
+        return bpmnResultBpmnMap;
     }
 
     private void setStartEvent() {
@@ -116,7 +116,7 @@ public class ProcessModelBuilder {
         if (startEvent != null) {
             bpmnProcessModel.setStart(startEvent);
             bpmnProcessModel.putNode(startEvent.getId(), startEvent);
-            idMap.put(startEvent.getNameAndId(), "");
+            bpmnResultBpmnMap.put(startEvent.getNameAndId(), new TStartEvent());
         }
     }
 
@@ -159,7 +159,7 @@ public class ProcessModelBuilder {
         if (endEvent != null) {
             bpmnProcessModel.setEnd(endEvent);
             bpmnProcessModel.putNode(endEvent.getId(), endEvent);
-            idMap.put(endEvent.getNameAndId(), "");
+            bpmnResultBpmnMap.put(endEvent.getNameAndId(), new TEndEvent());
         }
     }
 
@@ -173,7 +173,7 @@ public class ProcessModelBuilder {
             pool.setpid(bpmnProcessModel.getParentId());
 
             bpmnProcessModel.putNode(pool.getId(), pool);
-            idMap.put(pool.getId(), tProcess.getId());
+            bpmnResultBpmnMap.put(pool.getId(), tProcess);
         }
     }
 
@@ -187,7 +187,7 @@ public class ProcessModelBuilder {
             bpmnSwimLane.setpid(bpmnProcessModel.getParentId());
 
             bpmnProcessModel.putNode(bpmnSwimLane.getId(), bpmnSwimLane);
-            idMap.put(bpmnSwimLane.getId(), tLane.getId());
+            bpmnResultBpmnMap.put(bpmnSwimLane.getId(), tLane);
         }
     }
 
@@ -200,7 +200,7 @@ public class ProcessModelBuilder {
         bpmnTask.setpid(bpmnProcessModel.getParentId());
 
         bpmnProcessModel.putNode(bpmnTask.getId(), bpmnTask);
-        idMap.put(bpmnTask.getNameAndId(), tActivity.getId());
+        bpmnResultBpmnMap.put(bpmnTask.getNameAndId(), tActivity);
 
         /**
          //handle its child of intermediate event type
@@ -245,7 +245,7 @@ public class ProcessModelBuilder {
 
         if (bpmnEvent.getTypeTag().equals(BpmnEventType.Intermediate)) {
             bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
-            idMap.put(bpmnEvent.getNameAndId(), tEvent.getId());
+            bpmnResultBpmnMap.put(bpmnEvent.getNameAndId(), tEvent);
         }
     }
 
@@ -259,7 +259,7 @@ public class ProcessModelBuilder {
         setPathDefault(bpmnGateway, tGateway);
 
         bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
-        idMap.put(bpmnGateway.getNameAndId(), tGateway.getId());
+        bpmnResultBpmnMap.put(bpmnGateway.getNameAndId(), tGateway);
     }
 
     private void setPathDefault(BpmnGateway bpmnGateway, TGateway tGateway) {
@@ -296,7 +296,7 @@ public class ProcessModelBuilder {
             sequenceFLowList.add(bpmnEdge);
 
             bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
-            idMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), bpmnEdge.getId());
+            bpmnResultBpmnMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), tSequenceFlow);
         }
     }
 

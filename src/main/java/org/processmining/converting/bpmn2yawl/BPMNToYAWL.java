@@ -419,8 +419,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
         }
     }
 
-    private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl,
-                            HashMap<String, YAWLEdge> edges) {
+    private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl, HashMap<String, YAWLEdge> edges) {
         String fromId = edge.getFromId();
         String toId = edge.getToId();
         String[] arParams = new String[] {"", fromId, toId};

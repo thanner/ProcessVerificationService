@@ -1,3 +1,4 @@
+/*
 package br.edu.ufrgs.inf.bpm.rest.bpmnVerification;
 
 import br.edu.ufrgs.inf.bpm.builder.VerificationGenerator;
@@ -31,3 +32,4 @@ public class ApplicationRest {
     }
 
 }
+*/
