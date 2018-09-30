@@ -1,0 +1,8 @@
+{
+  "messageList": [
+    {
+      "processElementId": "Process",
+      "description": "It may be possible for the net [Process] to complete without any generated work. Check the empty tasks linking from i to o."
+    }
+  ]
+}
