@@ -12,8 +12,10 @@
 
     <xs:element name="message" type="verification:tMessage"/>
     <xs:complexType name="tMessage">
+        <xs:all>
+            <xs:element name="description" type="xs:string"/>
+        </xs:all>
         <xs:attribute name="processElementId" type="xs:string"/>
-        <xs:attribute name="description" type="xs:string"/>
     </xs:complexType>
 
 </xs:schema>
