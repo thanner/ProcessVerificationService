@@ -1,5 +1,6 @@
 package br.edu.ufrgs.inf.bpm.builder;
 
+import br.edu.ufrgs.inf.bpm.util.Paths;
 import br.edu.ufrgs.inf.bpm.util.ResourceLoader;
 import br.edu.ufrgs.inf.bpm.verificationmessages.TBpmnVerification;
 import br.edu.ufrgs.inf.bpm.verificationmessages.TMessage;
@@ -49,16 +50,16 @@ public class VerificationGenerator {
             filterUniques(tBpmnVerification, yawlVerificationWrapper.verify(tempFile, bpmnYawlIdMap));
         }
 
-        // Aqui apenas para ver o YAWL
+        // See the YAWL
         createYawlFile(tempFile);
 
         return tBpmnVerification;
     }
 
+
     private static void createYawlFile(File tempFile) throws IOException {
-        // TODO: Código apenas para ver YAWL
         String text = FileUtils.readFileToString(tempFile, "UTF-8");
-        File file = new File("/Users/thanner/Documents/specification.yawl");
+        File file = new File(Paths.LocalOthersPath + "/TestData/specification.yawl");
         FileUtils.writeStringToFile(file, text, "UTF-8");
     }
 

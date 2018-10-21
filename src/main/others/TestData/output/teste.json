@@ -31,7 +31,7 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "ResetNet Analysis Warning: The net root has dead tasks:[AtomicTask:Node7, AtomicTask:Node13, AtomicTask:Node10, AtomicTask:Node12, AtomicTask:Node3]",
+      "description": "ResetNet Analysis Warning: The net root has dead tasks:[AtomicTask:Node13, AtomicTask:Node12, AtomicTask:Node10, AtomicTask:Node3, AtomicTask:Node7]",
       "processElementId": "Process",
       "messageType": "STRUCTURE",
       "source": "YAWL Verification"
