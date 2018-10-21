@@ -23,10 +23,14 @@ public class DataGeneratorApp {
         getInputFiles();
         ApplicationStarter.startApplication();
 
+        /*
         File folder = new File(Paths.LocalOthersPath + Paths.dataInputPath);
         for (File fileEntry : folder.listFiles()) {
             generateData(fileEntry, true);
         }
+        */
+
+        generateData(new File(Paths.LocalOthersPath + "/TestData/teste.bpmn"), false);
 
         // File file = new File(Paths.LocalOthersPath + Paths.dataInputPath + "154 - HR Process - functional department - eng - process.bpmn");
     }

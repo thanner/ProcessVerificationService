@@ -3,6 +3,7 @@ package br.edu.ufrgs.inf.bpm.wrapper;
 import org.omg.spec.bpmn._20100524.model.*;
 
 import javax.xml.bind.JAXBElement;
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +53,16 @@ public class BpmnWrapper {
         return null;
     }
 
+    public <T> List<T> getFlowElementList(Class<T> flowElementClass, TProcess tProcess) {
+        List<T> elementList = new ArrayList<>();
+        for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
+            if (flowElementClass.isInstance(flowElement.getValue())) {
+                elementList.add((T) flowElement.getValue());
+            }
+        }
+        return elementList;
+    }
+
     public TLane getLaneByFlowElement(TFlowElement tFlowElement) {
         List<TProcess> processList = getProcessList();
         for (TProcess process : processList) {
@@ -94,6 +105,21 @@ public class BpmnWrapper {
             }
         }
         return processList;
+    }
+
+    public TFlowElement getFlowElementByQName(QName qName) {
+        return getFlowElementById(qName.getLocalPart());
+    }
+
+    public TFlowElement getFlowElementById(String flowElementId) {
+        for (TProcess tProcess : getProcessList()) {
+            for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
+                if (flowElement.getValue().getId().equals(flowElementId)) {
+                    return flowElement.getValue();
+                }
+            }
+        }
+        return null;
     }
 
     public String getProcessName(TProcess process) {

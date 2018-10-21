@@ -12,6 +12,7 @@ import org.processmining.mining.bpmnmining.BpmnResult;
 import org.w3c.dom.Element;
 
 import javax.xml.bind.JAXBElement;
+import javax.xml.namespace.QName;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -19,14 +20,20 @@ public class ProcessModelBuilder {
 
     private List<BpmnEvent> eventList;
     private List<BpmnEdge> sequenceFLowList;
+
+    private List<TStartEvent> startEventList;
+    private List<TEndEvent> endEventList;
+
     private BpmnWrapper bpmnWrapper;
     private BpmnProcessModelAdapter bpmnProcessModel;
     private Map<String, TBaseElement> bpmnResultBpmnMap;
     private Set<String> defaultPath;
+    private Set<String> predicatePath;
 
     public List<BpmnResult> buildProcess(TDefinitions definitions) {
         bpmnResultBpmnMap = new HashMap<>();
         defaultPath = new HashSet<>();
+        predicatePath = new HashSet<>();
         bpmnWrapper = new BpmnWrapper(definitions);
 
         List<BpmnResult> bpmnResultList = new ArrayList<>();
@@ -36,6 +43,9 @@ public class ProcessModelBuilder {
         for (TProcess tProcess : processList) {
             eventList = new ArrayList<>();
             sequenceFLowList = new ArrayList<>();
+
+            startEventList = new ArrayList<>();
+            endEventList = new ArrayList<>();
 
             bpmnProcessModel = new BpmnProcessModelAdapter("Process Model " + processId);
             createPool(tProcess);
@@ -79,7 +89,10 @@ public class ProcessModelBuilder {
 
     private void setStartEvent() {
         List<BpmnEvent> startEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.Start)).collect(Collectors.toList());
+
         BpmnEvent startEvent = null;
+        TStartEvent tStartEvent = new TStartEvent();
+
         switch (startEvents.size()) {
             case 0:
                 // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
@@ -87,13 +100,13 @@ public class ProcessModelBuilder {
                 break;
             case 1:
                 startEvent = startEvents.get(0);
+                tStartEvent = startEventList.get(0);
                 break;
             default:
                 startEvent = new BpmnEvent("Bpmn Start Event 1");
                 startEvent.setTypeTag(BpmnEventType.Start);
                 startEvent.setpid(bpmnProcessModel.getParentId());
 
-                TStartEvent tStartEvent = new TStartEvent();
                 tStartEvent.setId(startEvent.getId());
 
                 TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
@@ -116,13 +129,16 @@ public class ProcessModelBuilder {
         if (startEvent != null) {
             bpmnProcessModel.setStart(startEvent);
             bpmnProcessModel.putNode(startEvent.getId(), startEvent);
-            bpmnResultBpmnMap.put(startEvent.getNameAndId(), new TStartEvent());
+            bpmnResultBpmnMap.put(startEvent.getNameAndId(), tStartEvent);
         }
     }
 
     private void setEndEvent() {
         List<BpmnEvent> endEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.End)).collect(Collectors.toList());
+
         BpmnEvent endEvent = null;
+        TEndEvent tEndEvent = new TEndEvent();
+
         switch (endEvents.size()) {
             case 0:
                 // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
@@ -130,13 +146,13 @@ public class ProcessModelBuilder {
                 break;
             case 1:
                 endEvent = endEvents.get(0);
+                tEndEvent = endEventList.get(0);
                 break;
             default:
                 endEvent = new BpmnEvent("Bpmn End Event 1");
                 endEvent.setTypeTag(BpmnEventType.End);
                 endEvent.setpid(bpmnProcessModel.getParentId());
 
-                TEndEvent tEndEvent = new TEndEvent();
                 tEndEvent.setId(endEvent.getId());
 
                 TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
@@ -159,7 +175,7 @@ public class ProcessModelBuilder {
         if (endEvent != null) {
             bpmnProcessModel.setEnd(endEvent);
             bpmnProcessModel.putNode(endEvent.getId(), endEvent);
-            bpmnResultBpmnMap.put(endEvent.getNameAndId(), new TEndEvent());
+            bpmnResultBpmnMap.put(endEvent.getNameAndId(), tEndEvent);
         }
     }
 
@@ -238,14 +254,17 @@ public class ProcessModelBuilder {
 
         bpmnEvent.setTypeTag(getEventType(tEvent));
 
-        // Default
-        bpmnEvent.setTrigger(BpmnEventTriggerType.None);
-
         eventList.add(bpmnEvent);
 
         if (bpmnEvent.getTypeTag().equals(BpmnEventType.Intermediate)) {
             bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
             bpmnResultBpmnMap.put(bpmnEvent.getNameAndId(), tEvent);
+        }
+
+        if (tEvent instanceof TStartEvent) {
+            startEventList.add((TStartEvent) tEvent);
+        } else if (tEvent instanceof TEndEvent) {
+            endEventList.add((TEndEvent) tEvent);
         }
     }
 
@@ -263,17 +282,50 @@ public class ProcessModelBuilder {
     }
 
     private void setPathDefault(BpmnGateway bpmnGateway, TGateway tGateway) {
+        boolean needDefault = true;
         TSequenceFlow path = null;
 
         if (tGateway instanceof TExclusiveGateway) {
             path = (TSequenceFlow) ((TExclusiveGateway) tGateway).getDefault();
         } else if (tGateway instanceof TInclusiveGateway) {
             path = (TSequenceFlow) ((TInclusiveGateway) tGateway).getDefault();
+        } else {
+            needDefault = false;
         }
 
-        if (path != null) {
+        List<TSequenceFlow> targetSequenceFlowList = getTargetSequenceFlow(tGateway);
+
+        if (needDefault && targetSequenceFlowList.size() > 0) {
+            if (path == null) {
+                path = targetSequenceFlowList.get(0);
+            }
+
             defaultPath.add(path.getId());
+            final String pathId = path.getId();
+            Set<String> predicateList = targetSequenceFlowList.stream().filter(s -> !s.getId().equals(pathId)).map(TBaseElement::getId).collect(Collectors.toSet());
+            predicatePath.addAll(predicateList);
         }
+    }
+
+    private List<TSequenceFlow> getTargetSequenceFlow(TGateway tGateway) {
+        List<TSequenceFlow> targetSequenceFlow = new ArrayList<>();
+        for (QName qName : tGateway.getOutgoing()) {
+            TFlowElement tFlowElement = bpmnWrapper.getFlowElementByQName(qName);
+            if (tFlowElement instanceof TSequenceFlow) {
+                targetSequenceFlow.add((TSequenceFlow) tFlowElement);
+            }
+        }
+        return targetSequenceFlow;
+    }
+
+    public String getFirstTargetSequenceFlowId(TFlowNode tFlowNode) {
+        for (QName qName : tFlowNode.getOutgoing()) {
+            TFlowElement tFlowElement = bpmnWrapper.getFlowElementByQName(qName);
+            if (tFlowElement instanceof TSequenceFlow) {
+                return tFlowElement.getId();
+            }
+        }
+        return null;
     }
 
     private String getLaneId(TFlowNode node) {
@@ -288,15 +340,31 @@ public class ProcessModelBuilder {
             BpmnEdge bpmnEdge = new BpmnEdge(element);
             bpmnEdge.setType(BpmnEdgeType.Flow);
             bpmnEdge.setpid(bpmnProcessModel.getParentId());
-            bpmnEdge.setDefaultFlag(defaultPath.contains(tSequenceFlow.getId()));
 
-            bpmnEdge.setFromId(((TFlowElement) tSequenceFlow.getSourceRef()).getId());
+            boolean hasDefault = defaultPath.contains(tSequenceFlow.getId());
+            if (hasDefault) {
+                bpmnEdge.setDefaultFlag(true);
+            }
+
+            boolean hasPredicate = predicatePath.contains(tSequenceFlow.getId());
+            if (hasPredicate) {
+                bpmnEdge.setCondition("true()");
+            }
+
+            TFlowElement tFlowElementFrom = (TFlowElement) tSequenceFlow.getSourceRef();
+            bpmnEdge.setFromId(tFlowElementFrom.getId());
+            String nameFrom = tFlowElementFrom.getName() != null ? tFlowElementFrom.getName() : "";
+            String fromIdentifier = nameFrom + "\t" + tFlowElementFrom.getId();
+
+            TFlowElement tFlowElementTo = (TFlowElement) tSequenceFlow.getTargetRef();
             bpmnEdge.setToId(((TFlowElement) tSequenceFlow.getTargetRef()).getId());
+            String nameTo = tFlowElementTo.getName() != null ? tFlowElementTo.getName() : "";
+            String toIdentifier = nameTo + "\t" + tFlowElementTo.getId();
 
             sequenceFLowList.add(bpmnEdge);
 
             bpmnProcessModel.putEdge(bpmnEdge.getId(), bpmnEdge);
-            bpmnResultBpmnMap.put(bpmnEdge.getFromId() + " -> " + bpmnEdge.getToId(), tSequenceFlow);
+            bpmnResultBpmnMap.put(fromIdentifier + " -> " + toIdentifier, tSequenceFlow);
         }
     }
 

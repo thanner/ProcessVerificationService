@@ -1,0 +1,40 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the activity Task_NullName.",
+      "processElementId": "Task_NullName",
+      "messageType": "LABEL",
+      "source": "Process Model Verification"
+    },
+    {
+      "description": "No label was identified in the gateway XorSplit1.",
+      "processElementId": "XorSplit1",
+      "messageType": "LABEL",
+      "source": "Process Model Verification"
+    },
+    {
+      "description": "No label was identified in the gateway AndJoin1.",
+      "processElementId": "AndJoin1",
+      "messageType": "LABEL",
+      "source": "Process Model Verification"
+    },
+    {
+      "description": "No label was identified in the gateway XorSplit2.",
+      "processElementId": "XorSplit2",
+      "messageType": "LABEL",
+      "source": "Process Model Verification"
+    },
+    {
+      "description": "ResetNet Analysis Warning: The net root does not have an option to complete.",
+      "processElementId": "Process",
+      "messageType": "STRUCTURE",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "ResetNet Analysis Warning: The net root has dead tasks:[AtomicTask:Node7, AtomicTask:Node13, AtomicTask:Node10, AtomicTask:Node12, AtomicTask:Node3]",
+      "processElementId": "Process",
+      "messageType": "STRUCTURE",
+      "source": "YAWL Verification"
+    }
+  ]
+}

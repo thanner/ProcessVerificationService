@@ -102,12 +102,16 @@ public class BPMNToYAWL implements ConvertingPlugin {
                                BpmnProcessModel bpm,
                                YAWLDecompositionBPMN ydRoot,
                                boolean isAdhoc) {
+
+        // ADD TO VERIFICATION
+        YAWLDecompositionBPMN yDecompStart = new YAWLDecompositionBPMN("decompositionStart", "false", "WebServiceGatewayFactsType");
+        yawl.addDecomposition("decompositionStartId", yDecompStart);
+
         //add the only input condition
         String inCondId = "inCond_" + ydRoot.getIdentifier();
         YAWLCondition inputCond = ydRoot.addInputCondition(inCondId);
         String inTaskId = "inTask_" + ydRoot.getIdentifier();
-        YAWLTask inputTask = ydRoot.addTask(inTaskId, "or",
-                isAdhoc ? "and" : "or", "", null);
+        YAWLTask inputTask = ydRoot.addTask(inTaskId, "or", isAdhoc ? "and" : "or", yDecompStart.getID(), null);
         YAWLEdge inputEdge = ydRoot.addEdge(inCondId, inTaskId, false, null, null);
         //Manual for manual added input condition, will be deleted when converted back to BPMN
         setAttributes(inputCond, BpmnXmlTags.EVENTYPE,
@@ -462,73 +466,5 @@ public class BPMNToYAWL implements ConvertingPlugin {
             }
         }
     }
-
-    /**
-     // Teste
-     public void constructEdge(String[] arParams, BpmnGraph bpmn) {
-
-     if (arParams.length == 3) {
-     ArrayList predsFrom = bpmn.getPreds(arParams[1]);
-     ArrayList predsTo = bpmn.getPreds(arParams[2]);
-
-     int num;
-     for(num = 1; predsFrom.size() > num && predsTo.size() > num && ((String)predsFrom.get(num)).equals(predsTo.get(num)); ++num) {
-     ;
-     }
-
-     arParams[0] = (String)predsFrom.get(num - 1);
-     if (arParams[0] == null) {
-     arParams[0] = "root";
-     } else {
-     arParams[0] = bpmn.getNameAndId(arParams[0]);
-     // TODO: 1 - Adicionei
-     if(arParams[0] == null){
-     arParams[0] = "root";
-     }
-     }
-
-
-     // TODO: 2 - Para "Exclusive XOR", getNameAndId está retornando NULL (isso buga lá na frente)
-     if(arParams[1].equals("Exclusive XOR")){
-     System.out.println("achei");
-     }
-     if (predsFrom.size() != num) {
-     arParams[1] = (String)predsFrom.get(num);
-     }
-     arParams[1] = getNameAndId(arParams[1], bpmn);
-
-
-     if (predsTo.size() != num) {
-     arParams[2] = (String)predsTo.get(num);
-     }
-     arParams[2] = bpmn.getNameAndId(arParams[2]);
-
-     }
-     }
-
-     public String getNameAndId(String var1, BpmnGraph bpmn) {
-     // TODO: 3 - bpmn.getProcess().getNode(var1) retorna null
-     // TODO: Isso significa que o nó Exclusive XOR não existe em bpmn.getProcess();
-     // TODO: De fato, não existe NENHUM Node com nome "Exclusive XOR" no processo do BPMN!!!
-     BpmnObject var2 = bpmn.getProcess().getNode(var1);
-     if (var2 == null) {
-     BpmnSubProcess[] var4 = bpmn.getProcess().getBpmnSubProcesses();
-     BpmnSubProcess[] var5 = var4;
-     int var6 = var4.length;
-
-     for(int var7 = 0; var7 < var6; ++var7) {
-     BpmnSubProcess var8 = var5[var7];
-     String var9 = var8.getSubGraph().getNameAndId(var1);
-     if (var9 != null) {
-     return var9;
-     }
-     }
-
-     return null;
-     } else {
-     return var2.getNameAndId();
-     }
-     }
-     */
 
 }

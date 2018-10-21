@@ -4,6 +4,7 @@ import org.omg.spec.bpmn._20100524.model.TBaseElement;
 import org.processmining.converting.bpmn2yawl.BPMNToYAWL;
 import org.processmining.exporting.yawl.YAWLExport;
 import org.processmining.framework.models.yawl.YAWLDecomposition;
+import org.processmining.framework.models.yawl.YAWLEdge;
 import org.processmining.framework.models.yawl.YAWLModel;
 import org.processmining.framework.models.yawl.YAWLNode;
 import org.processmining.framework.plugin.ProvidedObject;
@@ -30,6 +31,7 @@ public class YAWLBuilder {
                 yawlExport.export(providedObjectYawl, outputStream);
             }
         }
+
         return yawlResult;
     }
 
@@ -44,15 +46,26 @@ public class YAWLBuilder {
                         for (YAWLNode yawlNode : yawlDecomposition.getNodes()) {
                             bpmnYawlIdMap.put("Node" + yawlNode.getId(), bpmnIdMap.get(yawlNode.getID()));
                         }
-                        /*
+
                         for(Object yawlEdgeObject : yawlDecomposition.getEdges()){
                             if(yawlEdgeObject instanceof  YAWLEdge) {
                                 YAWLEdge yawlEdge = (YAWLEdge) yawlEdgeObject;
-                                // bpmnYawlIdMap.put(yawlEdge.toString(), bpmnIdMap.get(yawlEdge.toString()));
-                                // cannonName
+
+                                String idHead = "";
+                                if (yawlEdge.getHead() instanceof YAWLNode) {
+                                    idHead = ((YAWLNode) yawlEdge.getHead()).getID();
+                                }
+
+                                String idTail = "";
+                                if (yawlEdge.getTail() instanceof YAWLNode) {
+                                    idTail = ((YAWLNode) yawlEdge.getTail()).getID();
+                                }
+
+                                String yawlEdgeId = idTail + " -> " + idHead;
+                                bpmnYawlIdMap.put("Edge " + yawlEdge.toString(), bpmnIdMap.get(yawlEdgeId));
                             }
                         }
-                        */
+
                     }
                 }
             }
