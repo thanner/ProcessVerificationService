@@ -31,13 +31,13 @@
       "source": "BPMN Verification"
     },
     {
-      "description": "ResetNet Analysis Warning: The net root does not have an option to complete.",
+      "description": "The process does not have an option to complete.",
       "processElementId": "Process",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
     {
-      "description": "ResetNet Analysis Warning: The net root has dead tasks:[ Activity: D (id: Task_D), Exclusive Gateway (id: XorSplit2), Activity: F (id: Task_F), Parallel Gateway (id: AndJoin1)]",
+      "description": "The process has unreachable elements:[Activity: D (id: Task_D),  Activity: F (id: Task_F), Parallel Gateway (id: AndJoin1), Exclusive Gateway (id: XorSplit2)]",
       "processElementId": "Process",
       "messageType": "structure",
       "source": "YAWL Verification"

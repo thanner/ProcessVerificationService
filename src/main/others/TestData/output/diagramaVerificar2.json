@@ -41,18 +41,6 @@
       "processElementId": "ExclusiveGateway_0vlkb7i",
       "messageType": "label",
       "source": "BPMN Verification"
-    },
-    {
-      "description": "Exclusive Gateway (id: ExclusiveGateway_0cw95p6) any flow from any AND-split [Exclusive Gateway (id: ExclusiveGateway_0cw95p6)] may not have a default flow.",
-      "processElementId": "ExclusiveGateway_0cw95p6",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "It was not possible to verify soundness in the model. Please correct the errors identified in the YAWL before this is possible.",
-      "processElementId": "Process",
-      "messageType": "structure",
-      "source": "YAWL Verification"
     }
   ]
 }

@@ -151,6 +151,10 @@ public class YAWLVerificationWrapper {
     }
 
     private String updateMessage(String message) {
+        message = message.replaceAll("The net root", "The process");
+        message = message.replaceAll("ResetNet Analysis Warning: ", "");
+        message = message.replaceAll("has dead tasks", "has unreachable elements");
+
         for (String bpmnKey : bpmnYawlIdMap.keySet()) {
             Object o = bpmnYawlIdMap.get(bpmnKey);
             if (o != null) {

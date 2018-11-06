@@ -98,8 +98,6 @@ public class BPMNToYAWL implements ConvertingPlugin {
         return yawl;
     }
 
-    private boolean isPredicateAnalysis = true;
-
     private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl, HashMap<String, YAWLEdge> edges) {
         String fromId = edge.getFromId();
         String toId = edge.getToId();
@@ -143,8 +141,6 @@ public class BPMNToYAWL implements ConvertingPlugin {
             }
         }
     }
-
-    private boolean hasMultipleInTaskOutputs = false;
 
     private void addSubprocess(BpmnGraph bpmn, YAWLModel yawl,
                                BpmnProcessModel bpm,
@@ -496,6 +492,9 @@ public class BPMNToYAWL implements ConvertingPlugin {
             hasMultipleInTaskOutputs = true;
         }
     }
+
+    private boolean isPredicateAnalysis = true;
+    private boolean hasMultipleInTaskOutputs = false;
 
     public boolean isPredicateAnalysis() {
         return isPredicateAnalysis;

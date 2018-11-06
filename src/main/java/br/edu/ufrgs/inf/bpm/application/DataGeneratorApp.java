@@ -34,7 +34,7 @@ public class DataGeneratorApp {
         //generateData(new File(Paths.LocalOthersPath + "/TestData/input/2009-2 Conduct Directions Hearing - process.bpmn"), false);
 
         //diagramaVerificar2
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste.bpmn"), false);
+        generateData(new File(Paths.LocalOthersPath + "/TestData/diagramaVerificar2.bpmn"), false);
         // File file = new File(Paths.LocalOthersPath + Paths.dataInputPath + "154 - HR Process - functional department - eng - process.bpmn");
     }
 

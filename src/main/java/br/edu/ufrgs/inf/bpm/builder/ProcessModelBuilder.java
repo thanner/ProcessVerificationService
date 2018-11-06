@@ -302,19 +302,19 @@ public class ProcessModelBuilder {
         bpmnGateway.setName(tGateway.getName());
         bpmnGateway.setLane(getLaneId(tGateway));
         bpmnGateway.setType(getGatewayType(tGateway));
-        setPathDefault(bpmnGateway, tGateway);
+        setPathDefault(tGateway);
 
         bpmnProcessModel.putNode(bpmnGateway.getId(), bpmnGateway);
         bpmnResultBpmnMap.put(bpmnGateway.getNameAndId(), tGateway);
     }
 
-    private void setPathDefault(BpmnGateway bpmnGateway, TGateway tGateway) {
+    private void setPathDefault(TGateway tGateway) {
         boolean needDefault = true;
         TSequenceFlow path = null;
 
-        if (tGateway instanceof TExclusiveGateway) {
+        if (tGateway instanceof TExclusiveGateway && tGateway.getOutgoing().size() > 1) {
             path = (TSequenceFlow) ((TExclusiveGateway) tGateway).getDefault();
-        } else if (tGateway instanceof TInclusiveGateway) {
+        } else if (tGateway instanceof TInclusiveGateway && tGateway.getOutgoing().size() > 1) {
             path = (TSequenceFlow) ((TInclusiveGateway) tGateway).getDefault();
         } else {
             needDefault = false;
@@ -343,16 +343,6 @@ public class ProcessModelBuilder {
             }
         }
         return targetSequenceFlow;
-    }
-
-    public String getFirstTargetSequenceFlowId(TFlowNode tFlowNode) {
-        for (QName qName : tFlowNode.getOutgoing()) {
-            TFlowElement tFlowElement = bpmnWrapper.getFlowElementByQName(qName);
-            if (tFlowElement instanceof TSequenceFlow) {
-                return tFlowElement.getId();
-            }
-        }
-        return null;
     }
 
     private String getLaneId(TFlowNode node) {
