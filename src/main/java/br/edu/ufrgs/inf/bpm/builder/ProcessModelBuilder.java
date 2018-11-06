@@ -90,13 +90,24 @@ public class ProcessModelBuilder {
     private void setStartEvent() {
         List<BpmnEvent> startEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.Start)).collect(Collectors.toList());
 
-        BpmnEvent startEvent = null;
-        TStartEvent tStartEvent = new TStartEvent();
-
         switch (startEvents.size()) {
             case 0:
-                // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
-                // startEvent = new BpmnEvent("Bpmn Start Event 1");
+                break;
+            case 1:
+                BpmnEvent startEvent = startEvents.get(0);
+                bpmnProcessModel.setStart(startEvent);
+                bpmnProcessModel.putNode(startEvent.getId(), startEvent);
+                break;
+            default:
+                for (BpmnEvent bpmnEvent : startEvents) {
+                    bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
+                }
+                break;
+        }
+
+        /*
+        switch (startEvents.size()) {
+            case 0:
                 break;
             case 1:
                 startEvent = startEvents.get(0);
@@ -110,7 +121,7 @@ public class ProcessModelBuilder {
                 tStartEvent.setId(startEvent.getId());
 
                 TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
-                tExclusiveGateway.setId("Exclusive XOR");
+                tExclusiveGateway.setId("Exclusive XOR Start");
                 createGateway(tExclusiveGateway);
 
                 createSequenceFlow("Start - XOR", tStartEvent, tExclusiveGateway);
@@ -131,18 +142,33 @@ public class ProcessModelBuilder {
             bpmnProcessModel.putNode(startEvent.getId(), startEvent);
             bpmnResultBpmnMap.put(startEvent.getNameAndId(), tStartEvent);
         }
+        */
     }
 
     private void setEndEvent() {
         List<BpmnEvent> endEvents = eventList.stream().filter(e -> e.getTypeTag().equals(BpmnEventType.End)).collect(Collectors.toList());
 
+        switch (endEvents.size()) {
+            case 0:
+                break;
+            case 1:
+                BpmnEvent endEvent = endEvents.get(0);
+                bpmnProcessModel.setEnd(endEvent);
+                bpmnProcessModel.putNode(endEvent.getId(), endEvent);
+                break;
+            default:
+                for (BpmnEvent bpmnEvent : endEvents) {
+                    bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
+                }
+                break;
+        }
+
+        /*
         BpmnEvent endEvent = null;
         TEndEvent tEndEvent = new TEndEvent();
 
         switch (endEvents.size()) {
             case 0:
-                // TODO: Devo criar um novo evento de inicio nesse caso ou devo deixar alertar?
-                // endEvent = new BpmnEvent("Bpmn End Event 1");
                 break;
             case 1:
                 endEvent = endEvents.get(0);
@@ -156,7 +182,7 @@ public class ProcessModelBuilder {
                 tEndEvent.setId(endEvent.getId());
 
                 TExclusiveGateway tExclusiveGateway = new TExclusiveGateway();
-                tExclusiveGateway.setId("Exclusive XOR");
+                tExclusiveGateway.setId("Exclusive XOR End");
                 createGateway(tExclusiveGateway);
 
                 createSequenceFlow("End - XOR", tExclusiveGateway, tEndEvent);
@@ -177,6 +203,7 @@ public class ProcessModelBuilder {
             bpmnProcessModel.putNode(endEvent.getId(), endEvent);
             bpmnResultBpmnMap.put(endEvent.getNameAndId(), tEndEvent);
         }
+        */
     }
 
     private void createPool(TProcess tProcess) {
@@ -255,10 +282,10 @@ public class ProcessModelBuilder {
         bpmnEvent.setTypeTag(getEventType(tEvent));
 
         eventList.add(bpmnEvent);
+        bpmnResultBpmnMap.put(bpmnEvent.getNameAndId(), tEvent);
 
         if (bpmnEvent.getTypeTag().equals(BpmnEventType.Intermediate)) {
             bpmnProcessModel.putNode(bpmnEvent.getId(), bpmnEvent);
-            bpmnResultBpmnMap.put(bpmnEvent.getNameAndId(), tEvent);
         }
 
         if (tEvent instanceof TStartEvent) {

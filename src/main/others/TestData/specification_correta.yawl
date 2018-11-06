@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.0" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema4.0.xsd">
+  <specification uri="specification_correta">
+    <name>Bpmnnet</name>
+    <documentation>Bpmnnet</documentation>
+    <metaData>
+      <coverage>4.2.744</coverage>
+      <version>0.1</version>
+      <persistent>false</persistent>
+      <identifier>UID_1af2affe-99dc-41c0-abf9-4b8026af7e36</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="root" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="Node0">
+          <flowsInto>
+            <nextElementRef id="Node1" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Node1">
+          <name>inTask_root</name>
+          <documentation>inTask_root</documentation>
+          <flowsInto>
+            <nextElementRef id="Node7" />
+            <predicate>true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="Node4" />
+            <predicate>true()</predicate>
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="or" />
+          <decomposesTo id="decompositionStart" />
+        </task>
+        <condition id="Node4">
+          <name />
+          <flowsInto>
+            <nextElementRef id="Node5" />
+          </flowsInto>
+        </condition>
+        <condition id="Node7">
+          <name />
+          <flowsInto>
+            <nextElementRef id="Node6" />
+          </flowsInto>
+        </condition>
+        <task id="Node5">
+          <name>A</name>
+          <documentation>A</documentation>
+          <flowsInto>
+            <nextElementRef id="Node3" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Node6">
+          <name>B</name>
+          <documentation>B</documentation>
+          <flowsInto>
+            <nextElementRef id="Node3" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+        </task>
+        <task id="Node3">
+          <name>outTask_root</name>
+          <documentation>outTask_root</documentation>
+          <flowsInto>
+            <nextElementRef id="Node2" />
+          </flowsInto>
+          <join code="or" />
+          <split code="and" />
+        </task>
+        <outputCondition id="Node2" />
+      </processControlElements>
+    </decomposition>
+    <decomposition id="decompositionStart" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="BR"/>
+    <specification id="specification_correta">
+      <size w="63" h="26"/>
+      <net id="root">
+        <bounds x="0" y="0" w="1204" h="579"/>
+        <frame x="0" y="0" w="1207" h="582"/>
+        <viewport x="0" y="0" w="1207" h="582"/>
+        <vertex id="Node0">
+          <attributes>
+            <bounds x="32" y="32" w="32" h="32"/>
+          </attributes>
+        </vertex>
+        <vertex id="Node7">
+          <attributes>
+            <bounds x="204" y="144" w="32" h="32"/>
+          </attributes>
+        </vertex>
+        <vertex id="Node4">
+          <attributes>
+            <bounds x="236" y="56" w="32" h="32"/>
+          </attributes>
+        </vertex>
+        <vertex id="Node2">
+          <attributes>
+            <bounds x="544" y="32" w="32" h="32"/>
+          </attributes>
+        </vertex>
+        <container id="Node1">
+          <vertex>
+            <attributes>
+              <bounds x="128" y="32" w="32" h="32"/>
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="96" y="64" w="96" h="16"/>
+            </attributes>
+          </label>
+          <decorator type="OR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="159" y="32" w="11" h="32"/>
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Node6">
+          <vertex>
+            <attributes>
+              <bounds x="312" y="120" w="32" h="32"/>
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="280" y="152" w="97" h="17"/>
+            </attributes>
+          </label>
+        </container>
+        <container id="Node5">
+          <vertex>
+            <attributes>
+              <bounds x="316" y="36" w="32" h="32"/>
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="284" y="68" w="97" h="17"/>
+            </attributes>
+          </label>
+        </container>
+        <container id="Node3">
+          <vertex>
+            <attributes>
+              <bounds x="448" y="32" w="32" h="32"/>
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="416" y="64" w="96" h="16"/>
+            </attributes>
+          </label>
+          <decorator type="OR_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="438" y="32" w="11" h="32"/>
+            </attributes>
+          </decorator>
+        </container>
+        <flow source="Node0" target="Node1">
+          <ports in="13" out="12"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node1" target="Node7">
+          <ports in="2" out="12"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node7" target="Node6">
+          <ports in="13" out="12"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node1" target="Node4">
+          <ports in="2" out="12"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node6" target="Node3">
+          <ports in="13" out="2"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node5" target="Node3">
+          <ports in="13" out="2"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node3" target="Node2">
+          <ports in="13" out="12"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Node4" target="Node5">
+          <ports in="13" out="12"/>
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>

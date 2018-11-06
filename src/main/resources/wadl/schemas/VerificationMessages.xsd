@@ -16,15 +16,8 @@
             <xs:element name="description" type="xs:string"/>
         </xs:all>
         <xs:attribute name="processElementId" type="xs:string"/>
-        <xs:attribute name="messageType" type="ve:messageType"/>
+        <xs:attribute name="messageType" type="xs:string"/>
         <xs:attribute name="source" type="xs:string"/>
     </xs:complexType>
-
-    <xs:simpleType name="messageType" final="restriction">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="label"/>
-            <xs:enumeration value="structure"/>
-        </xs:restriction>
-    </xs:simpleType>
 
 </xs:schema>

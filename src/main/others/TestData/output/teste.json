@@ -1,39 +1,45 @@
 {
   "messageList": [
     {
-      "description": "No label was identified in the activity Task_NullName.",
+      "description": "No label was identified in the activity (id: Task_NullName).",
       "processElementId": "Task_NullName",
-      "messageType": "LABEL",
+      "messageType": "Label",
       "source": "Process Model Verification"
     },
     {
-      "description": "No label was identified in the gateway XorSplit1.",
+      "description": "Not all condition labels were identified in the gateway \"XOR SPLIT\" (id: XorSplit1).",
       "processElementId": "XorSplit1",
-      "messageType": "LABEL",
+      "messageType": "Label",
       "source": "Process Model Verification"
     },
     {
-      "description": "No label was identified in the gateway AndJoin1.",
+      "description": "No label was identified in the gateway (id: AndJoin1).",
       "processElementId": "AndJoin1",
-      "messageType": "LABEL",
+      "messageType": "Label",
       "source": "Process Model Verification"
     },
     {
-      "description": "No label was identified in the gateway XorSplit2.",
+      "description": "No label was identified in the gateway (id: XorSplit2).",
       "processElementId": "XorSplit2",
-      "messageType": "LABEL",
+      "messageType": "Label",
+      "source": "Process Model Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the gateway (id: XorSplit2).",
+      "processElementId": "XorSplit2",
+      "messageType": "Label",
       "source": "Process Model Verification"
     },
     {
       "description": "ResetNet Analysis Warning: The net root does not have an option to complete.",
       "processElementId": "Process",
-      "messageType": "STRUCTURE",
+      "messageType": "Structure",
       "source": "YAWL Verification"
     },
     {
-      "description": "ResetNet Analysis Warning: The net root has dead tasks:[AtomicTask:Node13, AtomicTask:Node12, AtomicTask:Node10, AtomicTask:Node3, AtomicTask:Node7]",
+      "description": "ResetNet Analysis Warning: The net root has dead tasks:[AtomicTask:Node3, AtomicTask:Task_F, AtomicTask:XorSplit2, AtomicTask:Task_D, AtomicTask:AndJoin1]",
       "processElementId": "Process",
-      "messageType": "STRUCTURE",
+      "messageType": "Structure",
       "source": "YAWL Verification"
     }
   ]

@@ -106,6 +106,10 @@ public class BPMNToYAWL implements ConvertingPlugin {
         // ADD TO VERIFICATION
         YAWLDecompositionBPMN yDecompStart = new YAWLDecompositionBPMN("decompositionStart", "false", "WebServiceGatewayFactsType");
         yawl.addDecomposition("decompositionStartId", yDecompStart);
+        // ADD TO VERIFICATION
+        boolean isDefault = true;
+        String predicate = "true()";
+
 
         //add the only input condition
         String inCondId = "inCond_" + ydRoot.getIdentifier();
@@ -113,6 +117,7 @@ public class BPMNToYAWL implements ConvertingPlugin {
         String inTaskId = "inTask_" + ydRoot.getIdentifier();
         YAWLTask inputTask = ydRoot.addTask(inTaskId, "or", isAdhoc ? "and" : "or", yDecompStart.getID(), null);
         YAWLEdge inputEdge = ydRoot.addEdge(inCondId, inTaskId, false, null, null);
+
         //Manual for manual added input condition, will be deleted when converted back to BPMN
         setAttributes(inputCond, BpmnXmlTags.EVENTYPE,
                 new String[]{BpmnXmlTags.BPMN_MANUAL, null,
@@ -145,7 +150,11 @@ public class BPMNToYAWL implements ConvertingPlugin {
             setAttributes(controlCond, BpmnXmlTags.EVENTYPE,
                     new String[]{BpmnXmlTags.BPMN_MANUAL, null,
                             BpmnXmlTags.BPMN_INTERMEDIATE, null});
-            YAWLEdge inControlEdge = ydRoot.addEdge(inTaskId, controlCondId, false, null, null);
+
+            YAWLEdge inControlEdge = ydRoot.addEdge(inTaskId, controlCondId, isDefault, predicate, null);
+            isDefault = false;
+            // YAWLEdge inControlEdge = ydRoot.addEdge(inTaskId, controlCondId, false, null, null);
+
             setAttributes(inControlEdge, BpmnXmlTags.EDGETYPE,
                     new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
             YAWLEdge outControlEdge = ydRoot.addEdge(controlCondId,
@@ -226,10 +235,12 @@ public class BPMNToYAWL implements ConvertingPlugin {
                                 bett == null ? null : bett.toString()});
                 if (bet == BpmnEventType.Start) {
                     //create an edge to connect the inputTask and this start event
-                    YAWLEdge edge = ydRoot.addEdge(inTaskId, nameAndId, false,
-                            bett == null ? null : bett.toString(), null);
-                    setAttributes(edge, BpmnXmlTags.EDGETYPE,
-                            new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
+
+                    YAWLEdge edge = ydRoot.addEdge(inTaskId, nameAndId, isDefault, predicate, null);
+                    isDefault = false;
+                    //YAWLEdge edge = ydRoot.addEdge(inTaskId, nameAndId, false, bett == null ? null : bett.toString(), null);
+
+                    setAttributes(edge, BpmnXmlTags.EDGETYPE, new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                 } else if (bet == BpmnEventType.End) {
                     //create an edge to connect this end event and the output task
                     YAWLEdge edge = ydRoot.addEdge(nameAndId, outTaskId, false,
@@ -302,7 +313,11 @@ public class BPMNToYAWL implements ConvertingPlugin {
             if (node instanceof YAWLTask) {
                 if (node.getPredecessors().size() == 0) {
                     if (node != outputTask) {
-                        YAWLEdge edge = ydRoot.addEdge(inTaskId,((String)node.getAttributeValue("nodeid")).substring(7), false, null, null);
+
+                        YAWLEdge edge = ydRoot.addEdge(inTaskId, ((String) node.getAttributeValue("nodeid")).substring(7), isDefault, predicate, null);
+                        isDefault = false;
+                        //YAWLEdge edge = ydRoot.addEdge(inTaskId,((String)node.getAttributeValue("nodeid")).substring(7), false, null, null);
+
                         setAttributes(edge, BpmnXmlTags.EDGETYPE, new String[]
                                 {BpmnXmlTags.BPMN_MANUAL, null, null, null});
                         setAttributes(edge, BpmnXmlTags.EDGETYPE,
@@ -320,7 +335,11 @@ public class BPMNToYAWL implements ConvertingPlugin {
                 if (node.getPredecessors().size() == 0 &&
                         node.getSuccessors().size() == 0) {
                     String nodeId = ((String)node.getAttributeValue("nodeid")).substring(7);
-                    YAWLEdge edge = ydRoot.addEdge(inTaskId, nodeId, false, null, null);
+
+                    YAWLEdge edge = ydRoot.addEdge(inTaskId, nodeId, isDefault, predicate, null);
+                    isDefault = false;
+                    //YAWLEdge edge = ydRoot.addEdge(inTaskId, nodeId, false, null, null);
+
                     setAttributes(edge, BpmnXmlTags.EDGETYPE,
                             new String[]{BpmnXmlTags.BPMN_MANUAL, null, null, null});
                     edges.put(inTaskId + "_" + nodeId, edge);

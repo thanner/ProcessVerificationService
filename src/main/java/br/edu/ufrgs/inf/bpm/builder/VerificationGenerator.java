@@ -26,7 +26,7 @@ public class VerificationGenerator {
 
         // BPMN Verification
 
-        ProcessModelVerification processModelVerification = new ProcessModelVerification();
+        BPMNVerification processModelVerification = new BPMNVerification();
         filterUniques(tBpmnVerification, processModelVerification.verify(tDefinitions));
 
         // YAWL Verification

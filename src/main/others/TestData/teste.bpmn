@@ -18,7 +18,7 @@
       <bpmn:outgoing>SequenceFlow_0y8ns0m</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="SequenceFlow_0estx3l" sourceRef="XorSplit1" targetRef="Task_A" />
-    <bpmn:exclusiveGateway id="XorSplit1">
+    <bpmn:exclusiveGateway id="XorSplit1" name="XOR SPLIT">
       <bpmn:incoming>SequenceFlow_1uq67ey</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0estx3l</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_1fkgikc</bpmn:outgoing>

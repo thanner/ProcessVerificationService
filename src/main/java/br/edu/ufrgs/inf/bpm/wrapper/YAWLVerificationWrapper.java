@@ -1,6 +1,6 @@
 package br.edu.ufrgs.inf.bpm.wrapper;
 
-import br.edu.ufrgs.inf.bpm.verificationmessages.MessageType;
+import br.edu.ufrgs.inf.bpm.messages.MessageType;
 import br.edu.ufrgs.inf.bpm.verificationmessages.TMessage;
 import org.apache.commons.io.FileUtils;
 import org.omg.spec.bpmn._20100524.model.*;
@@ -76,7 +76,7 @@ public class YAWLVerificationWrapper {
         tMessage.setProcessElementId(processElementId);
         tMessage.setDescription(createDescription(message, tBaseElement));
         tMessage.setSource(source);
-        tMessage.setMessageType(MessageType.STRUCTURE);
+        tMessage.setMessageType(MessageType.STRUCTURE.getValue());
 
         return tMessage;
     }
@@ -131,11 +131,24 @@ public class YAWLVerificationWrapper {
         TMessage tMessage = new TMessage();
 
         tMessage.setProcessElementId(processElementId);
-        tMessage.setDescription(message);
+        tMessage.setDescription(updateMessage(message));
         tMessage.setSource(source);
-        tMessage.setMessageType(MessageType.STRUCTURE);
+        tMessage.setMessageType(MessageType.STRUCTURE.getValue());
 
         return tMessage;
+    }
+
+    private String updateMessage(String message) {
+        for (String bpmnKey : bpmnYawlIdMap.keySet()) {
+            Object o = bpmnYawlIdMap.get(bpmnKey);
+            if (o != null) {
+                if (o instanceof TFlowElement) {
+                    TFlowElement tFlowElement = (TFlowElement) o;
+                    message = message.replaceAll(bpmnKey, tFlowElement.getId());
+                }
+            }
+        }
+        return message;
     }
 
 }

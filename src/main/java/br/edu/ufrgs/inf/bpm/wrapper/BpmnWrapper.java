@@ -6,6 +6,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BpmnWrapper {
 
@@ -180,6 +181,22 @@ public class BpmnWrapper {
             }
         }
         return tActivityList;
+    }
+
+    public List<TSequenceFlow> getTargetSequenceFlows(TFlowNode tFlowNode) {
+        List<TSequenceFlow> sequenceFlowList = new ArrayList<>();
+        for (QName qName : tFlowNode.getOutgoing()) {
+            TFlowElement tFlowElement = getFlowElementByQName(qName);
+            if (tFlowElement instanceof TSequenceFlow) {
+                sequenceFlowList.add((TSequenceFlow) tFlowElement);
+            }
+        }
+        return sequenceFlowList;
+    }
+
+
+    public int getAmountFlowNode(TProcess tProcess) {
+        return tProcess.getFlowElement().stream().filter(e -> e.getValue() instanceof TFlowNode).collect(Collectors.toList()).size();
     }
 
 }
