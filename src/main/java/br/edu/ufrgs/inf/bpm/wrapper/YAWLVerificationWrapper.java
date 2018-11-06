@@ -84,26 +84,38 @@ public class YAWLVerificationWrapper {
     private String createDescription(YVerificationMessage message, TBaseElement tBaseElement) {
         String description = message.getMessage();
         String atomicTask = message.getSource().toString();
-        MessageHandler messageHandler = new MessageHandler();
 
-        if (tBaseElement != null) {
-            String elementDescription = "";
-            if (tBaseElement instanceof TActivity) {
-                elementDescription = messageHandler.handleActivityError((TActivity) tBaseElement);
-            } else if (tBaseElement instanceof TGateway) {
-                elementDescription = messageHandler.handleGatewayError((TGateway) tBaseElement);
-            } else if (tBaseElement instanceof TEvent) {
-                elementDescription = messageHandler.handleEventError((TEvent) tBaseElement);
-            } else if (tBaseElement instanceof TSequenceFlow) {
-                elementDescription = messageHandler.handleSequenceFlowError((TSequenceFlow) tBaseElement);
-            }
+        String elementDescription = getElementDescription(tBaseElement);
 
-            if (!elementDescription.isEmpty()) {
-                description = description.replaceAll(atomicTask, elementDescription);
-            }
+        if (!elementDescription.isEmpty()) {
+            description = description.replaceAll(atomicTask, elementDescription);
         }
 
+
         return description;
+    }
+
+    private String getElementDescription(TBaseElement tBaseElement) {
+        MessageHandler messageHandler = new MessageHandler();
+        String elementDescription = "";
+        if (tBaseElement != null) {
+            if (tBaseElement instanceof TActivity) {
+                elementDescription = messageHandler.handleActivityError((TActivity) tBaseElement);
+            } else if (tBaseElement instanceof TEvent) {
+                elementDescription = messageHandler.handleEventError((TEvent) tBaseElement);
+            } else if (tBaseElement instanceof TGateway) {
+                elementDescription = messageHandler.handleGatewayError((TGateway) tBaseElement);
+            } else if (tBaseElement instanceof TSequenceFlow) {
+                elementDescription = messageHandler.handleSequenceFlowError((TSequenceFlow) tBaseElement);
+            } else if (tBaseElement instanceof TFlowNode) {
+                elementDescription = messageHandler.handleFlowNodeError((TFlowNode) tBaseElement);
+            } else {
+                elementDescription = messageHandler.handleBaseElementError(tBaseElement);
+            }
+        } else {
+            elementDescription = "Process";
+        }
+        return elementDescription;
     }
 
     private List<TMessage> getAnalysisMessageList(YSpecification ySpecification) {
@@ -144,8 +156,12 @@ public class YAWLVerificationWrapper {
             if (o != null) {
                 if (o instanceof TFlowElement) {
                     TFlowElement tFlowElement = (TFlowElement) o;
-                    message = message.replaceAll(bpmnKey, tFlowElement.getId());
+                    message = message.replaceAll("AtomicTask:" + bpmnKey, getElementDescription(tFlowElement));
+                    message = message.replaceAll(bpmnKey, getElementDescription(tFlowElement));
                 }
+            } else {
+                message = message.replaceAll("AtomicTask:" + bpmnKey + ",", "");
+                message = message.replaceAll("AtomicTask:" + bpmnKey, "");
             }
         }
         return message;

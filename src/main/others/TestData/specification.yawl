@@ -34,8 +34,6 @@
 					<documentation>inTask_root</documentation>
 					<flowsInto>
 						<nextElementRef id="Node9"/>
-						<predicate>true()</predicate>
-						<isDefaultFlow/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>

@@ -3,43 +3,43 @@
     {
       "description": "No label was identified in the activity (id: Task_NullName).",
       "processElementId": "Task_NullName",
-      "messageType": "Label",
-      "source": "Process Model Verification"
+      "messageType": "label",
+      "source": "BPMN Verification"
     },
     {
       "description": "Not all condition labels were identified in the gateway \"XOR SPLIT\" (id: XorSplit1).",
       "processElementId": "XorSplit1",
-      "messageType": "Label",
-      "source": "Process Model Verification"
+      "messageType": "label",
+      "source": "BPMN Verification"
     },
     {
       "description": "No label was identified in the gateway (id: AndJoin1).",
       "processElementId": "AndJoin1",
-      "messageType": "Label",
-      "source": "Process Model Verification"
+      "messageType": "label",
+      "source": "BPMN Verification"
     },
     {
       "description": "No label was identified in the gateway (id: XorSplit2).",
       "processElementId": "XorSplit2",
-      "messageType": "Label",
-      "source": "Process Model Verification"
+      "messageType": "label",
+      "source": "BPMN Verification"
     },
     {
       "description": "Not all condition labels were identified in the gateway (id: XorSplit2).",
       "processElementId": "XorSplit2",
-      "messageType": "Label",
-      "source": "Process Model Verification"
+      "messageType": "label",
+      "source": "BPMN Verification"
     },
     {
       "description": "ResetNet Analysis Warning: The net root does not have an option to complete.",
       "processElementId": "Process",
-      "messageType": "Structure",
+      "messageType": "structure",
       "source": "YAWL Verification"
     },
     {
-      "description": "ResetNet Analysis Warning: The net root has dead tasks:[AtomicTask:Node3, AtomicTask:Task_F, AtomicTask:XorSplit2, AtomicTask:Task_D, AtomicTask:AndJoin1]",
+      "description": "ResetNet Analysis Warning: The net root has dead tasks:[ Activity: D (id: Task_D), Exclusive Gateway (id: XorSplit2), Activity: F (id: Task_F), Parallel Gateway (id: AndJoin1)]",
       "processElementId": "Process",
-      "messageType": "Structure",
+      "messageType": "structure",
       "source": "YAWL Verification"
     }
   ]

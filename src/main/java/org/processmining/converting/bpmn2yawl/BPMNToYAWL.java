@@ -98,6 +98,54 @@ public class BPMNToYAWL implements ConvertingPlugin {
         return yawl;
     }
 
+    private boolean isPredicateAnalysis = true;
+
+    private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl, HashMap<String, YAWLEdge> edges) {
+        String fromId = edge.getFromId();
+        String toId = edge.getToId();
+        String[] arParams = new String[]{"", fromId, toId};
+        //search the common predecessor of the two nodes
+        bpmn.constructEdge(arParams);
+
+        // TODO: Adicionei para evitar erro | arParams[0] = bpmn.getNameAndId(arParams[0]); | Sendo arParams[0] == "Process Model 1" | retornava null
+        if (arParams[0] == null) {
+            arParams[0] = "root";
+        }
+
+        //construct the edge in YAWL
+        YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.
+                getDecomposition(arParams[0]);
+        YAWLEdge ye = thisDecomp.addEdge(arParams[1], arParams[2],
+                edge.isDefaultFlag(),
+                edge.getCondition() != null ?
+                        edge.getCondition() :
+                        edge.getMessage(), null);
+        if (ye == null) {
+            return false;
+        }
+        setAttributes(ye, BpmnXmlTags.EDGETYPE,
+                new String[]{String.valueOf(edge.getType()),
+                        edge.getCondition(), edge.isDefaultFlag() ? "true" : null,
+                        edge.getMessage()});
+        edges.put(arParams[1] + "_" + arParams[2], ye);
+        return true;
+    }
+
+    private void setAttributes(att.grappa.Element elem, String[] arNames,
+                               String[] arValues) {
+        if (arNames.length != arValues.length) {
+            return;
+        }
+
+        for (int i = 0; i < arNames.length; i++) {
+            if (arValues[i] != null) {
+                elem.setAttribute(arNames[i], arValues[i]);
+            }
+        }
+    }
+
+    private boolean hasMultipleInTaskOutputs = false;
+
     private void addSubprocess(BpmnGraph bpmn, YAWLModel yawl,
                                BpmnProcessModel bpm,
                                YAWLDecompositionBPMN ydRoot,
@@ -107,9 +155,12 @@ public class BPMNToYAWL implements ConvertingPlugin {
         YAWLDecompositionBPMN yDecompStart = new YAWLDecompositionBPMN("decompositionStart", "false", "WebServiceGatewayFactsType");
         yawl.addDecomposition("decompositionStartId", yDecompStart);
         // ADD TO VERIFICATION
-        boolean isDefault = true;
-        String predicate = "true()";
-
+        boolean isDefault = false;
+        String predicate = null;
+        if (!isPredicateAnalysis && hasMultipleInTaskOutputs) {
+            isDefault = true;
+            predicate = "true()";
+        }
 
         //add the only input condition
         String inCondId = "inCond_" + ydRoot.getIdentifier();
@@ -440,50 +491,26 @@ public class BPMNToYAWL implements ConvertingPlugin {
             String name = ((String)node.getAttributeValue("nodeid")).substring(7);
             ydRoot.removeYawlNode(name);
         }
+
+        if (inputTask.getOutEdges().size() > 1) {
+            hasMultipleInTaskOutputs = true;
+        }
     }
 
-    private boolean addEdge(BpmnEdge edge, BpmnGraph bpmn, YAWLModel yawl, HashMap<String, YAWLEdge> edges) {
-        String fromId = edge.getFromId();
-        String toId = edge.getToId();
-        String[] arParams = new String[] {"", fromId, toId};
-        //search the common predecessor of the two nodes
-        bpmn.constructEdge(arParams);
-
-        // TODO: Adicionei para evitar erro | arParams[0] = bpmn.getNameAndId(arParams[0]); | Sendo arParams[0] == "Process Model 1" | retornava null
-        if (arParams[0] == null) {
-            arParams[0] = "root";
-        }
-
-        //construct the edge in YAWL
-        YAWLDecompositionBPMN thisDecomp = (YAWLDecompositionBPMN) yawl.
-                getDecomposition(arParams[0]);
-        YAWLEdge ye = thisDecomp.addEdge(arParams[1], arParams[2],
-                edge.isDefaultFlag(),
-                edge.getCondition() != null ?
-                        edge.getCondition() :
-                        edge.getMessage(), null);
-        if (ye == null) {
-            return false;
-        }
-        setAttributes(ye, BpmnXmlTags.EDGETYPE,
-                new String[] {String.valueOf(edge.getType()),
-                        edge.getCondition(), edge.isDefaultFlag() ? "true" : null,
-                        edge.getMessage()});
-        edges.put(arParams[1] + "_" + arParams[2], ye);
-        return true;
+    public boolean isPredicateAnalysis() {
+        return isPredicateAnalysis;
     }
 
-    private void setAttributes(att.grappa.Element elem, String[] arNames,
-                               String[] arValues) {
-        if (arNames.length != arValues.length) {
-            return;
-        }
+    public void setPredicateAnalysis(boolean predicateAnalysis) {
+        isPredicateAnalysis = predicateAnalysis;
+    }
 
-        for (int i = 0; i < arNames.length; i++) {
-            if (arValues[i] != null) {
-                elem.setAttribute(arNames[i], arValues[i]);
-            }
-        }
+    public boolean isHasMultipleInTaskOutputs() {
+        return hasMultipleInTaskOutputs;
+    }
+
+    public void setHasMultipleInTaskOutputs(boolean hasMultipleInTaskOutputs) {
+        this.hasMultipleInTaskOutputs = hasMultipleInTaskOutputs;
     }
 
 }

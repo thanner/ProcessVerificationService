@@ -24,6 +24,14 @@ public class MessageHandler {
         return elementDescription;
     }
 
+    public String handleFlowNodeError(TFlowNode flowNode) {
+        return "Process Element" + getFlowNodeData(flowNode);
+    }
+
+    public String handleBaseElementError(TBaseElement tBaseElement) {
+        return "Process Element" + getBaseElementData(tBaseElement);
+    }
+
     private String getGatewayType(TGateway tGateway) {
         if (tGateway instanceof TExclusiveGateway) {
             return "Exclusive Gateway";
@@ -71,6 +79,15 @@ public class MessageHandler {
         }
         if (tSequenceFlow.getId() != null && !tSequenceFlow.getId().isEmpty()) {
             elementDescription += " (id: " + tSequenceFlow.getId() + ")";
+        }
+
+        return elementDescription;
+    }
+
+    private String getBaseElementData(TBaseElement tBaseElement) {
+        String elementDescription = "";
+        if (tBaseElement.getId() != null && !tBaseElement.getId().isEmpty()) {
+            elementDescription += " (id: " + tBaseElement.getId() + ")";
         }
 
         return elementDescription;

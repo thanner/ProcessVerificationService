@@ -27,6 +27,10 @@ public class YAWLBuilder {
         OutputStream outputStream = new FileOutputStream(yawlFile);
         for (ProvidedObject providedObjectBpmn : bpmnResult.getProvidedObjects()) {
             yawlResult = (YAWLResult) bpmnToYawl.convert(providedObjectBpmn);
+            if (bpmnToYawl.isHasMultipleInTaskOutputs()) {
+                bpmnToYawl.setPredicateAnalysis(false);
+                yawlResult = (YAWLResult) bpmnToYawl.convert(providedObjectBpmn);
+            }
             for (ProvidedObject providedObjectYawl : yawlResult.getProvidedObjects()) {
                 yawlExport.export(providedObjectYawl, outputStream);
             }
