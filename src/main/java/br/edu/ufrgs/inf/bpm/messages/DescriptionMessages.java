@@ -3,7 +3,7 @@ package br.edu.ufrgs.inf.bpm.messages;
 public class DescriptionMessages {
 
     public static String elementWithoutLabel = "No label was identified in the @elementType @element.";
-    public static String sequenceFlowWithoutLabel = "Not all condition labels were identified in the gateway @element.";
+    public static String sequenceFlowWithoutLabel = "Not all condition labels were identified in the @elementType @element.";
 
     public static String noStartEvents = "No start event was identified in the process @element.";
     public static String multipleStartEvents = "Multiple start events were identified in the process @element.";

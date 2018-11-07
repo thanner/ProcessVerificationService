@@ -1,31 +1,31 @@
 {
   "messageList": [
     {
-      "description": "No label was identified in the activity (id: Task_NullName).",
+      "description": "No label was identified in the Start Event (id: StartEvent_1).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Activity (id: Task_NullName).",
       "processElementId": "Task_NullName",
       "messageType": "label",
       "source": "BPMN Verification"
     },
     {
-      "description": "Not all condition labels were identified in the gateway \"XOR SPLIT\" (id: XorSplit1).",
+      "description": "Not all condition labels were identified in the Exclusive Gateway \"XOR SPLIT\" (id: XorSplit1).",
       "processElementId": "XorSplit1",
       "messageType": "label",
       "source": "BPMN Verification"
     },
     {
-      "description": "No label was identified in the gateway (id: AndJoin1).",
-      "processElementId": "AndJoin1",
-      "messageType": "label",
-      "source": "BPMN Verification"
-    },
-    {
-      "description": "No label was identified in the gateway (id: XorSplit2).",
+      "description": "No label was identified in the Exclusive Gateway (id: XorSplit2).",
       "processElementId": "XorSplit2",
       "messageType": "label",
       "source": "BPMN Verification"
     },
     {
-      "description": "Not all condition labels were identified in the gateway (id: XorSplit2).",
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: XorSplit2).",
       "processElementId": "XorSplit2",
       "messageType": "label",
       "source": "BPMN Verification"
@@ -37,7 +37,7 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "The process has unreachable elements:[Activity: D (id: Task_D),  Activity: F (id: Task_F), Parallel Gateway (id: AndJoin1), Exclusive Gateway (id: XorSplit2)]",
+      "description": "The process has unreachable elements:[Activity: D (id: Task_D), Exclusive Gateway (id: XorSplit2),  Parallel Gateway (id: AndJoin1), Activity: F (id: Task_F)]",
       "processElementId": "Process",
       "messageType": "structure",
       "source": "YAWL Verification"

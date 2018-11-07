@@ -4,7 +4,7 @@
     <bpmn:participant id="Participant_1liad38" processRef="Process_1" />
   </bpmn:collaboration>
   <bpmn:process id="Process_1" isExecutable="false">
-    <bpmn:startEvent id="StartEvent_1" name="myStartËvent">
+    <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_14the1o</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:task id="Task_NullName">

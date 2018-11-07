@@ -4,6 +4,7 @@ import br.edu.ufrgs.inf.bpm.messages.DescriptionMessages;
 import br.edu.ufrgs.inf.bpm.messages.MessageType;
 import br.edu.ufrgs.inf.bpm.verificationmessages.TMessage;
 import br.edu.ufrgs.inf.bpm.wrapper.BpmnWrapper;
+import br.edu.ufrgs.inf.bpm.wrapper.MessageHandler;
 import org.omg.spec.bpmn._20100524.model.*;
 
 import javax.xml.bind.JAXBElement;
@@ -15,7 +16,12 @@ public class BPMNVerification {
     List<TMessage> verificationMessages;
     BpmnWrapper bpmnWrapper;
     String source = "BPMN Verification";
+    MessageHandler messageHandler;
     private int amountElementsLimit = 30;
+
+    public BPMNVerification() {
+        this.messageHandler = new MessageHandler();
+    }
 
     public List<TMessage> verify(TDefinitions tDefinitions) {
         verificationMessages = new ArrayList<>();
@@ -38,9 +44,9 @@ public class BPMNVerification {
         if (size == 0) {
             createMessage(getElementIdRepresentation(tProcess), generateDescription(DescriptionMessages.noStartEvents, tProcess), MessageType.PRAGMATIC);
         } else if (size > 1) {
-            for (TStartEvent tStartEvent : tStartEventList) {
-                createMessage(getElementIdRepresentation(tStartEvent), generateDescription(DescriptionMessages.multipleStartEvents, tProcess), MessageType.PRAGMATIC);
-            }
+            //for (TStartEvent tStartEvent : tStartEventList) {
+            createMessage("Process", generateDescription(DescriptionMessages.multipleStartEvents, tProcess), MessageType.PRAGMATIC);
+            //}
         }
     }
 
@@ -50,27 +56,30 @@ public class BPMNVerification {
         if (size == 0) {
             createMessage(getElementIdRepresentation(tProcess), generateDescription(DescriptionMessages.noEndEvents, tProcess), MessageType.PRAGMATIC);
         } else if (size > 1) {
-            for (TEndEvent tEndEvent : tEndEventList) {
-                createMessage(getElementIdRepresentation(tEndEvent), generateDescription(DescriptionMessages.multipleEndEvents, tProcess), MessageType.PRAGMATIC);
-            }
+            //for (TEndEvent tEndEvent : tEndEventList) {
+            createMessage("Process", generateDescription(DescriptionMessages.multipleEndEvents, tProcess), MessageType.PRAGMATIC);
+            //}
         }
     }
 
     private void verifyElementsWithoutLabels(TProcess tProcess) {
         for (TLaneSet laneSet : tProcess.getLaneSet()) {
             for (TLane lane : laneSet.getLane()) {
-                verifyElementWithoutLabels(lane, "lane");
+                verifyElementWithoutLabels(lane, "Lane");
             }
         }
 
-        for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
-            if (flowElement.getValue() instanceof TActivity) {
-                verifyElementWithoutLabels(flowElement.getValue(), "activity");
-            } else if (flowElement.getValue() instanceof TEvent) {
-                verifyElementWithoutLabels(flowElement.getValue(), "event");
-            } else if (flowElement.getValue() instanceof TGateway) {
-                verifyElementWithoutLabels(flowElement.getValue(), "gateway");
-                verifySequenceFlowsWithoutLabels((TGateway) flowElement.getValue());
+        for (JAXBElement<? extends TFlowElement> flowElementJaxb : tProcess.getFlowElement()) {
+            TFlowElement flowElement = flowElementJaxb.getValue();
+            if (flowElement instanceof TActivity) {
+                verifyElementWithoutLabels(flowElement, "Activity");
+            } else if (flowElement instanceof TEvent) {
+                verifyEventWithoutLabels(flowElement, messageHandler.getEventType((TEvent) flowElement));
+            } else if (flowElement instanceof TExclusiveGateway || flowElement instanceof TInclusiveGateway || flowElement instanceof TEventBasedGateway || flowElement instanceof TComplexGateway) {
+                if (((TGateway) flowElement).getOutgoing().size() > 1) {
+                    verifyElementWithoutLabels(flowElement, messageHandler.getGatewayType((TGateway) flowElement));
+                    verifySequenceFlowsWithoutLabels((TGateway) flowElement, messageHandler.getGatewayType((TGateway) flowElement));
+                }
             }
         }
 
@@ -84,7 +93,7 @@ public class BPMNVerification {
 
         for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
             if (flowElement.getValue() instanceof TBoundaryEvent) {
-                verifyElementWithoutLabels(flowElement.getValue(), "boundary event");
+                verifyElementWithoutLabels(flowElement.getValue(), "Boundary Event");
             }
         }
 
@@ -96,13 +105,19 @@ public class BPMNVerification {
         }
     }
 
+    private void verifyEventWithoutLabels(TFlowElement tFlowElement, String elementType) {
+        if (tFlowElement.getName() == null || tFlowElement.getName().isEmpty()) {
+            createMessage("Process", generateDescriptionElementType(DescriptionMessages.elementWithoutLabel, getElementRepresentation(tFlowElement), elementType), MessageType.LABEL);
+        }
+    }
+
     private void verifyElementWithoutLabels(TLane tLane, String elementType) {
         if (tLane.getName() == null || tLane.getName().isEmpty()) {
             createMessage(getElementIdRepresentation(tLane), generateDescriptionElementType(DescriptionMessages.elementWithoutLabel, getElementRepresentation(tLane), elementType), MessageType.LABEL);
         }
     }
 
-    private void verifySequenceFlowsWithoutLabels(TGateway gateway) {
+    private void verifySequenceFlowsWithoutLabels(TGateway gateway, String elementType) {
         if (gateway instanceof TExclusiveGateway || gateway instanceof TInclusiveGateway) {
             boolean hasEmptyNameSequenceFlow = false;
             for (TSequenceFlow tSequenceFlow : bpmnWrapper.getTargetSequenceFlows(gateway)) {
@@ -112,7 +127,7 @@ public class BPMNVerification {
             }
 
             if (hasEmptyNameSequenceFlow) {
-                createMessage(getElementIdRepresentation(gateway), generateDescription(DescriptionMessages.sequenceFlowWithoutLabel, gateway), MessageType.LABEL);
+                createMessage(getElementIdRepresentation(gateway), generateDescriptionElementType(DescriptionMessages.sequenceFlowWithoutLabel, getElementRepresentation(gateway), elementType), MessageType.LABEL);
             }
         }
     }

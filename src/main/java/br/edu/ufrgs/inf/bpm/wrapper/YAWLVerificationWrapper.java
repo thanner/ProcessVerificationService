@@ -83,14 +83,15 @@ public class YAWLVerificationWrapper {
 
     private String createDescription(YVerificationMessage message, TBaseElement tBaseElement) {
         String description = message.getMessage();
-        String atomicTask = message.getSource().toString();
+        String yawlElement = message.getSource().toString();
 
         String elementDescription = getElementDescription(tBaseElement);
 
         if (!elementDescription.isEmpty()) {
-            description = description.replaceAll(atomicTask, elementDescription);
+            description = description.replaceAll(yawlElement, elementDescription);
         }
 
+        description = description.replaceAll("Error: ", "");
 
         return description;
     }
@@ -154,20 +155,28 @@ public class YAWLVerificationWrapper {
         message = message.replaceAll("The net root", "The process");
         message = message.replaceAll("ResetNet Analysis Warning: ", "");
         message = message.replaceAll("has dead tasks", "has unreachable elements");
+        message = removeElements(message);
 
         for (String bpmnKey : bpmnYawlIdMap.keySet()) {
             Object o = bpmnYawlIdMap.get(bpmnKey);
             if (o != null) {
                 if (o instanceof TFlowElement) {
                     TFlowElement tFlowElement = (TFlowElement) o;
-                    message = message.replaceAll("AtomicTask:" + bpmnKey, getElementDescription(tFlowElement));
                     message = message.replaceAll(bpmnKey, getElementDescription(tFlowElement));
                 }
             } else {
-                message = message.replaceAll("AtomicTask:" + bpmnKey + ",", "");
-                message = message.replaceAll("AtomicTask:" + bpmnKey, "");
+                message = message.replaceAll(bpmnKey + ",", "");
+                message = message.replaceAll(bpmnKey, "");
             }
         }
+        return message;
+    }
+
+    private String removeElements(String message) {
+        message = message.replaceAll("AtomicTask:", "");
+        message = message.replaceAll("CompositeTask:", "");
+        message = message.replaceAll("Condition:", "");
+        message = message.replaceAll("Task:", "");
         return message;
     }
 

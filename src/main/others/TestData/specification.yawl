@@ -33,7 +33,7 @@
 					<name>inTask_root</name>
 					<documentation>inTask_root</documentation>
 					<flowsInto>
-						<nextElementRef id="Node12"/>
+						<nextElementRef id="Node9"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
@@ -47,7 +47,7 @@
 					<flowsInto>
 						<nextElementRef id="Node2"/>
 					</flowsInto>
-					<join code="xor"/>
+					<join code="or"/>
 					<split code="and"/>
 				</task>
 				<task
@@ -56,81 +56,67 @@
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
+						<nextElementRef id="Node11"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node5"
+				>
+					<name>A</name>
+					<documentation>A</documentation>
+					<flowsInto>
 						<nextElementRef id="Node7"/>
 					</flowsInto>
-					<join code="and"/>
+					<join code="xor"/>
 					<split code="and"/>
 				</task>
 				<condition
-					id="Node5"
+					id="Node6"
 				>
-					<name></name>
+					<name>endEvent</name>
 					<flowsInto>
 						<nextElementRef id="Node3"/>
 					</flowsInto>
 				</condition>
-				<task
-					id="Node6"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node15"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node13"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
 				<task
 					id="Node7"
 				>
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
-						<nextElementRef id="Node9"/>
+						<nextElementRef id="Node12"/>
 					</flowsInto>
-					<join code="xor"/>
+					<join code="and"/>
 					<split code="and"/>
 				</task>
 				<task
 					id="Node8"
 				>
-					<name>Replace part
-</name>
-					<documentation>Replace part
-</documentation>
+					<name>O</name>
+					<documentation>O</documentation>
+					<flowsInto>
+						<nextElementRef id="Node7"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<condition
+					id="Node9"
+				>
+					<name></name>
 					<flowsInto>
 						<nextElementRef id="Node4"/>
 					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node9"
-				>
-					<name>Fill the repair form
-</name>
-					<documentation>Fill the repair form
-</documentation>
-					<flowsInto>
-						<nextElementRef id="Node5"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
+				</condition>
 				<task
 					id="Node10"
 				>
-					<name>Make evaluation
-</name>
-					<documentation>Make evaluation
-</documentation>
+					<name>D</name>
+					<documentation>D</documentation>
 					<flowsInto>
-						<nextElementRef id="Node6"/>
+						<nextElementRef id="Node3"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
@@ -138,56 +124,42 @@
 				<task
 					id="Node11"
 				>
-					<name>Fill the part replacement form
-</name>
-					<documentation>Fill the part replacement form
-</documentation>
+					<name>XOR SPLIT</name>
+					<documentation>XOR SPLIT</documentation>
 					<flowsInto>
-						<nextElementRef id="Node4"/>
+						<nextElementRef id="Node8"/>
+						<predicate ordering="0">true()</predicate>
+					</flowsInto>
+					<flowsInto>
+						<nextElementRef id="Node5"/>
+						<isDefaultFlow/>
 					</flowsInto>
 					<join code="xor"/>
-					<split code="and"/>
+					<split code="xor"/>
 				</task>
-				<condition
+				<task
 					id="Node12"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node10"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node13"
-				>
-					<name>Make a backup</name>
-					<documentation>Make a backup</documentation>
-					<flowsInto>
-						<nextElementRef id="Node14"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node14"
-				>
-					<name>Format computer</name>
-					<documentation>Format computer</documentation>
-					<flowsInto>
-						<nextElementRef id="Node7"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node15"
 				>
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
-						<nextElementRef id="Node8"/>
+						<nextElementRef id="Node10"/>
+						<isDefaultFlow/>
 					</flowsInto>
 					<flowsInto>
-						<nextElementRef id="Node11"/>
+						<nextElementRef id="Node13"/>
+						<predicate ordering="0">true()</predicate>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="xor"/>
+				</task>
+				<task
+					id="Node13"
+				>
+					<name>F</name>
+					<documentation>F</documentation>
+					<flowsInto>
+						<nextElementRef id="Node6"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>

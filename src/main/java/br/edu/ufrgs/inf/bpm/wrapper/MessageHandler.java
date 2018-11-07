@@ -32,7 +32,7 @@ public class MessageHandler {
         return "Process Element" + getBaseElementData(tBaseElement);
     }
 
-    private String getGatewayType(TGateway tGateway) {
+    public String getGatewayType(TGateway tGateway) {
         if (tGateway instanceof TExclusiveGateway) {
             return "Exclusive Gateway";
         } else if (tGateway instanceof TInclusiveGateway) {
@@ -46,7 +46,7 @@ public class MessageHandler {
         }
     }
 
-    private String getEventType(TEvent tEvent) {
+    public String getEventType(TEvent tEvent) {
         if (tEvent instanceof TStartEvent) {
             return "Start Event";
         } else if (tEvent instanceof TIntermediateCatchEvent) {
