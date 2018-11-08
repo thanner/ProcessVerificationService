@@ -30,7 +30,8 @@ public class DataGeneratorApp {
         }
         */
 
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste.bpmn"), false);
+        //generateData(new File(Paths.LocalOthersPath + "/TestData/teste.bpmn"), false);
+        generateData(new File(Paths.LocalOthersPath + "/TestData/teste4.bpmn"), false);
         //generateData(new File(Paths.LocalOthersPath + "/TestData/input/2009-2 Conduct Directions Hearing - process.bpmn"), false);
 
         //diagramaVerificar2

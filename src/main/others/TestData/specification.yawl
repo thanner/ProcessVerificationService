@@ -33,10 +33,20 @@
 					<name>inTask_root</name>
 					<documentation>inTask_root</documentation>
 					<flowsInto>
-						<nextElementRef id="Node9"/>
+						<nextElementRef id="Node5"/>
+						<predicate>true()</predicate>
+					</flowsInto>
+					<flowsInto>
+						<nextElementRef id="Node8"/>
+						<predicate>true()</predicate>
+					</flowsInto>
+					<flowsInto>
+						<nextElementRef id="Node6"/>
+						<predicate>true()</predicate>
+						<isDefaultFlow/>
 					</flowsInto>
 					<join code="xor"/>
-					<split code="and"/>
+					<split code="or"/>
 					<decomposesTo id="decompositionStart"/>
 				</task>
 				<task
@@ -53,113 +63,62 @@
 				<task
 					id="Node4"
 				>
-					<name></name>
-					<documentation></documentation>
+					<name>Do activity 1
+</name>
+					<documentation>Do activity 1
+</documentation>
 					<flowsInto>
-						<nextElementRef id="Node11"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node5"
-				>
-					<name>A</name>
-					<documentation>A</documentation>
-					<flowsInto>
-						<nextElementRef id="Node7"/>
+						<nextElementRef id="Node9"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
 				</task>
 				<condition
-					id="Node6"
+					id="Node5"
 				>
-					<name>endEvent</name>
+					<name></name>
 					<flowsInto>
 						<nextElementRef id="Node3"/>
 					</flowsInto>
 				</condition>
-				<task
-					id="Node7"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node12"/>
-					</flowsInto>
-					<join code="and"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node8"
-				>
-					<name>O</name>
-					<documentation>O</documentation>
-					<flowsInto>
-						<nextElementRef id="Node7"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
 				<condition
-					id="Node9"
+					id="Node6"
 				>
 					<name></name>
 					<flowsInto>
 						<nextElementRef id="Node4"/>
 					</flowsInto>
 				</condition>
-				<task
-					id="Node10"
+				<condition
+					id="Node7"
 				>
-					<name>D</name>
-					<documentation>D</documentation>
+					<name></name>
 					<flowsInto>
 						<nextElementRef id="Node3"/>
+					</flowsInto>
+				</condition>
+				<task
+					id="Node8"
+				>
+					<name>Do activity 3
+</name>
+					<documentation>Do activity 3
+</documentation>
+					<flowsInto>
+						<nextElementRef id="Node7"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
 				</task>
 				<task
-					id="Node11"
+					id="Node9"
 				>
-					<name>XOR SPLIT</name>
-					<documentation>XOR SPLIT</documentation>
+					<name>Do activity 2
+</name>
+					<documentation>Do activity 2
+</documentation>
 					<flowsInto>
-						<nextElementRef id="Node8"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node5"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node12"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node10"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node13"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node13"
-				>
-					<name>F</name>
-					<documentation>F</documentation>
-					<flowsInto>
-						<nextElementRef id="Node6"/>
+						<nextElementRef id="Node3"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>

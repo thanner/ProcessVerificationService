@@ -4,6 +4,19 @@ import org.omg.spec.bpmn._20100524.model.*;
 
 public class MessageHandler {
 
+    public String getElementType(TFlowElement tFlowElement) {
+        String elementType = "Process Element";
+        if (tFlowElement instanceof TActivity) {
+            elementType = "Activity";
+        } else if (tFlowElement instanceof TEvent) {
+            elementType = getEventType((TEvent) tFlowElement);
+        } else if (tFlowElement instanceof TGateway) {
+            elementType = getGatewayType((TGateway) tFlowElement);
+        }
+
+        return elementType;
+    }
+
     public String handleActivityError(TActivity tActivity) {
         String elementDescription = "Activity" + getFlowNodeData(tActivity);
         return elementDescription;

@@ -37,7 +37,7 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "The process has unreachable elements:[Activity: D (id: Task_D), Exclusive Gateway (id: XorSplit2),  Parallel Gateway (id: AndJoin1), Activity: F (id: Task_F)]",
+      "description": "The process has unreachable elements:[Exclusive Gateway (id: XorSplit2), Parallel Gateway (id: AndJoin1), Activity: F (id: Task_F), Activity: D (id: Task_D), ]",
       "processElementId": "Process",
       "messageType": "structure",
       "source": "YAWL Verification"

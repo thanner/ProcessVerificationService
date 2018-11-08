@@ -28,6 +28,8 @@ public class BPMNVerification {
         bpmnWrapper = new BpmnWrapper(tDefinitions);
 
         for (TProcess tProcess : bpmnWrapper.getProcessList()) {
+            verifyFlowNodesWithoutIncomings(tProcess);
+            verifyFlowNodesWithoutOutgoings(tProcess);
             verifyAmountStartEvents(tProcess);
             verifyAmountEndEvents(tProcess);
             verifyElementsWithoutLabels(tProcess);
@@ -36,6 +38,28 @@ public class BPMNVerification {
         }
 
         return verificationMessages;
+    }
+
+    private void verifyFlowNodesWithoutIncomings(TProcess tProcess) {
+        List<TFlowNode> tFlowNodeWithoutIncoming = bpmnWrapper.getFlowNodesWithoutIncoming(tProcess);
+        for (TFlowNode tFlowNode : tFlowNodeWithoutIncoming) {
+            if (!(tFlowNode instanceof TStartEvent)) {
+                String elementType = messageHandler.getElementType(tFlowNode);
+                String description = generateDescriptionElementType(DescriptionMessages.flowNodeWithoutIncoming, getElementRepresentation(tFlowNode), elementType);
+                createMessage(getElementIdRepresentation(tFlowNode), description, MessageType.STRUCTURE);
+            }
+        }
+    }
+
+    private void verifyFlowNodesWithoutOutgoings(TProcess tProcess) {
+        List<TFlowNode> tFlowNodeWithoutOutgoing = bpmnWrapper.getFlowNodesWithoutOutgoing(tProcess);
+        for (TFlowNode tFlowNode : tFlowNodeWithoutOutgoing) {
+            if (!(tFlowNode instanceof TEndEvent)) {
+                String elementType = messageHandler.getElementType(tFlowNode);
+                String description = generateDescriptionElementType(DescriptionMessages.flowNodeWithoutOutgoing, getElementRepresentation(tFlowNode), elementType);
+                createMessage(getElementIdRepresentation(tFlowNode), description, MessageType.STRUCTURE);
+            }
+        }
     }
 
     private void verifyAmountStartEvents(TProcess tProcess) {
@@ -71,14 +95,15 @@ public class BPMNVerification {
 
         for (JAXBElement<? extends TFlowElement> flowElementJaxb : tProcess.getFlowElement()) {
             TFlowElement flowElement = flowElementJaxb.getValue();
+            String elementType = messageHandler.getElementType(flowElement);
             if (flowElement instanceof TActivity) {
-                verifyElementWithoutLabels(flowElement, "Activity");
+                verifyElementWithoutLabels(flowElement, elementType);
             } else if (flowElement instanceof TEvent) {
-                verifyEventWithoutLabels(flowElement, messageHandler.getEventType((TEvent) flowElement));
+                verifyEventWithoutLabels(flowElement, elementType);
             } else if (flowElement instanceof TExclusiveGateway || flowElement instanceof TInclusiveGateway || flowElement instanceof TEventBasedGateway || flowElement instanceof TComplexGateway) {
                 if (((TGateway) flowElement).getOutgoing().size() > 1) {
-                    verifyElementWithoutLabels(flowElement, messageHandler.getGatewayType((TGateway) flowElement));
-                    verifySequenceFlowsWithoutLabels((TGateway) flowElement, messageHandler.getGatewayType((TGateway) flowElement));
+                    verifyElementWithoutLabels(flowElement, elementType);
+                    verifySequenceFlowsWithoutLabels((TGateway) flowElement, elementType);
                 }
             }
         }

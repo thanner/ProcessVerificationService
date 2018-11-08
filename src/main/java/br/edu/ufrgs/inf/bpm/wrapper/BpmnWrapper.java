@@ -194,6 +194,35 @@ public class BpmnWrapper {
         return sequenceFlowList;
     }
 
+    public List<TFlowNode> getFlowNodesWithoutIncoming(TProcess tProcess) {
+        List<TFlowNode> flowNodeWithoutIncomingList = new ArrayList();
+        for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
+            TFlowElement tFlowElement = flowElement.getValue();
+            if (tFlowElement instanceof TFlowNode) {
+                TFlowNode tFlowNode = (TFlowNode) tFlowElement;
+                if (tFlowNode.getIncoming() == null || tFlowNode.getIncoming().isEmpty()) {
+                    flowNodeWithoutIncomingList.add(tFlowNode);
+                }
+            }
+        }
+
+        return flowNodeWithoutIncomingList;
+    }
+
+    public List<TFlowNode> getFlowNodesWithoutOutgoing(TProcess tProcess) {
+        List<TFlowNode> flowNodeWithoutOutgoingList = new ArrayList();
+        for (JAXBElement<? extends TFlowElement> flowElement : tProcess.getFlowElement()) {
+            TFlowElement tFlowElement = flowElement.getValue();
+            if (tFlowElement instanceof TFlowNode) {
+                TFlowNode tFlowNode = (TFlowNode) tFlowElement;
+                if (tFlowNode.getOutgoing() == null || tFlowNode.getOutgoing().isEmpty()) {
+                    flowNodeWithoutOutgoingList.add(tFlowNode);
+                }
+            }
+        }
+
+        return flowNodeWithoutOutgoingList;
+    }
 
     public int getAmountFlowNode(TProcess tProcess) {
         return tProcess.getFlowElement().stream().filter(e -> e.getValue() instanceof TFlowNode).collect(Collectors.toList()).size();
