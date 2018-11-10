@@ -1,0 +1,28 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the Start Event (id: id-18).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-19).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"meeting\" (id: id-7).",
+      "processElementId": "id-7",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"meeting\" (id: id-7).",
+      "processElementId": "id-7",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    }
+  ]
+}

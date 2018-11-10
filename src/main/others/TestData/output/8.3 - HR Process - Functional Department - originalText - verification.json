@@ -1,0 +1,28 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-14).",
+      "processElementId": "id-14",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-14).",
+      "processElementId": "id-14",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-16).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-17).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    }
+  ]
+}

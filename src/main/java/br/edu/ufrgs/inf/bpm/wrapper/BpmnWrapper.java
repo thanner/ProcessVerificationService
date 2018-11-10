@@ -228,4 +228,8 @@ public class BpmnWrapper {
         return tProcess.getFlowElement().stream().filter(e -> e.getValue() instanceof TFlowNode).collect(Collectors.toList()).size();
     }
 
+    public boolean isBlackBox(TProcess tProcess) {
+        return tProcess.getFlowElement().isEmpty();
+    }
+
 }

@@ -76,7 +76,9 @@ public class ProcessModelBuilder {
             setEndEvent();
 
             BpmnGraph bpmnGraph = new BpmnGraph("Graph " + processId, bpmnProcessModel);
-            bpmnResultList.add(new BpmnResult(null, bpmnGraph));
+            if (!bpmnWrapper.isBlackBox(tProcess)) {
+                bpmnResultList.add(new BpmnResult(null, bpmnGraph));
+            }
             processId++;
         }
 

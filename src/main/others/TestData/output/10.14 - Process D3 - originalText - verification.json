@@ -1,0 +1,154 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-19).",
+      "processElementId": "id-19",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-19).",
+      "processElementId": "id-19",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-20).",
+      "processElementId": "id-20",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-20).",
+      "processElementId": "id-20",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-22).",
+      "processElementId": "id-22",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-22).",
+      "processElementId": "id-22",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-24).",
+      "processElementId": "id-24",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-24).",
+      "processElementId": "id-24",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-25).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-26).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-7) any flow from any XOR/OR-split [Activity: examine the bill (id: id-7)] must have either a predicate or be a default flow.",
+      "processElementId": "id-7",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-7) any flow from any OR-split [Activity: examine the bill (id: id-7)] must have a predicate.",
+      "processElementId": "id-7",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-7) the postset of any OR/XOR split must have exactly one default flow (not 0)",
+      "processElementId": "id-7",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-19) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-19)]to[Condition:Node15]) for the same task.",
+      "processElementId": "id-19",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-19) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-19)]to[Condition:Node24]) for the same task.",
+      "processElementId": "id-19",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-19) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-19)]to[Condition:Node16]) for the same task.",
+      "processElementId": "id-19",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-9) any flow from any XOR/OR-split [Activity: examine the bill (id: id-9)] must have either a predicate or be a default flow.",
+      "processElementId": "id-9",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-9) any flow from any OR-split [Activity: examine the bill (id: id-9)] must have a predicate.",
+      "processElementId": "id-9",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-9) the postset of any OR/XOR split must have exactly one default flow (not 0)",
+      "processElementId": "id-9",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-22) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-22)]to[Condition:c{Node10_Node19}]) for the same task.",
+      "processElementId": "id-22",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-24) the postset of any OR/XOR split must have exactly one default flow (not 0)",
+      "processElementId": "id-24",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-11) any flow from any XOR/OR-split [Activity: examine the bill (id: id-11)] must have either a predicate or be a default flow.",
+      "processElementId": "id-11",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-11) any flow from any OR-split [Activity: examine the bill (id: id-11)] must have a predicate.",
+      "processElementId": "id-11",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Activity: examine the bill (id: id-11) the postset of any OR/XOR split must have exactly one default flow (not 0)",
+      "processElementId": "id-11",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "It was not possible to verify soundness in the model. Please correct the errors identified in the YAWL before this is possible.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    }
+  ]
+}

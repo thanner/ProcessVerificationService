@@ -1,0 +1,64 @@
+{
+  "messageList": [
+    {
+      "description": "Multiple end events were identified in the process \"Pool\" (id: id-0).",
+      "processElementId": "Process",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-19).",
+      "processElementId": "id-19",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-19).",
+      "processElementId": "id-19",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-20).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-21).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-22).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"go\" (id: id-4).",
+      "processElementId": "id-4",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"go\" (id: id-4).",
+      "processElementId": "id-4",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"msp\" (id: id-6).",
+      "processElementId": "id-6",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"msp\" (id: id-6).",
+      "processElementId": "id-6",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    }
+  ]
+}

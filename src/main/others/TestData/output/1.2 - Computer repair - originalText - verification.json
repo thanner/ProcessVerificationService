@@ -1,0 +1,94 @@
+{
+  "messageList": [
+    {
+      "description": "Multiple end events were identified in the process \"Pool\" (id: id-0).",
+      "processElementId": "Process",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-16).",
+      "processElementId": "id-16",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-16).",
+      "processElementId": "id-16",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-18).",
+      "processElementId": "id-18",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-18).",
+      "processElementId": "id-18",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-19).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-20).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-21).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-22).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-23).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"hands\" (id: id-4).",
+      "processElementId": "id-4",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"hands\" (id: id-4).",
+      "processElementId": "id-4",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-18) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-18)]to[Condition:c{Node15_Node7}]) for the same task.",
+      "processElementId": "id-18",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-18) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-18)]to[Condition:c{Node15_Node11}]) for the same task.",
+      "processElementId": "id-18",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "It was not possible to verify soundness in the model. Please correct the errors identified in the YAWL before this is possible.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    }
+  ]
+}

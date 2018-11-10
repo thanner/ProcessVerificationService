@@ -20,18 +20,18 @@ public class DataGeneratorApp {
 
     public static void main(String[] args) {
         prepareLogger();
-        getInputFiles();
+        //getInputFiles();
         ApplicationStarter.startApplication();
 
-        /*
         File folder = new File(Paths.LocalOthersPath + Paths.dataInputPath);
         for (File fileEntry : folder.listFiles()) {
             generateData(fileEntry, true);
         }
-        */
+
+        //generateData(new File(Paths.LocalOthersPath + "/TestData/input/10.5 - Process B5.2 - originalText - process.bpmn"), false);
 
         //generateData(new File(Paths.LocalOthersPath + "/TestData/teste.bpmn"), false);
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste4.bpmn"), false);
+        //generateData(new File(Paths.LocalOthersPath + "/TestData/teste4.bpmn"), false);
         //generateData(new File(Paths.LocalOthersPath + "/TestData/input/2009-2 Conduct Directions Hearing - process.bpmn"), false);
 
         //diagramaVerificar2

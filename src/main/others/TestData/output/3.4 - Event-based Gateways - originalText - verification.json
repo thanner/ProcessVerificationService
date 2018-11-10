@@ -1,0 +1,64 @@
+{
+  "messageList": [
+    {
+      "description": "No start event was identified in the process \"claimant\" (id: id-0).",
+      "processElementId": "id-0",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"claimant\" (id: id-0).",
+      "processElementId": "id-0",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"reminder\" (id: id-2).",
+      "processElementId": "id-2",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"reminder\" (id: id-2).",
+      "processElementId": "id-2",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Event Based Gateway (id: id-12).",
+      "processElementId": "id-12",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-14).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-15).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Event Based Gateway (id: id-12) any flow from any XOR/OR-split [Event Based Gateway (id: id-12)] must have either a predicate or be a default flow.",
+      "processElementId": "id-12",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Event Based Gateway (id: id-12) the postset of any OR/XOR split must have exactly one default flow (not 0)",
+      "processElementId": "id-12",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "It was not possible to verify soundness in the model. Please correct the errors identified in the YAWL before this is possible.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    }
+  ]
+}

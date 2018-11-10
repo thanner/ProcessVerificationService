@@ -1,0 +1,16 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the Start Event (id: id-10).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-11).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    }
+  ]
+}

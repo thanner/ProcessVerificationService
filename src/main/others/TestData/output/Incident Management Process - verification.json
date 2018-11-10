@@ -1,44 +1,94 @@
-[
-  {
-    "name": "Bpmnnet",
-    "messages": [
-      {
-        "elementId": "Process",
-        "description": "It may be possible for the net [Process] to complete without any generated work. Check the empty tasks linking from i to o."
-      },
-      {
-        "elementId": "id-15",
-        "description": "id-15 the postset of any OR/XOR split must have exactly one default flow (not 0)"
-      },
-      {
-        "elementId": "id-13",
-        "description": "id-13 the postset of any OR/XOR split must have exactly one default flow (not 0)"
-      },
-      {
-        "description": "AtomicTask:Node1 the postset of any OR/XOR split must have exactly one default flow (not 0)"
-      },
-      {
-        "description": "AtomicTask:Node1 any flow from any OR-split [AtomicTask:Node1] must have a predicate."
-      },
-      {
-        "elementId": "id-16",
-        "description": "id-16 any flow from any XOR/OR-split [id-16] must have either a predicate or be a default flow."
-      },
-      {
-        "elementId": "id-16",
-        "description": "id-16 the postset of any OR/XOR split must have exactly one default flow (not 0)"
-      },
-      {
-        "elementId": "id-13",
-        "description": "id-13 any flow from any XOR/OR-split [id-13] must have either a predicate or be a default flow."
-      },
-      {
-        "elementId": "id-15",
-        "description": "id-15 any flow from any XOR/OR-split [id-15] must have either a predicate or be a default flow."
-      },
-      {
-        "description": "AtomicTask:Node1 any flow from any XOR/OR-split [AtomicTask:Node1] must have either a predicate or be a default flow."
-      }
-    ]
-  }
-]
+{
+  "messageList": [
+    {
+      "description": "Multiple end events were identified in the process \"Pool\" (id: id-0).",
+      "processElementId": "Process",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-17).",
+      "processElementId": "id-17",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-17).",
+      "processElementId": "id-17",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-19).",
+      "processElementId": "id-19",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-19).",
+      "processElementId": "id-19",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-20).",
+      "processElementId": "id-20",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-20).",
+      "processElementId": "id-20",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-21).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-22).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-23).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-24).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"help\" (id: id-6).",
+      "processElementId": "id-6",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"help\" (id: id-6).",
+      "processElementId": "id-6",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"software developer\" (id: id-8).",
+      "processElementId": "id-8",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"software developer\" (id: id-8).",
+      "processElementId": "id-8",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    }
+  ]
+}
