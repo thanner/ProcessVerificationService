@@ -89,6 +89,12 @@
       "processElementId": "id-8",
       "messageType": "pragmatic",
       "source": "BPMN Verification"
+    },
+    {
+      "description": "OR-join task(s) _start  in the net root could be more simply modelled as XOR-join task(s).",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
     }
   ]
 }

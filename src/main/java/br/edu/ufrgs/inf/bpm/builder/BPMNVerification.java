@@ -33,6 +33,7 @@ public class BPMNVerification {
             verifyAmountStartEvents(tProcess);
             verifyAmountEndEvents(tProcess);
             verifyElementsWithoutLabels(tProcess);
+            verifyActivitiesWithoutLane(tProcess);
             verifyAmountElements(tProcess);
             verifyORGateways(tProcess);
         }
@@ -155,6 +156,20 @@ public class BPMNVerification {
                 createMessage(getElementIdRepresentation(gateway), generateDescriptionElementType(DescriptionMessages.sequenceFlowWithoutLabel, getElementRepresentation(gateway), elementType), MessageType.LABEL);
             }
         }
+    }
+
+    private void verifyActivitiesWithoutLane(TProcess tProcess) {
+        for (JAXBElement<? extends TFlowElement> jaxbElement : tProcess.getFlowElement()) {
+            TFlowElement tFlowElement = jaxbElement.getValue();
+            if (tFlowElement instanceof TActivity) {
+                TLane tLane = bpmnWrapper.getLaneByFlowElement(tFlowElement);
+                if (tLane == null) {
+                    String elementType = messageHandler.getElementType(tFlowElement);
+                    createMessage(getElementIdRepresentation(tFlowElement), generateDescriptionElementType(DescriptionMessages.activityWithoutLane, getElementRepresentation(tFlowElement), elementType), MessageType.LABEL);
+                }
+            }
+        }
+
     }
 
     private void verifyAmountElements(TProcess tProcess) {

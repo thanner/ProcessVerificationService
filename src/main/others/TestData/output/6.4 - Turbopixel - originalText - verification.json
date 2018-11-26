@@ -119,6 +119,72 @@
       "processElementId": "id-8",
       "messageType": "pragmatic",
       "source": "BPMN Verification"
+    },
+    {
+      "description": "Event Based Gateway (id: id-37) any flow from any XOR/OR-split [Event Based Gateway (id: id-37)] must have either a predicate or be a default flow.",
+      "processElementId": "id-37",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Event Based Gateway (id: id-37) the postset of any OR/XOR split must have exactly one default flow (not 0)",
+      "processElementId": "id-37",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Process preset size must be \u003e 0",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Exclusive Gateway (id: id-29) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-29)]to[Condition:c{Node13_Node28}]) for the same task.",
+      "processElementId": "id-29",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Condition:Node15 is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Condition:Node26 is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Condition:c{Node12_Node31} is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Condition:c{Node31_Node29} is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "AtomicTask:Node31 is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "AtomicTask:Node12 is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "It was not possible to verify soundness in the model. Please correct the errors identified in the YAWL before this is possible.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
     }
   ]
 }

@@ -43,6 +43,36 @@
       "source": "BPMN Verification"
     },
     {
+      "description": "No resource was identified in the Activity \"a claim handling process is necessary\" (id: id-5).",
+      "processElementId": "id-5",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"expect claimant to return the questionnaire\" (id: id-6).",
+      "processElementId": "id-6",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"send a reminder to the claimant\" (id: id-8).",
+      "processElementId": "id-8",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"send so\" (id: id-10).",
+      "processElementId": "id-10",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"receive the completed questionnaire\" (id: id-11).",
+      "processElementId": "id-11",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
       "description": "Event Based Gateway (id: id-12) any flow from any XOR/OR-split [Event Based Gateway (id: id-12)] must have either a predicate or be a default flow.",
       "processElementId": "id-12",
       "messageType": "structure",

@@ -1,0 +1,46 @@
+{
+  "messageList": [
+    {
+      "description": "No incoming element was identified in the Activity \"B\" (id: Task_08xmdut).",
+      "processElementId": "Task_08xmdut",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No outgoing element was identified in the Activity \"A\" (id: Task_0dd9jf9).",
+      "processElementId": "Task_0dd9jf9",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No outgoing element was identified in the Activity \"B\" (id: Task_08xmdut).",
+      "processElementId": "Task_08xmdut",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process (id: Process_1).",
+      "processElementId": "Process_1",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: StartEvent_1).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"A\" (id: Task_0dd9jf9).",
+      "processElementId": "Task_0dd9jf9",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"B\" (id: Task_08xmdut).",
+      "processElementId": "Task_08xmdut",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    }
+  ]
+}

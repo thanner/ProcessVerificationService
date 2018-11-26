@@ -109,44 +109,8 @@
       "source": "BPMN Verification"
     },
     {
-      "description": "The element (Exclusive Gateway (id: id-49)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-49",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: move through the hands of cost center managers (id: id-30)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-30",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: send back the copy of the invoice directly to accounting (id: id-34)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-34",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: proceede with the clarification with the vendor (id: id-35)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-35",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: move back (id: id-43)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-43",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: continue  (id: id-39)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-39",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: send the copy of the invoice again to the cost (id: id-38)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-38",
+      "description": "The element (Activity: invoice items be AP (id: id-40)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-40",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
@@ -157,20 +121,20 @@
       "source": "YAWL Verification"
     },
     {
+      "description": "The element (Activity: move back (id: id-43)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-43",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
       "description": "The element (Activity: resolve inconsistencies (id: id-37)) plays a part in an infinite loop/recursion in which no work items may be created.",
       "processElementId": "id-37",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
     {
-      "description": "The element (Activity: consult the cost center managers again (id: id-36)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-36",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "The element (Activity: invoice items be AP (id: id-40)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-40",
+      "description": "The element (Activity: move through the hands of cost center managers (id: id-30)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-30",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
@@ -181,8 +145,14 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "The element (Activity: e.g.  (id: id-32)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-32",
+      "description": "The element (Activity: consult the cost center managers again (id: id-36)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-36",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Activity: send the copy of the invoice again to the cost (id: id-38)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-38",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
@@ -199,20 +169,50 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "The element (Exclusive Gateway (id: id-50)) plays a part in an infinite loop/recursion in which no work items may be created.",
-      "processElementId": "id-50",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
       "description": "The element (Activity: want to check 20,000 eur again (id: id-42)) plays a part in an infinite loop/recursion in which no work items may be created.",
       "processElementId": "id-42",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
     {
+      "description": "The element (Activity: send back the copy of the invoice directly to accounting (id: id-34)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-34",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Exclusive Gateway (id: id-50)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-50",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
       "description": "The element (Activity: mark positions (id: id-31)) plays a part in an infinite loop/recursion in which no work items may be created.",
       "processElementId": "id-31",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Activity: proceede with the clarification with the vendor (id: id-35)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-35",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Activity: e.g.  (id: id-32)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-32",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Exclusive Gateway (id: id-49)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-49",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Activity: continue  (id: id-39)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "id-39",
       "messageType": "structure",
       "source": "YAWL Verification"
     },

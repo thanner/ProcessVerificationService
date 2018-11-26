@@ -1,0 +1,64 @@
+{
+  "messageList": [
+    {
+      "description": "No incoming element was identified in the Activity \"Do activity 3\n\" (id: Task_1oyc1dy).",
+      "processElementId": "Task_1oyc1dy",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No incoming element was identified in the Intermediate Throw Event (id: IntermediateThrowEvent_1nx7966).",
+      "processElementId": "IntermediateThrowEvent_1nx7966",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No outgoing element was identified in the Activity \"Do activity 2\n\" (id: Task_0m5bwtg).",
+      "processElementId": "Task_0m5bwtg",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No outgoing element was identified in the Intermediate Throw Event (id: IntermediateThrowEvent_1nx7966).",
+      "processElementId": "IntermediateThrowEvent_1nx7966",
+      "messageType": "structure",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: StartEvent_1).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: EndEvent_1qzhwj1).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Intermediate Throw Event (id: IntermediateThrowEvent_1nx7966).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"Do activity 1\n\" (id: Task_0zk8d7d).",
+      "processElementId": "Task_0zk8d7d",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"Do activity 3\n\" (id: Task_1oyc1dy).",
+      "processElementId": "Task_1oyc1dy",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"Do activity 2\n\" (id: Task_0m5bwtg).",
+      "processElementId": "Task_0m5bwtg",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    }
+  ]
+}

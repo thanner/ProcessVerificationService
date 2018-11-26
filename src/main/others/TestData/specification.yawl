@@ -33,7 +33,7 @@
 					<name>inTask_root</name>
 					<documentation>inTask_root</documentation>
 					<flowsInto>
-						<nextElementRef id="Node86"/>
+						<nextElementRef id="Node12"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
@@ -47,55 +47,22 @@
 					<flowsInto>
 						<nextElementRef id="Node2"/>
 					</flowsInto>
-					<join code="or"/>
+					<join code="xor"/>
 					<split code="and"/>
 				</task>
 				<task
 					id="Node4"
 				>
-					<name>prepare the final status report based on the received information</name>
-					<documentation>prepare the final status report based on the received information</documentation>
+					<name></name>
+					<documentation></documentation>
 					<flowsInto>
 						<nextElementRef id="Node7"/>
 					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node5"
-				>
-					<name>send the normal execution back to service management</name>
-					<documentation>send the normal execution back to service management</documentation>
-					<flowsInto>
-						<nextElementRef id="Node16"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node6"
-				>
-					<name>take alternative three process paths</name>
-					<documentation>take alternative three process paths</documentation>
-					<flowsInto>
-						<nextElementRef id="Node14"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node7"
-				>
-					<name>determine what counter measures should be taken depending on the information in the final status report</name>
-					<documentation>determine what counter measures should be taken depending on the information in the final status report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node6"/>
-					</flowsInto>
-					<join code="xor"/>
+					<join code="and"/>
 					<split code="and"/>
 				</task>
 				<condition
-					id="Node8"
+					id="Node5"
 				>
 					<name></name>
 					<flowsInto>
@@ -103,23 +70,12 @@
 					</flowsInto>
 				</condition>
 				<task
-					id="Node9"
-				>
-					<name>include trouble report in a status report</name>
-					<documentation>include trouble report in a status report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node12"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node10"
+					id="Node6"
 				>
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
-						<nextElementRef id="Node5"/>
+						<nextElementRef id="Node15"/>
 						<predicate ordering="0">true()</predicate>
 					</flowsInto>
 					<flowsInto>
@@ -130,73 +86,23 @@
 					<split code="xor"/>
 				</task>
 				<task
-					id="Node11"
+					id="Node7"
 				>
-					<name>create a trouble report</name>
-					<documentation>create a trouble report</documentation>
+					<name></name>
+					<documentation></documentation>
 					<flowsInto>
-						<nextElementRef id="Node22"/>
+						<nextElementRef id="Node9"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
 				</task>
 				<task
-					id="Node12"
+					id="Node8"
 				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node10"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node13"
-				>
-					<name>send trouble report back to service management</name>
-					<documentation>send trouble report back to service management</documentation>
-					<flowsInto>
-						<nextElementRef id="Node16"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node14"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node8"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node82"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node15"
-				>
-					<name>include the normal execution in a status report</name>
-					<documentation>include the normal execution in a status report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node12"/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node12"/>
-					</flowsInto>
-					<join code="or"/>
-					<split code="or"/>
-				</task>
-				<task
-					id="Node16"
-				>
-					<name></name>
-					<documentation></documentation>
+					<name>Replace part
+</name>
+					<documentation>Replace part
+</documentation>
 					<flowsInto>
 						<nextElementRef id="Node4"/>
 					</flowsInto>
@@ -204,888 +110,84 @@
 					<split code="and"/>
 				</task>
 				<task
-					id="Node17"
+					id="Node9"
+				>
+					<name>Fill the repair form
+</name>
+					<documentation>Fill the repair form
+</documentation>
+					<flowsInto>
+						<nextElementRef id="Node5"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node10"
+				>
+					<name>Make evaluation
+</name>
+					<documentation>Make evaluation
+</documentation>
+					<flowsInto>
+						<nextElementRef id="Node6"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node11"
+				>
+					<name>Fill the part replacement form
+</name>
+					<documentation>Fill the part replacement form
+</documentation>
+					<flowsInto>
+						<nextElementRef id="Node4"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<condition
+					id="Node12"
+				>
+					<name></name>
+					<flowsInto>
+						<nextElementRef id="Node10"/>
+					</flowsInto>
+				</condition>
+				<task
+					id="Node13"
+				>
+					<name>Make a backup</name>
+					<documentation>Make a backup</documentation>
+					<flowsInto>
+						<nextElementRef id="Node14"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node14"
+				>
+					<name>Format computer</name>
+					<documentation>Format computer</documentation>
+					<flowsInto>
+						<nextElementRef id="Node7"/>
+					</flowsInto>
+					<join code="xor"/>
+					<split code="and"/>
+				</task>
+				<task
+					id="Node15"
 				>
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
-						<nextElementRef id="Node22"/>
-						<isDefaultFlow/>
+						<nextElementRef id="Node8"/>
 					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node21"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node19"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node18"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node30"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node90"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node19"
-				>
-					<name>analyze this</name>
-					<documentation>analyze this</documentation>
 					<flowsInto>
 						<nextElementRef id="Node11"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node20"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node15"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node15"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node9"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node21"
-				>
-					<name>create a notification about the normal service execution</name>
-					<documentation>create a notification about the normal service execution</documentation>
-					<flowsInto>
-						<nextElementRef id="Node22"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node22"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node20"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node23"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node41"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node78"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node24"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node23"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node25"
-				>
-					<name>indicate the type of problem</name>
-					<documentation>indicate the type of problem</documentation>
-					<flowsInto>
-						<nextElementRef id="Node29"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node26"
-				>
-					<name>create a trouble report</name>
-					<documentation>create a trouble report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node25"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node27"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node59"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node24"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node28"
-				>
-					<name>receive the detailed problem report</name>
-					<documentation>receive the detailed problem report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node38"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node29"
-				>
-					<name>indicate the type of problem</name>
-					<documentation>indicate the type of problem</documentation>
-					<flowsInto>
-						<nextElementRef id="Node28"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node30"
-				>
-					<name>perform the analysis</name>
-					<documentation>perform the analysis</documentation>
-					<flowsInto>
-						<nextElementRef id="Node36"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node31"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node53"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node73"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node32"
-				>
-					<name>send out the detailed problem report to resource provisioning</name>
-					<documentation>send out the detailed problem report to resource provisioning</documentation>
-					<flowsInto>
-						<nextElementRef id="Node18"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node33"
-				>
-					<name>receive the report about service performance</name>
-					<documentation>receive the report about service performance</documentation>
-					<flowsInto>
-						<nextElementRef id="Node75"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node34"
-				>
-					<name>create a trouble report</name>
-					<documentation>create a trouble report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node26"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node35"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node55"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node36"
-				>
-					<name>perform based</name>
-					<documentation>perform based</documentation>
-					<flowsInto>
-						<nextElementRef id="Node34"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node37"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node35"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node57"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node38"
-				>
-					<name>check that</name>
-					<documentation>check that</documentation>
-					<flowsInto>
-						<nextElementRef id="Node17"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node39"
-				>
-					<name>report an sla violation rebate to billing</name>
-					<documentation>report an sla violation rebate to billing</documentation>
-					<flowsInto>
-						<nextElementRef id="Node43"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node40"
-				>
-					<name>trigger i.e.</name>
-					<documentation>trigger i.e.</documentation>
-					<flowsInto>
-						<nextElementRef id="Node39"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node41"
-				>
-					<name>to be </name>
-					<documentation>to be </documentation>
-					<flowsInto>
-						<nextElementRef id="Node32"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node42"
-				>
-					<name>complete three activities</name>
-					<documentation>complete three activities</documentation>
-					<flowsInto>
-						<nextElementRef id="Node33"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node43"
-				>
-					<name>send out report to the customer</name>
-					<documentation>send out report to the customer</documentation>
-					<flowsInto>
-						<nextElementRef id="Node42"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node44"
-				>
-					<name>trigger i.e.</name>
-					<documentation>trigger i.e.</documentation>
-					<flowsInto>
-						<nextElementRef id="Node40"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node45"
-				>
-					<name>send detailed problem report to service management</name>
-					<documentation>send detailed problem report to service management</documentation>
-					<flowsInto>
-						<nextElementRef id="Node50"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node46"
-				>
-					<name>receive the problem resolution report</name>
-					<documentation>receive the problem resolution report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node88"/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node88"/>
-					</flowsInto>
-					<join code="or"/>
-					<split code="or"/>
-				</task>
-				<task
-					id="Node47"
-				>
-					<name>create a detailed problem report</name>
-					<documentation>create a detailed problem report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node45"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node48"
-				>
-					<name>receive the actual service performance</name>
-					<documentation>receive the actual service performance</documentation>
-					<flowsInto>
-						<nextElementRef id="Node88"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node49"
-				>
-					<name>receive the detailed problem report</name>
-					<documentation>receive the detailed problem report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node60"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node50"
-				>
-					<name>deal on a first level with violations of quality</name>
-					<documentation>deal on a first level with violations of quality</documentation>
-					<flowsInto>
-						<nextElementRef id="Node49"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node51"
-				>
-					<name>fix process</name>
-					<documentation>fix process</documentation>
-					<flowsInto>
-						<nextElementRef id="Node37"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node52"
-				>
-					<name>undertake necessary corrective actions</name>
-					<documentation>undertake necessary corrective actions</documentation>
-					<flowsInto>
-						<nextElementRef id="Node58"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node53"
-				>
-					<name>link to an extra problem</name>
-					<documentation>link to an extra problem</documentation>
-					<flowsInto>
-						<nextElementRef id="Node51"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node54"
-				>
-					<name>track possible errors</name>
-					<documentation>track possible errors</documentation>
-					<flowsInto>
-						<nextElementRef id="Node52"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node55"
-				>
-					<name>take together the information</name>
-					<documentation>take together the information</documentation>
-					<flowsInto>
-						<nextElementRef id="Node47"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node56"
-				>
-					<name>send out report to service management</name>
-					<documentation>send out report to service management</documentation>
-					<flowsInto>
-						<nextElementRef id="Node83"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node57"
-				>
-					<name>continue </name>
-					<documentation>continue </documentation>
-					<flowsInto>
-						<nextElementRef id="Node35"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node58"
-				>
-					<name>create a trouble-shooting report</name>
-					<documentation>create a trouble-shooting report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node56"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<condition
-					id="Node59"
-				>
-					<name>locates the problem </name>
-					<flowsInto>
-						<nextElementRef id="Node24"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node60"
-				>
-					<name>investigate </name>
-					<documentation>investigate </documentation>
-					<flowsInto>
-						<nextElementRef id="Node27"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node61"
-				>
-					<name>send out the status report</name>
-					<documentation>send out the status report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node84"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node62"
-				>
-					<name>happen within 2 days</name>
-					<documentation>happen within 2 days</documentation>
-					<flowsInto>
-						<nextElementRef id="Node91"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node63"
-				>
-					<name>receive the restoration request</name>
-					<documentation>receive the restoration request</documentation>
-					<flowsInto>
-						<nextElementRef id="Node54"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node64"
-				>
-					<name>terminate the process</name>
-					<documentation>terminate the process</documentation>
-					<flowsInto>
-						<nextElementRef id="Node84"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node65"
-				>
-					<name>send list to the customer service department of teleco</name>
-					<documentation>send list to the customer service department of teleco</documentation>
-					<flowsInto>
-						<nextElementRef id="Node70"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node66"
-				>
-					<name>require automatic resource restoration</name>
-					<documentation>require automatic resource restoration</documentation>
-					<flowsInto>
-						<nextElementRef id="Node71"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node67"
-				>
-					<name>perceive that her subscribed service has degraded</name>
-					<documentation>perceive that her subscribed service has degraded</documentation>
-					<flowsInto>
-						<nextElementRef id="Node65"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node68"
-				>
-					<name>create a request</name>
-					<documentation>create a request</documentation>
-					<flowsInto>
-						<nextElementRef id="Node92"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node69"
-				>
-					<name>compare the problem report to the customer sla to identify</name>
-					<documentation>compare the problem report to the customer sla to identify</documentation>
-					<flowsInto>
-						<nextElementRef id="Node80"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node70"
-				>
-					<name>enter a problem</name>
-					<documentation>enter a problem</documentation>
-					<flowsInto>
-						<nextElementRef id="Node69"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node71"
-				>
-					<name>send message to resource provisioning</name>
-					<documentation>send message to resource provisioning</documentation>
-					<flowsInto>
-						<nextElementRef id="Node62"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node72"
-				>
-					<name>create the problem resolution report</name>
-					<documentation>create the problem resolution report</documentation>
-					<flowsInto>
-						<nextElementRef id="Node77"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<condition
-					id="Node73"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node3"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node74"
-				>
-					<name>undertake corrective actions</name>
-					<documentation>undertake corrective actions</documentation>
-					<flowsInto>
-						<nextElementRef id="Node72"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<condition
-					id="Node75"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node3"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node76"
-				>
-					<name>end </name>
-					<documentation>end </documentation>
-					<flowsInto>
-						<nextElementRef id="Node92"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node77"
-				>
-					<name>send out the problem resolution report to customer service</name>
-					<documentation>send out the problem resolution report to customer service</documentation>
-					<flowsInto>
-						<nextElementRef id="Node76"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<condition
-					id="Node78"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node3"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node79"
-				>
-					<name>determine the significance of the customer based on information that has been collected during the history of the contractual relationship</name>
-					<documentation>determine the significance of the customer based on information that has been collected during the history of the contractual relationship</documentation>
-					<flowsInto>
-						<nextElementRef id="Node81"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node80"
-				>
-					<name>determine the necessary counter measures to include respective priorities</name>
-					<documentation>determine the necessary counter measures to include respective priorities</documentation>
-					<flowsInto>
-						<nextElementRef id="Node79"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node81"
-				>
-					<name>collect that</name>
-					<documentation>collect that</documentation>
-					<flowsInto>
-						<nextElementRef id="Node31"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node82"
-				>
-					<name>send the actual service performance back to the customer service</name>
-					<documentation>send the actual service performance back to the customer service</documentation>
-					<flowsInto>
-						<nextElementRef id="Node87"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node83"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node46"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node48"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node46"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node84"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node63"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node85"
-				>
-					<name>require that</name>
-					<documentation>require that</documentation>
-					<flowsInto>
-						<nextElementRef id="Node92"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<condition
-					id="Node86"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node67"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node87"
-				>
-					<name>detect no problem</name>
-					<documentation>detect no problem</documentation>
-					<flowsInto>
-						<nextElementRef id="Node89"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node88"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node44"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node89"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node68"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node74"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node85"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<condition
-					id="Node90"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node3"/>
-					</flowsInto>
-				</condition>
-				<task
-					id="Node91"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node61"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node64"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node92"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node66"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>

@@ -1,0 +1,70 @@
+{
+  "messageList": [
+    {
+      "description": "Multiple end events were identified in the process \"Pool\" (id: id-0).",
+      "processElementId": "Process",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: id-74).",
+      "processElementId": "id-74",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: id-74).",
+      "processElementId": "id-74",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: id-75).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-76).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: id-77).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "The amount of elements in the process \"Pool\" (id: id-0) exceeded the maximum expected quantity (found 63 and is expected at most 30)",
+      "processElementId": "id-0",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"building\" (id: id-11).",
+      "processElementId": "id-11",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"building\" (id: id-11).",
+      "processElementId": "id-11",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No start event was identified in the process \"letter\" (id: id-13).",
+      "processElementId": "id-13",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No end event was identified in the process \"letter\" (id: id-13).",
+      "processElementId": "id-13",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    }
+  ]
+}

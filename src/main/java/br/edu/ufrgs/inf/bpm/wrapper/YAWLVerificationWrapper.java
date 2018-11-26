@@ -123,7 +123,12 @@ public class YAWLVerificationWrapper {
         List<TMessage> tMessageList = new ArrayList<>();
 
         YAnalyserOptions yAnalyserOptions = new YAnalyserOptions();
-        yAnalyserOptions.enableResetWeakSoundness(true); // yAnalyserOptions.enableResetSoundness(true);
+        yAnalyserOptions.enableYawlReductionRules(true);
+        yAnalyserOptions.enableResetReductionRules(true);
+        yAnalyserOptions.enableResetWeakSoundness(true);
+        yAnalyserOptions.enableResetCancellation(true);
+        yAnalyserOptions.enableResetOrJoin(true);
+        yAnalyserOptions.enableResetOrjoinCycle(true);
 
         YAnalyser yAnalyser = new YAnalyser();
         String analysisXML = yAnalyser.analyse(ySpecification, yAnalyserOptions);

@@ -1,0 +1,22 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the Start Event (id: StartEvent_1).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: ExclusiveGateway_020g0q9).",
+      "processElementId": "ExclusiveGateway_020g0q9",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: EndEvent_1t5h3rx).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    }
+  ]
+}

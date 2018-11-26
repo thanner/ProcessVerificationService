@@ -23,6 +23,60 @@
       "processElementId": "Process",
       "messageType": "label",
       "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"olive oil in a bowl\" (id: id-3).",
+      "processElementId": "id-3",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"set aside 1/4 cup of the mixture to use \" (id: id-4).",
+      "processElementId": "id-4",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"place chicken in the bowl\" (id: id-5).",
+      "processElementId": "id-5",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"marinate 20 minutes\" (id: id-6).",
+      "processElementId": "id-6",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"grill \" (id: id-7).",
+      "processElementId": "id-7",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"grate \" (id: id-8).",
+      "processElementId": "id-8",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"drain \" (id: id-9).",
+      "processElementId": "id-9",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"discard marinade\" (id: id-10).",
+      "processElementId": "id-10",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"place chicken\" (id: id-11).",
+      "processElementId": "id-11",
+      "messageType": "label",
+      "source": "BPMN Verification"
     }
   ]
 }
