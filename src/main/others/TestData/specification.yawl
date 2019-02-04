@@ -33,7 +33,7 @@
 					<name>inTask_root</name>
 					<documentation>inTask_root</documentation>
 					<flowsInto>
-						<nextElementRef id="Node12"/>
+						<nextElementRef id="Node4"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>
@@ -50,71 +50,34 @@
 					<join code="xor"/>
 					<split code="and"/>
 				</task>
-				<task
+				<condition
 					id="Node4"
+				>
+					<name></name>
+					<flowsInto>
+						<nextElementRef id="Node8"/>
+					</flowsInto>
+				</condition>
+				<task
+					id="Node5"
 				>
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
 						<nextElementRef id="Node7"/>
 					</flowsInto>
-					<join code="and"/>
+					<flowsInto>
+						<nextElementRef id="Node8"/>
+					</flowsInto>
+					<join code="xor"/>
 					<split code="and"/>
 				</task>
-				<condition
-					id="Node5"
-				>
-					<name></name>
-					<flowsInto>
-						<nextElementRef id="Node3"/>
-					</flowsInto>
-				</condition>
 				<task
 					id="Node6"
 				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node15"/>
-						<predicate ordering="0">true()</predicate>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node13"/>
-						<isDefaultFlow/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="xor"/>
-				</task>
-				<task
-					id="Node7"
-				>
-					<name></name>
-					<documentation></documentation>
-					<flowsInto>
-						<nextElementRef id="Node9"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node8"
-				>
-					<name>Replace part
+					<name>Do 1
 </name>
-					<documentation>Replace part
-</documentation>
-					<flowsInto>
-						<nextElementRef id="Node4"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node9"
-				>
-					<name>Fill the repair form
-</name>
-					<documentation>Fill the repair form
+					<documentation>Do 1
 </documentation>
 					<flowsInto>
 						<nextElementRef id="Node5"/>
@@ -122,72 +85,21 @@
 					<join code="xor"/>
 					<split code="and"/>
 				</task>
-				<task
-					id="Node10"
-				>
-					<name>Make evaluation
-</name>
-					<documentation>Make evaluation
-</documentation>
-					<flowsInto>
-						<nextElementRef id="Node6"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node11"
-				>
-					<name>Fill the part replacement form
-</name>
-					<documentation>Fill the part replacement form
-</documentation>
-					<flowsInto>
-						<nextElementRef id="Node4"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
 				<condition
-					id="Node12"
+					id="Node7"
 				>
 					<name></name>
 					<flowsInto>
-						<nextElementRef id="Node10"/>
+						<nextElementRef id="Node3"/>
 					</flowsInto>
 				</condition>
 				<task
-					id="Node13"
-				>
-					<name>Make a backup</name>
-					<documentation>Make a backup</documentation>
-					<flowsInto>
-						<nextElementRef id="Node14"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node14"
-				>
-					<name>Format computer</name>
-					<documentation>Format computer</documentation>
-					<flowsInto>
-						<nextElementRef id="Node7"/>
-					</flowsInto>
-					<join code="xor"/>
-					<split code="and"/>
-				</task>
-				<task
-					id="Node15"
+					id="Node8"
 				>
 					<name></name>
 					<documentation></documentation>
 					<flowsInto>
-						<nextElementRef id="Node8"/>
-					</flowsInto>
-					<flowsInto>
-						<nextElementRef id="Node11"/>
+						<nextElementRef id="Node6"/>
 					</flowsInto>
 					<join code="xor"/>
 					<split code="and"/>

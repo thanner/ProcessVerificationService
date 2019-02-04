@@ -19,7 +19,6 @@
                     </request>
                     <response>
                         <representation mediaType="application/json"/>
-                        <representation mediaType="application/xml"/>
                     </response>
                 </method>
             </resource>

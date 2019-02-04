@@ -234,18 +234,18 @@ public class BPMNVerification {
     private String getRepresentation(String elementName, String elementId, String elementType) {
         String label = "";
         if (elementName != null) {
-            label += "\"" + elementName + "\"";
+            label += "\"" + elementName.trim() + "\"";
         }
 
         if (elementId != null) {
             if (!label.equals("")) {
                 label += " ";
             }
-            label += "(id: " + elementId + ")";
+            label += "(id: " + elementId.trim() + ")";
         }
 
         if (label.isEmpty()) {
-            label = "unknown " + elementType;
+            label = "unknown " + elementType.trim();
         }
         return label;
     }

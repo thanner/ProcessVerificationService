@@ -265,7 +265,7 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "Exclusive Gateway (id: id-90) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-90)]to[Condition:c{Node89_Node74}]) for the same task.",
+      "description": "Exclusive Gateway (id: id-90) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-90)]to[Condition:c{Node89_Node68}]) for the same task.",
       "processElementId": "id-90",
       "messageType": "structure",
       "source": "YAWL Verification"

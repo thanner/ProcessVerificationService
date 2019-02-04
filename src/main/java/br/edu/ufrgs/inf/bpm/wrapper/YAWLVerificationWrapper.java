@@ -125,7 +125,8 @@ public class YAWLVerificationWrapper {
         YAnalyserOptions yAnalyserOptions = new YAnalyserOptions();
         yAnalyserOptions.enableYawlReductionRules(true);
         yAnalyserOptions.enableResetReductionRules(true);
-        yAnalyserOptions.enableResetWeakSoundness(true);
+        //yAnalyserOptions.enableResetWeakSoundness(true);
+        yAnalyserOptions.enableResetSoundness(true);
         yAnalyserOptions.enableResetCancellation(true);
         yAnalyserOptions.enableResetOrJoin(true);
         yAnalyserOptions.enableResetOrjoinCycle(true);

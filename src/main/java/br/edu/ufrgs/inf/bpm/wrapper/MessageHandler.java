@@ -76,10 +76,10 @@ public class MessageHandler {
     private String getFlowNodeData(TFlowNode tFlowNode) {
         String elementDescription = "";
         if (tFlowNode.getName() != null && !tFlowNode.getName().isEmpty()) {
-            elementDescription = ": " + tFlowNode.getName();
+            elementDescription = ": " + tFlowNode.getName().trim();
         }
         if (tFlowNode.getId() != null && !tFlowNode.getId().isEmpty()) {
-            elementDescription += " (id: " + tFlowNode.getId() + ")";
+            elementDescription += " (id: " + tFlowNode.getId().trim() + ")";
         }
 
         return elementDescription;
@@ -88,10 +88,10 @@ public class MessageHandler {
     private String getSequenceFlowData(TSequenceFlow tSequenceFlow) {
         String elementDescription = "";
         if (tSequenceFlow.getName() != null && !tSequenceFlow.getName().isEmpty()) {
-            elementDescription = ": " + tSequenceFlow.getName();
+            elementDescription = ": " + tSequenceFlow.getName().trim();
         }
         if (tSequenceFlow.getId() != null && !tSequenceFlow.getId().isEmpty()) {
-            elementDescription += " (id: " + tSequenceFlow.getId() + ")";
+            elementDescription += " (id: " + tSequenceFlow.getId().trim() + ")";
         }
 
         return elementDescription;
@@ -100,7 +100,7 @@ public class MessageHandler {
     private String getBaseElementData(TBaseElement tBaseElement) {
         String elementDescription = "";
         if (tBaseElement.getId() != null && !tBaseElement.getId().isEmpty()) {
-            elementDescription += " (id: " + tBaseElement.getId() + ")";
+            elementDescription += " (id: " + tBaseElement.getId().trim() + ")";
         }
 
         return elementDescription;

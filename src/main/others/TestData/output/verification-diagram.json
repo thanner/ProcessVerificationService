@@ -1,0 +1,76 @@
+{
+  "messageList": [
+    {
+      "description": "Multiple start events were identified in the process (id: Process_05u14rw).",
+      "processElementId": "Process",
+      "messageType": "pragmatic",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: StartEvent_1ai55ks).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Activity (id: Task_1vmdkpu).",
+      "processElementId": "Task_1vmdkpu",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Start Event (id: StartEvent_1whelzl).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the Exclusive Gateway (id: ExclusiveGateway_1fbl8y1).",
+      "processElementId": "ExclusiveGateway_1fbl8y1",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "Not all condition labels were identified in the Exclusive Gateway (id: ExclusiveGateway_1fbl8y1).",
+      "processElementId": "ExclusiveGateway_1fbl8y1",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: EndEvent_12npddc).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity (id: Task_1vmdkpu).",
+      "processElementId": "Task_1vmdkpu",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"Do activtiy 1\" (id: Task_0rd32o3).",
+      "processElementId": "Task_0rd32o3",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"Do activity 2\" (id: Task_1eeo3ow).",
+      "processElementId": "Task_1eeo3ow",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "The process does not have an option to complete. Potential deadlocks: 1c{Exclusive Gateway (id: ExclusiveGateway_1fbl8y1)_Activity: Do activity 2 (id: Task_1eeo3ow)} 2c{Exclusive Gateway (id: ExclusiveGateway_1fbl8y1)_Activity: Do activtiy 1 (id: Task_0rd32o3)} 2c{Exclusive Gateway (id: ExclusiveGateway_1fbl8y1)_Activity: Do activity 2 (id: Task_1eeo3ow)} 1c{Exclusive Gateway (id: ExclusiveGateway_1fbl8y1)_Activity: Do activtiy 1 (id: Task_0rd32o3)}",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The process does not satisfy the soundness property.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    }
+  ]
+}

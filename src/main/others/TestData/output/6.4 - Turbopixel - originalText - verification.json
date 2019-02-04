@@ -139,19 +139,13 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "Exclusive Gateway (id: id-29) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-29)]to[Condition:c{Node13_Node28}]) for the same task.",
+      "description": "Exclusive Gateway (id: id-29) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-29)]to[Condition:c{Node13_Node19}]) for the same task.",
       "processElementId": "id-29",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
     {
-      "description": "Condition:Node15 is not on a forward directed path from i to o.",
-      "processElementId": "Process",
-      "messageType": "structure",
-      "source": "YAWL Verification"
-    },
-    {
-      "description": "Condition:Node26 is not on a forward directed path from i to o.",
+      "description": "AtomicTask:Node12 is not on a forward directed path from i to o.",
       "processElementId": "Process",
       "messageType": "structure",
       "source": "YAWL Verification"
@@ -175,7 +169,13 @@
       "source": "YAWL Verification"
     },
     {
-      "description": "AtomicTask:Node12 is not on a forward directed path from i to o.",
+      "description": "Condition:Node15 is not on a forward directed path from i to o.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "Condition:Node26 is not on a forward directed path from i to o.",
       "processElementId": "Process",
       "messageType": "structure",
       "source": "YAWL Verification"

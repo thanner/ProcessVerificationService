@@ -1,0 +1,46 @@
+{
+  "messageList": [
+    {
+      "description": "No label was identified in the Start Event (id: StartEvent_1).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No label was identified in the End Event (id: EndEvent_10k53is).",
+      "processElementId": "Process",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "No resource was identified in the Activity \"Do 1\" (id: Task_08u88zk).",
+      "processElementId": "Task_08u88zk",
+      "messageType": "label",
+      "source": "BPMN Verification"
+    },
+    {
+      "description": "The element (Parallel Gateway (id: ExclusiveGateway_1e24zpz)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "ExclusiveGateway_1e24zpz",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Exclusive Gateway (id: ExclusiveGateway_1vc79te)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "ExclusiveGateway_1vc79te",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "The element (Activity: Do 1 (id: Task_08u88zk)) plays a part in an infinite loop/recursion in which no work items may be created.",
+      "processElementId": "Task_08u88zk",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    },
+    {
+      "description": "It was not possible to verify soundness in the model. Please correct the errors identified in the YAWL before this is possible.",
+      "processElementId": "Process",
+      "messageType": "structure",
+      "source": "YAWL Verification"
+    }
+  ]
+}

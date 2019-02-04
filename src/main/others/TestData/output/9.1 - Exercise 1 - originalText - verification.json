@@ -127,13 +127,13 @@
       "source": "BPMN Verification"
     },
     {
-      "description": "Exclusive Gateway (id: id-24) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-24)]to[Condition:c{Node5_Node15}]) for the same task.",
+      "description": "Exclusive Gateway (id: id-24) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-24)]to[Condition:c{Node5_Node17}]) for the same task.",
       "processElementId": "id-24",
       "messageType": "structure",
       "source": "YAWL Verification"
     },
     {
-      "description": "Exclusive Gateway (id: id-24) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-24)]to[Condition:c{Node5_Node17}]) for the same task.",
+      "description": "Exclusive Gateway (id: id-24) no two elements may possess the same ordering (Flow:from[Exclusive Gateway (id: id-24)]to[Condition:c{Node5_Node4}]) for the same task.",
       "processElementId": "id-24",
       "messageType": "structure",
       "source": "YAWL Verification"
