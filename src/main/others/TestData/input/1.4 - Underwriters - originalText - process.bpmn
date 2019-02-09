@@ -49,7 +49,7 @@
             <incoming>id-38</incoming>
             <outgoing>id-39</outgoing>
         </task>
-        <task name="act to a new issue" id="id-12">
+        <task name="act as financial midwives to a new issue" id="id-12">
             <incoming>id-39</incoming>
             <outgoing>id-43</outgoing>
         </task>

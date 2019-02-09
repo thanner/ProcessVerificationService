@@ -5,13 +5,13 @@
             <lane name="potential customers" id="id-2">
                 <flowNodeRef>id-10</flowNodeRef>
                 <flowNodeRef>id-11</flowNodeRef>
-                <flowNodeRef>id-29</flowNodeRef>
                 <flowNodeRef>id-38</flowNodeRef>
             </lane>
             <lane name="marketing staff" id="id-3">
                 <flowNodeRef>id-12</flowNodeRef>
                 <flowNodeRef>id-13</flowNodeRef>
                 <flowNodeRef>id-14</flowNodeRef>
+                <flowNodeRef>id-29</flowNodeRef>
                 <flowNodeRef>id-30</flowNodeRef>
             </lane>
             <lane name="call center staff" id="id-4">
@@ -24,26 +24,26 @@
                 <flowNodeRef>id-21</flowNodeRef>
                 <flowNodeRef>id-31</flowNodeRef>
                 <flowNodeRef>id-32</flowNodeRef>
+                <flowNodeRef>id-34</flowNodeRef>
                 <flowNodeRef>id-39</flowNodeRef>
             </lane>
             <lane name="head of development" id="id-5">
                 <flowNodeRef>id-22</flowNodeRef>
                 <flowNodeRef>id-33</flowNodeRef>
-                <flowNodeRef>id-34</flowNodeRef>
                 <flowNodeRef>id-41</flowNodeRef>
             </lane>
             <lane name="sales representative" id="id-6">
                 <flowNodeRef>id-23</flowNodeRef>
                 <flowNodeRef>id-27</flowNodeRef>
                 <flowNodeRef>id-28</flowNodeRef>
+                <flowNodeRef>id-35</flowNodeRef>
+                <flowNodeRef>id-36</flowNodeRef>
                 <flowNodeRef>id-40</flowNodeRef>
             </lane>
             <lane name="pre-sales employee" id="id-7">
                 <flowNodeRef>id-24</flowNodeRef>
                 <flowNodeRef>id-25</flowNodeRef>
                 <flowNodeRef>id-26</flowNodeRef>
-                <flowNodeRef>id-35</flowNodeRef>
-                <flowNodeRef>id-36</flowNodeRef>
                 <flowNodeRef>id-37</flowNodeRef>
                 <flowNodeRef>id-42</flowNodeRef>
             </lane>

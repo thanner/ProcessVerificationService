@@ -20,33 +20,13 @@ public class DataGeneratorApp {
 
     public static void main(String[] args) {
         prepareLogger();
-        //getInputFiles();
+        getInputFiles();
         ApplicationStarter.startApplication();
 
-        generateData(new File(Paths.LocalOthersPath + "/TestData/loop.bpmn"), false);
-
-        /*
         File folder = new File(Paths.LocalOthersPath + Paths.dataInputPath);
         for (File fileEntry : folder.listFiles()) {
-            generateData(fileEntry, true);
+            generateData(fileEntry, false);
         }
-        */
-
-        //generateData(new File(Paths.LocalOthersPath + "/TestData/errorInput/1.1 - Bicycle manufacturing - originalText - process.bpmn"), false);
-
-        //generateData(new File(Paths.LocalOthersPath + "/TestData/input/10.5 - Process B5.2 - originalText - process.bpmn"), false);
-        /*
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste.bpmn"), false);
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste2.bpmn"), false);
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste3.bpmn"), false);
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste4.bpmn"), false);
-        generateData(new File(Paths.LocalOthersPath + "/TestData/teste5.bpmn"), false);
-        */
-        //generateData(new File(Paths.LocalOthersPath + "/TestData/input/2009-2 Conduct Directions Hearing - process.bpmn"), false);
-
-        //diagramaVerificar2
-        //generateData(new File(Paths.LocalOthersPath + "/TestData/diagramaVerificar2.bpmn"), false);
-        // File file = new File(Paths.LocalOthersPath + Paths.dataInputPath + "154 - HR Process - functional department - eng - process.bpmn");
     }
 
     private static void prepareLogger() {

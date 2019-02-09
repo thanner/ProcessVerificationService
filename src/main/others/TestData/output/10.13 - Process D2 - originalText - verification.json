@@ -1,16 +1,1 @@
-{
-  "messageList": [
-    {
-      "description": "No label was identified in the Start Event (id: id-8).",
-      "processElementId": "Process",
-      "messageType": "label",
-      "source": "BPMN Verification"
-    },
-    {
-      "description": "No label was identified in the End Event (id: id-9).",
-      "processElementId": "Process",
-      "messageType": "label",
-      "source": "BPMN Verification"
-    }
-  ]
-}
+{"messageList":[{"description":"No label was identified in the Start Event (id: id-8).","processElementId":"Process","messageType":"label","source":"BPMN Verification"},{"description":"No label was identified in the End Event (id: id-9).","processElementId":"Process","messageType":"label","source":"BPMN Verification"}]}
